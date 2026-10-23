@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ t.meta_title }}</title>
+<meta name="description" content="{{ t.meta_desc }}">
+<meta name="keywords" content="{{ t.meta_keywords }}">
+{% set here = cfg.site_url ~ ('/ko' if lang == 'ko' else '/') %}
+<link rel="canonical" href="{{ here }}">
+<link rel="alternate" hreflang="ja" href="{{ cfg.site_url }}/">
+<link rel="alternate" hreflang="ko" href="{{ cfg.site_url }}/ko">
+<link rel="alternate" hreflang="x-default" href="{{ cfg.site_url }}/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ t.meta_title }}">
+<meta property="og:description" content="{{ t.meta_desc }}">
+<meta property="og:url" content="{{ here }}">
+<meta property="og:image" content="{{ cfg.site_url }}/static/img/og.jpg">
+<meta property="og:locale" content="{{ 'ja_JP' if lang == 'ja' else 'ko_KR' }}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+<script type="application/ld+json">{{ ld | tojson }}</script>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a href="{{ '/ko' if lang == 'ko' else '/' }}" class="logo" aria-label="{{ t.brand }}">
+      {% include 'bear.svg' %}
+      <span><b>{{ t.brand }}</b><small>{{ t.brand_sub }}</small></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#service">{{ t.nav_service }}</a>
+      <a href="#price">{{ t.nav_price }}</a>
+      <a href="#vehicle">{{ t.nav_vehicle }}</a>
+      <a href="#gallery">{{ t.nav_gallery }}</a>
+      <a href="#reviews">{{ t.nav_reviews }}</a>
+      <a href="#faq">{{ t.nav_faq }}</a>
+      <a href="#contact">{{ t.nav_contact }}</a>
+    </nav>
+    <div class="hdr-r">
+      <a class="lang" href="{{ t.other_lang_path }}" hreflang="{{ 'ko' if lang == 'ja' else 'ja' }}">{{ t.other_lang }}</a>
+      <a class="btn btn-line" href="{{ cfg.line_url }}" target="_blank" rel="noopener">{{ t.cta_line }}</a>
+      <button class="burger" aria-label="menu" aria-expanded="false" onclick="document.body.classList.toggle('nav-open');this.setAttribute('aria-expanded',document.body.classList.contains('nav-open'))"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-txt">
+      <p class="eyebrow">{{ t.hero_eyebrow }}</p>
+      <h1>{{ t.hero_h1 | safe }}</h1>
+      <p class="lead">{{ t.hero_sub }}</p>
+      <div class="hero-cta">
+        <a class="btn btn-line btn-lg" href="{{ cfg.line_url }}" target="_blank" rel="noopener">{{ t.cta_line }}</a>
+        <a class="btn btn-ghost btn-lg" href="#price">{{ t.cta_price }}</a>
+      </div>
+      <ul class="chips">
+        <li>{{ t.hero_chip1 }}</li><li>{{ t.hero_chip2 }}</li><li>{{ t.hero_chip3 }}</li>
+      </ul>
+    </div>
+    <div class="hero-pic">
+      <img src="/static/img/gwanghwamun-snow.webp" alt="{{ t.hero_photo_alt }}" width="1108" height="1477" fetchpriority="high">
+      <div class="hero-badge">{% include 'bear.svg' %}<span>{{ t.hero_badge }}</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="service" class="sec">
+  <div class="wrap">
+    <h2>{{ t.svc_title }}</h2><p class="sec-lead">{{ t.svc_lead }}</p>
+    <div class="grid3">
+      <article class="card svc"><img src="/static/img/staria-front-thumb.webp" alt="{{ t.veh_alt1 }}" loading="lazy" width="600" height="450"><div><h3>{{ t.svc1_t }}</h3><p>{{ t.svc1_d }}</p></div></article>
+      <article class="card svc"><img src="/static/img/gyeongbokgung-guard-thumb.webp" alt="{{ t.cap_guard }}" loading="lazy" width="600" height="800"><div><h3>{{ t.svc2_t }}</h3><p>{{ t.svc2_d }}</p></div></article>
+      <article class="card svc"><img src="/static/img/solati-side-thumb.webp" alt="{{ t.veh_alt2 }}" loading="lazy" width="600" height="450"><div><h3>{{ t.svc3_t }}</h3><p>{{ t.svc3_d }}</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="price" class="sec sec-alt">
+  <div class="wrap">
+    <h2>{{ t.price_title }}</h2><p class="sec-lead">{{ t.price_lead }}</p>
+    <div class="price-grid">
+      <table class="price">
+        <thead><tr><th>{{ t.price_h_item }}</th><th>{{ t.price_h_price }}</th><th>{{ t.price_h_note }}</th></tr></thead>
+        <tbody>
+          <tr><td>{{ t.price_icn }}</td><td class="num">{{ "{:,}".format(prices.icn) }}<small>{{ t.won }}</small></td><td>{{ t.price_note_staria }}</td></tr>
+          <tr><td>{{ t.price_gmp }}</td><td class="num">{{ "{:,}".format(prices.gmp) }}<small>{{ t.won }}</small></td><td>{{ t.price_note_staria }}</td></tr>
+          <tr><td>{{ t.price_half }}</td><td class="num">{{ "{:,}".format(prices.half) }}<small>{{ t.won }}</small></td><td>{{ t.price_note_seoul }}</td></tr>
+          <tr><td>{{ t.price_full }}</td><td class="num">{{ "{:,}".format(prices.full) }}<small>{{ t.won }}</small></td><td>{{ t.price_note_seoul }}</td></tr>
+          <tr class="rt"><td colspan="3"><b>{{ t.price_rt }}</b> — {{ t.price_rt_note }}</td></tr>
+        </tbody>
+      </table>
+      <div class="card est" id="est" data-icn="{{ prices.icn }}" data-gmp="{{ prices.gmp }}" data-off="{{ prices.rt_off }}"
+           data-msg="{{ t.est_line_msg }}" data-line="{{ cfg.line_url }}" data-ask="{{ t.est_ask }}" data-won="{{ t.won }}">
+        <h3>{{ t.est_title }}</h3>
+        <label>{{ t.est_airport }}<select name="airport"><option value="icn">{{ t.est_icn }}</option><option value="gmp">{{ t.est_gmp }}</option></select></label>
+        <label>{{ t.est_trip }}<select name="trip"><option value="1">{{ t.est_oneway }}</option><option value="2">{{ t.est_round }}</option></select></label>
+        <label>{{ t.est_people }}<select name="people"><option value="6">{{ t.est_p6 }}</option><option value="15">{{ t.est_p15 }}</option></select></label>
+        <div class="est-out"><span>{{ t.est_total }}</span><strong id="est-total"></strong><em id="est-save" hidden>{{ t.est_save }} <span></span></em></div>
+        <a id="est-cta" class="btn btn-line" href="{{ cfg.line_url }}" target="_blank" rel="noopener">{{ t.est_cta }}</a>
+      </div>
+    </div>
+    <p class="note">{{ t.price_solati_note }}</p>
+  </div>
+</section>
+
+<section id="vehicle" class="sec">
+  <div class="wrap">
+    <h2>{{ t.veh_title }}</h2><p class="sec-lead">{{ t.veh_lead }}</p>
+    <div class="grid2">
+      <article class="card veh"><img src="/static/img/staria-side.webp" alt="{{ t.veh_alt1 }}" loading="lazy" width="1400" height="1050"><div><span class="cap">{{ t.veh1_cap }}</span><h3>{{ t.veh1_t }}</h3><p>{{ t.veh1_d }}</p></div></article>
+      <article class="card veh"><img src="/static/img/solati-front.webp" alt="{{ t.veh_alt2 }}" loading="lazy" width="1400" height="1050"><div><span class="cap">{{ t.veh2_cap }}</span><h3>{{ t.veh2_t }}</h3><p>{{ t.veh2_d }}</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-dark">
+  <div class="wrap">
+    <h2>{{ t.flow_title }}</h2>
+    <ol class="flow">
+      {% for i in range(1, 5) %}<li><span class="n">{{ i }}</span><h3>{{ t['flow%d_t' % i] }}</h3><p>{{ t['flow%d_d' % i] }}</p></li>{% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <h2>{{ t.why_title }}</h2>
+    <div class="grid4">
+      {% for i in range(1, 5) %}<div class="why"><span class="ic">{{ ['💬','🏷️','🗺️','🚐'][i-1] }}</span><h3>{{ t['why%d_t' % i] }}</h3><p>{{ t['why%d_d' % i] }}</p></div>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="sec sec-alt">
+  <div class="wrap">
+    <h2>{{ t.gal_title }}</h2><p class="sec-lead">{{ t.gal_lead }}</p>
+    <div class="tabs" role="tablist">
+      <button class="on" data-f="all">{{ t.gal_all }}</button><button data-f="scenery">{{ t.gal_scenery }}</button><button data-f="vehicle">{{ t.gal_vehicle }}</button>
+    </div>
+    <div class="masonry" id="gal">
+      {% for n, cat, cap in gallery %}
+      <a href="/static/img/{{ n }}.webp" data-cat="{{ cat }}" data-cap="{{ t[cap] }}"><img src="/static/img/{{ n }}-thumb.webp" alt="{{ t[cap] }}" loading="lazy"><span>{{ t[cap] }}</span></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="sec">
+  <div class="wrap">
+    <h2>{{ t.rev_title }}</h2><p class="sec-lead">{{ t.rev_lead }}</p>
+    {% if sent == 'review' %}<p class="flash">{{ t.rev_thanks }}</p>{% endif %}
+    {% if reviews %}
+    <p class="avg"><span class="stars">{{ '★' * (avg | round | int) }}{{ '☆' * (5 - (avg | round | int)) }}</span> {{ t.rev_avg }} {{ avg }} / {{ reviews | length }}{{ t.rev_count }}</p>
+    <div class="grid3">
+      {% for r in reviews[:6] %}
+      <article class="card rev"><span class="stars">{{ '★' * r.rating }}{{ '☆' * (5 - r.rating) }}</span><p>{{ r.body }}</p><footer><b>{{ r.name }}</b>{% if r.city %} · {{ r.city }}{% endif %}{% if r.service %} · {{ r.service }}{% endif %}<time>{{ r.at }}</time></footer></article>
+      {% endfor %}
+    </div>
+    {% else %}<p class="empty">{{ t.rev_empty }}</p>{% endif %}
+    <details class="card rev-form">
+      <summary>{{ t.rev_write }}</summary>
+      <form method="post" action="/review">
+        <input type="hidden" name="lang" value="{{ lang }}"><input type="text" name="website" class="hp" tabindex="-1" autocomplete="off">
+        <div class="row2">
+          <label>{{ t.rev_name }}<input name="name" required maxlength="40"></label>
+          <label>{{ t.rev_city }}<input name="city" maxlength="40"></label>
+        </div>
+        <div class="row2">
+          <label>{{ t.rev_service }}<select name="service">{% for o in t.f_service_opts %}<option>{{ o }}</option>{% endfor %}</select></label>
+          <label>{{ t.rev_rating }}<select name="rating">{% for i in [5,4,3,2,1] %}<option value="{{ i }}">{{ '★' * i }}</option>{% endfor %}</select></label>
+        </div>
+        <label>{{ t.rev_body }}<textarea name="body" rows="4" required maxlength="1000"></textarea></label>
+        <p class="note">{{ t.rev_note }}</p>
+        <button class="btn btn-dark">{{ t.rev_submit }}</button>
+      </form>
+    </details>
+  </div>
+</section>
+
+<section id="faq" class="sec sec-alt">
+  <div class="wrap narrow">
+    <h2>{{ t.faq_title }}</h2>
+    {% for q, a in t.faq %}<details class="faq"><summary>{{ q }}</summary><p>{{ a }}</p></details>{% endfor %}
+  </div>
+</section>
+
+<section id="contact" class="sec sec-dark">
+  <div class="wrap">
+    <h2>{{ t.contact_title }}</h2><p class="sec-lead">{{ t.contact_lead }}</p>
+    {% if sent == 'contact' %}<p class="flash">{{ t.f_sent }}</p>{% endif %}
+    <div class="contact-grid">
+      <div class="contact-side">
+        <div class="card ck"><h3>{{ t.contact_line_t }}</h3><p>{{ t.contact_line_d }}</p><img src="/static/img/line-qr.png" alt="LINE QR" width="160" height="160" loading="lazy"><a class="btn btn-line" href="{{ cfg.line_url }}" target="_blank" rel="noopener">{{ t.cta_line }}</a></div>
+        <div class="card ck"><h3>{{ t.contact_phone_t }}</h3><a class="tel" href="tel:+82{{ cfg.phone[1:] | replace('-','') }}">{{ cfg.phone }}</a></div>
+      </div>
+      <form class="card cform" method="post" action="/contact">
+        <input type="hidden" name="lang" value="{{ lang }}"><input type="text" name="website" class="hp" tabindex="-1" autocomplete="off">
+        <div class="row2">
+          <label>{{ t.f_name }}<input name="name" required maxlength="60"></label>
+          <label>{{ t.f_contact }}<input name="contact" required maxlength="100"></label>
+        </div>
+        <div class="row2">
+          <label>{{ t.f_people }}<input name="people" type="number" min="1" max="15"></label>
+          <label>{{ t.f_date }}<input name="date" type="date"></label>
+        </div>
+        <div class="row2">
+          <label>{{ t.f_origin }}<input name="origin" maxlength="100"></label>
+          <label>{{ t.f_destination }}<input name="destination" maxlength="100"></label>
+        </div>
+        <label>{{ t.f_service }}<select name="service">{% for o in t.f_service_opts %}<option>{{ o }}</option>{% endfor %}</select></label>
+        <label>{{ t.f_message }}<textarea name="message" rows="4" maxlength="500"></textarea></label>
+        <button class="btn btn-gold">{{ t.f_submit }}</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr-in">
+    <div><div class="logo">{% include 'bear.svg' %}<span><b>{{ t.brand }}</b><small>{{ t.brand_sub }}</small></span></div><p>{{ t.footer_about }}</p></div>
+    <div><p>TEL {{ cfg.phone }}</p><p><a href="{{ cfg.line_url }}" target="_blank" rel="noopener">LINE</a></p><p><a href="{{ t.other_lang_path }}">{{ t.other_lang }}</a></p></div>
+  </div>
+  <p class="credit">{{ t.footer_photo_credit }} · © {{ year }} {{ t.brand }}. {{ t.footer_rights }}</p>
+</footer>
+
+<div class="mbar">
+  <a href="{{ cfg.line_url }}" target="_blank" rel="noopener" class="m-line">{{ t.cta_line_short }}</a>
+  <a href="tel:+82{{ cfg.phone[1:] | replace('-','') }}">{{ t.cta_call }}</a>
+  <a href="#price">{{ t.nav_price }}</a>
+</div>
+<a class="fab" href="{{ cfg.line_url }}" target="_blank" rel="noopener" aria-label="LINE">{{ t.cta_line }}</a>
+
+<div class="lb" id="lb" hidden><button class="lb-x" aria-label="close">×</button><button class="lb-p" aria-label="prev">‹</button><figure><img alt=""><figcaption></figcaption></figure><button class="lb-n" aria-label="next">›</button></div>
+<script src="/static/js/main.js" defer></script>
+</body>
+</html>
