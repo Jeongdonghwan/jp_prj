@@ -26,8 +26,7 @@ ILLUST = [(f"여행객들 AI 이미지 ({i}).jpg", f"memory-{i:02d}") for i in r
     ("연락처.jpg", "illust-contact"),
 ]
 CARS = [
-    ("staria-1.jpg", "staria-front"),
-    ("staria-3.jpg", "staria-side"),
+    ("staria-limo.jpg", "staria-limo"),
     ("solati-1.jpg", "solati-side"),
     ("solati-3.jpg", "solati-front"),
 ]
