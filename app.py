@@ -24,7 +24,7 @@ I18N = {
 }
 PRICES = {"icn": 150000, "gmp": 80000, "half": 300000, "full": 500000, "rt_off": 0.10}
 
-GALLERY = [  # (파일명, 카테고리, 캡션 키)
+GALLERY = [(f"memory-{i:02d}", "memory", f"cap_m{i}") for i in range(1, 15)] + [  # (파일명, 카테고리, 캡션 키)
     ("gwanghwamun-snow", "scenery", "cap_gwanghwamun"),
     ("hangang-night", "scenery", "cap_hangang"),
     ("gyeongbokgung-guard", "scenery", "cap_guard"),

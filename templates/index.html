@@ -19,9 +19,10 @@
 <meta property="og:locale" content="{{ 'ja_JP' if lang == 'ja' else 'ko_KR' }}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="/static/img/illust-hero.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Jua&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/static/css/style.css">
 <script type="application/ld+json">{{ ld | tojson }}</script>
 </head>
@@ -52,22 +53,35 @@
 
 <main>
 <section class="hero">
+  <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
   <div class="wrap hero-in">
     <div class="hero-txt">
-      <p class="eyebrow">{{ t.hero_eyebrow }}</p>
+      <p class="eyebrow">✈ {{ t.hero_eyebrow }}</p>
       <h1>{{ t.hero_h1 | safe }}</h1>
       <p class="lead">{{ t.hero_sub }}</p>
       <div class="hero-cta">
         <a class="btn btn-line btn-lg" href="{{ cfg.line_url }}" target="_blank" rel="noopener">{{ t.cta_line }}</a>
-        <a class="btn btn-ghost btn-lg" href="#price">{{ t.cta_price }}</a>
+        <a class="btn btn-pink btn-lg" href="#price">{{ t.cta_price }}</a>
       </div>
       <ul class="chips">
         <li>{{ t.hero_chip1 }}</li><li>{{ t.hero_chip2 }}</li><li>{{ t.hero_chip3 }}</li>
       </ul>
     </div>
     <div class="hero-pic">
-      <img src="/static/img/gwanghwamun-snow.webp" alt="{{ t.hero_photo_alt }}" width="1108" height="1477" fetchpriority="high">
+      <img src="/static/img/illust-hero.webp" alt="{{ t.hero_photo_alt }}" width="1254" height="1254" fetchpriority="high">
       <div class="hero-badge">{% include 'bear.svg' %}<span>{{ t.hero_badge }}</span></div>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 Q180 0 360 30 T720 30 T1080 30 T1440 30 V60 H0Z" fill="var(--bg)"/></svg>
+</section>
+
+<section class="memories" aria-label="{{ t.memories_title }}">
+  <div class="wrap">
+    <h2 class="mini">📸 {{ t.memories_title }}</h2>
+    <div class="strip">
+      {% for n, cat, cap in gallery if cat == 'memory' %}
+      <a href="#gallery" class="polaroid" style="--r:{{ [-3, 2, -2, 3, -1, 2][loop.index0 % 6] }}deg"><img src="/static/img/{{ n }}-thumb.webp" alt="{{ t[cap] }}" loading="lazy" width="600" height="450"><span>{{ t[cap] }}</span></a>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -75,15 +89,18 @@
 <section id="service" class="sec">
   <div class="wrap">
     <h2>{{ t.svc_title }}</h2><p class="sec-lead">{{ t.svc_lead }}</p>
-    <div class="grid3">
-      <article class="card svc"><img src="/static/img/staria-front-thumb.webp" alt="{{ t.veh_alt1 }}" loading="lazy" width="600" height="450"><div><h3>{{ t.svc1_t }}</h3><p>{{ t.svc1_d }}</p></div></article>
-      <article class="card svc"><img src="/static/img/gyeongbokgung-guard-thumb.webp" alt="{{ t.cap_guard }}" loading="lazy" width="600" height="800"><div><h3>{{ t.svc2_t }}</h3><p>{{ t.svc2_d }}</p></div></article>
-      <article class="card svc"><img src="/static/img/solati-side-thumb.webp" alt="{{ t.veh_alt2 }}" loading="lazy" width="600" height="450"><div><h3>{{ t.svc3_t }}</h3><p>{{ t.svc3_d }}</p></div></article>
+    <div class="svc-grid">
+      <img class="illust" src="/static/img/illust-seoul-thumb.webp" srcset="/static/img/illust-seoul-thumb.webp 600w, /static/img/illust-seoul.webp 1254w" sizes="(max-width:960px) 100vw, 520px" alt="{{ t.svc_banner_alt }}" loading="lazy" width="1254" height="1254">
+      <div class="svc-list">
+        <article class="card svc"><span class="ic pink">✈️</span><div><h3>{{ t.svc1_t }}</h3><p>{{ t.svc1_d }}</p></div></article>
+        <article class="card svc"><span class="ic yellow">🏯</span><div><h3>{{ t.svc2_t }}</h3><p>{{ t.svc2_d }}</p></div></article>
+        <article class="card svc"><span class="ic mint">⛳</span><div><h3>{{ t.svc3_t }}</h3><p>{{ t.svc3_d }}</p></div></article>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="price" class="sec sec-alt">
+<section id="price" class="sec sec-yellow">
   <div class="wrap">
     <h2>{{ t.price_title }}</h2><p class="sec-lead">{{ t.price_lead }}</p>
     <div class="price-grid">
@@ -94,12 +111,12 @@
           <tr><td>{{ t.price_gmp }}</td><td class="num">{{ "{:,}".format(prices.gmp) }}<small>{{ t.won }}</small></td><td>{{ t.price_note_staria }}</td></tr>
           <tr><td>{{ t.price_half }}</td><td class="num">{{ "{:,}".format(prices.half) }}<small>{{ t.won }}</small></td><td>{{ t.price_note_seoul }}</td></tr>
           <tr><td>{{ t.price_full }}</td><td class="num">{{ "{:,}".format(prices.full) }}<small>{{ t.won }}</small></td><td>{{ t.price_note_seoul }}</td></tr>
-          <tr class="rt"><td colspan="3"><b>{{ t.price_rt }}</b> — {{ t.price_rt_note }}</td></tr>
+          <tr class="rt"><td colspan="3">🎁 <b>{{ t.price_rt }}</b> — {{ t.price_rt_note }}</td></tr>
         </tbody>
       </table>
       <div class="card est" id="est" data-icn="{{ prices.icn }}" data-gmp="{{ prices.gmp }}" data-off="{{ prices.rt_off }}"
            data-msg="{{ t.est_line_msg }}" data-line="{{ cfg.line_url }}" data-ask="{{ t.est_ask }}" data-won="{{ t.won }}">
-        <h3>{{ t.est_title }}</h3>
+        <h3>🧮 {{ t.est_title }}</h3>
         <label>{{ t.est_airport }}<select name="airport"><option value="icn">{{ t.est_icn }}</option><option value="gmp">{{ t.est_gmp }}</option></select></label>
         <label>{{ t.est_trip }}<select name="trip"><option value="1">{{ t.est_oneway }}</option><option value="2">{{ t.est_round }}</option></select></label>
         <label>{{ t.est_people }}<select name="people"><option value="6">{{ t.est_p6 }}</option><option value="15">{{ t.est_p15 }}</option></select></label>
@@ -116,17 +133,20 @@
     <h2>{{ t.veh_title }}</h2><p class="sec-lead">{{ t.veh_lead }}</p>
     <div class="grid2">
       <article class="card veh"><img src="/static/img/staria-side.webp" alt="{{ t.veh_alt1 }}" loading="lazy" width="1400" height="1050"><div><span class="cap">{{ t.veh1_cap }}</span><h3>{{ t.veh1_t }}</h3><p>{{ t.veh1_d }}</p></div></article>
-      <article class="card veh"><img src="/static/img/solati-front.webp" alt="{{ t.veh_alt2 }}" loading="lazy" width="1400" height="1050"><div><span class="cap">{{ t.veh2_cap }}</span><h3>{{ t.veh2_t }}</h3><p>{{ t.veh2_d }}</p></div></article>
+      <article class="card veh"><img src="/static/img/solati-front.webp" alt="{{ t.veh_alt2 }}" loading="lazy" width="1400" height="1050"><div><span class="cap mint">{{ t.veh2_cap }}</span><h3>{{ t.veh2_t }}</h3><p>{{ t.veh2_d }}</p></div></article>
     </div>
   </div>
 </section>
 
-<section class="sec sec-dark">
+<section class="sec sec-sky">
   <div class="wrap">
     <h2>{{ t.flow_title }}</h2>
-    <ol class="flow">
-      {% for i in range(1, 5) %}<li><span class="n">{{ i }}</span><h3>{{ t['flow%d_t' % i] }}</h3><p>{{ t['flow%d_d' % i] }}</p></li>{% endfor %}
-    </ol>
+    <div class="flow-grid">
+      <img class="illust" src="/static/img/illust-welcome-thumb.webp" srcset="/static/img/illust-welcome-thumb.webp 600w, /static/img/illust-welcome.webp 1312w" sizes="(max-width:960px) 100vw, 520px" alt="{{ t.flow_img_alt }}" loading="lazy" width="1312" height="1199">
+      <ol class="flow">
+        {% for i in range(1, 5) %}<li><span class="n">{{ i }}</span><div><h3>{{ t['flow%d_t' % i] }}</h3><p>{{ t['flow%d_d' % i] }}</p></div></li>{% endfor %}
+      </ol>
+    </div>
   </div>
 </section>
 
@@ -134,16 +154,16 @@
   <div class="wrap">
     <h2>{{ t.why_title }}</h2>
     <div class="grid4">
-      {% for i in range(1, 5) %}<div class="why"><span class="ic">{{ ['💬','🏷️','🗺️','🚐'][i-1] }}</span><h3>{{ t['why%d_t' % i] }}</h3><p>{{ t['why%d_d' % i] }}</p></div>{% endfor %}
+      {% for i in range(1, 5) %}<div class="why"><span class="ic {{ ['pink','yellow','mint','sky'][i-1] }}">{{ ['💬','🏷️','🗺️','🚐'][i-1] }}</span><h3>{{ t['why%d_t' % i] }}</h3><p>{{ t['why%d_d' % i] }}</p></div>{% endfor %}
     </div>
   </div>
 </section>
 
-<section id="gallery" class="sec sec-alt">
+<section id="gallery" class="sec sec-pink">
   <div class="wrap">
     <h2>{{ t.gal_title }}</h2><p class="sec-lead">{{ t.gal_lead }}</p>
     <div class="tabs" role="tablist">
-      <button class="on" data-f="all">{{ t.gal_all }}</button><button data-f="scenery">{{ t.gal_scenery }}</button><button data-f="vehicle">{{ t.gal_vehicle }}</button>
+      <button class="on" data-f="all">{{ t.gal_all }}</button><button data-f="memory">{{ t.gal_memories }}</button><button data-f="scenery">{{ t.gal_scenery }}</button><button data-f="vehicle">{{ t.gal_vehicle }}</button>
     </div>
     <div class="masonry" id="gal">
       {% for n, cat, cap in gallery %}
@@ -164,7 +184,7 @@
       <article class="card rev"><span class="stars">{{ '★' * r.rating }}{{ '☆' * (5 - r.rating) }}</span><p>{{ r.body }}</p><footer><b>{{ r.name }}</b>{% if r.city %} · {{ r.city }}{% endif %}{% if r.service %} · {{ r.service }}{% endif %}<time>{{ r.at }}</time></footer></article>
       {% endfor %}
     </div>
-    {% else %}<p class="empty">{{ t.rev_empty }}</p>{% endif %}
+    {% else %}<p class="empty">🐻 {{ t.rev_empty }}</p>{% endif %}
     <details class="card rev-form">
       <summary>{{ t.rev_write }}</summary>
       <form method="post" action="/review">
@@ -179,27 +199,28 @@
         </div>
         <label>{{ t.rev_body }}<textarea name="body" rows="4" required maxlength="1000"></textarea></label>
         <p class="note">{{ t.rev_note }}</p>
-        <button class="btn btn-dark">{{ t.rev_submit }}</button>
+        <button class="btn btn-pink">{{ t.rev_submit }}</button>
       </form>
     </details>
   </div>
 </section>
 
-<section id="faq" class="sec sec-alt">
+<section id="faq" class="sec sec-yellow">
   <div class="wrap narrow">
     <h2>{{ t.faq_title }}</h2>
-    {% for q, a in t.faq %}<details class="faq"><summary>{{ q }}</summary><p>{{ a }}</p></details>{% endfor %}
+    {% for q, a in t.faq %}<details class="faq"><summary><span class="q">Q</span>{{ q }}</summary><p>{{ a }}</p></details>{% endfor %}
   </div>
 </section>
 
-<section id="contact" class="sec sec-dark">
+<section id="contact" class="sec sec-sky">
   <div class="wrap">
     <h2>{{ t.contact_title }}</h2><p class="sec-lead">{{ t.contact_lead }}</p>
     {% if sent == 'contact' %}<p class="flash">{{ t.f_sent }}</p>{% endif %}
+    <img class="contact-banner" src="/static/img/illust-contact.webp" alt="{{ t.contact_banner_alt }}" loading="lazy" width="1400" height="800">
     <div class="contact-grid">
       <div class="contact-side">
         <div class="card ck"><h3>{{ t.contact_line_t }}</h3><p>{{ t.contact_line_d }}</p><img src="/static/img/line-qr.png" alt="LINE QR" width="160" height="160" loading="lazy"><a class="btn btn-line" href="{{ cfg.line_url }}" target="_blank" rel="noopener">{{ t.cta_line }}</a></div>
-        <div class="card ck"><h3>{{ t.contact_phone_t }}</h3><a class="tel" href="tel:+82{{ cfg.phone[1:] | replace('-','') }}">{{ cfg.phone }}</a></div>
+        <div class="card ck"><h3>📞 {{ t.contact_phone_t }}</h3><a class="tel" href="tel:+82{{ cfg.phone[1:] | replace('-','') }}">{{ cfg.phone }}</a></div>
       </div>
       <form class="card cform" method="post" action="/contact">
         <input type="hidden" name="lang" value="{{ lang }}"><input type="text" name="website" class="hp" tabindex="-1" autocomplete="off">
@@ -217,7 +238,7 @@
         </div>
         <label>{{ t.f_service }}<select name="service">{% for o in t.f_service_opts %}<option>{{ o }}</option>{% endfor %}</select></label>
         <label>{{ t.f_message }}<textarea name="message" rows="4" maxlength="500"></textarea></label>
-        <button class="btn btn-gold">{{ t.f_submit }}</button>
+        <button class="btn btn-pink">{{ t.f_submit }}</button>
       </form>
     </div>
   </div>

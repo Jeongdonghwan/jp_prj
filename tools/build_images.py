@@ -19,6 +19,12 @@ KOREA = [
     ("한국여행이미지8.jpg", "gwanghwamun-snow"),
     ("한국여행이미지9.jpg", "seoul-night-skyline"),
 ]
+ILLUST = [(f"여행객들 AI 이미지 ({i}).jpg", f"memory-{i:02d}") for i in range(1, 15)] + [
+    ("히어로2.jpg", "illust-hero"),
+    ("히어로.jpg", "illust-welcome"),
+    ("중단.jpg", "illust-seoul"),
+    ("연락처.jpg", "illust-contact"),
+]
 CARS = [
     ("staria-1.jpg", "staria-front"),
     ("staria-3.jpg", "staria-side"),
@@ -43,6 +49,7 @@ def build(src_dir, items):
 
 if __name__ == "__main__":
     build(sys.argv[1], KOREA)
+    build(sys.argv[1], ILLUST)
     build(sys.argv[2], CARS)
     # OG 이미지 1200x630 (한강 야경 중앙 크롭)
     og = ImageOps.exif_transpose(Image.open(os.path.join(sys.argv[1], "한국여행 이미지2.jpg"))).convert("RGB")
