@@ -27,8 +27,8 @@ ILLUST = [(f"여행객들 AI 이미지 ({i}).jpg", f"memory-{i:02d}") for i in r
 ]
 CARS = [
     ("staria-limo.jpg", "staria-limo"),
-    ("solati-1.jpg", "solati-side"),
-    ("solati-3.jpg", "solati-front"),
+    ("쏠라티.jpg", "solati"),
+    ("제네시스 vip 탑승차량.jpg", "genesis-vip"),
 ]
 
 

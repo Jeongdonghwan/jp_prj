@@ -35,8 +35,8 @@ GALLERY = [(f"memory-{i:02d}", "memory", f"cap_m{i}") for i in range(1, 15)] + [
     ("seoul-night-skyline", "scenery", "cap_skyline"),
     ("namsan-sunset", "scenery", "cap_namsan_sunset"),
     ("staria-limo", "vehicle", "cap_staria"),
-    ("solati-side", "vehicle", "cap_solati"),
-    ("solati-front", "vehicle", "cap_solati"),
+    ("genesis-vip", "vehicle", "cap_genesis"),
+    ("solati", "vehicle", "cap_solati"),
 ]
 
 

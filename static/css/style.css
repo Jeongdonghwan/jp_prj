@@ -107,7 +107,7 @@ html[lang=ko] .btn{font-weight:400}
 .svc{display:flex;gap:18px;align-items:flex-start;padding:22px}
 .svc h3{font-size:1.2rem;margin-bottom:4px}
 .svc p,.veh p,.why p{color:var(--ink2);margin:0;font-size:.95rem}
-.veh img{aspect-ratio:16/10;object-fit:cover;width:100%}
+.veh img{aspect-ratio:3/2;object-fit:cover;width:100%}
 .veh div{padding:22px}
 .veh h3{font-size:1.2rem}
 .cap{display:inline-block;background:var(--pink);color:#fff;font-weight:700;font-size:.78rem;padding:3px 12px;border-radius:999px;margin-bottom:8px}
@@ -244,3 +244,5 @@ table.price{width:100%;border-collapse:separate;border-spacing:0;background:#fff
   .price th:nth-child(3),.price td:nth-child(3):not([colspan]){display:none}
   .why .ic{width:60px;height:60px;font-size:1.7rem}
 }
+
+.cap.gold{background:#f3e7c4;color:#7a5a12}

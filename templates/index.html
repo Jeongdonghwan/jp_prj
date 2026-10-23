@@ -131,9 +131,10 @@
 <section id="vehicle" class="sec">
   <div class="wrap">
     <h2>{{ t.veh_title }}</h2><p class="sec-lead">{{ t.veh_lead }}</p>
-    <div class="grid2">
+    <div class="grid3">
+      <article class="card veh"><img src="/static/img/genesis-vip.webp" alt="{{ t.veh_alt3 }}" loading="lazy" width="1382" height="922"><div><span class="cap gold">{{ t.veh3_cap }}</span><h3>{{ t.veh3_t }}</h3><p>{{ t.veh3_d }}</p></div></article>
       <article class="card veh"><img src="/static/img/staria-limo.webp" alt="{{ t.veh_alt1 }}" loading="lazy" width="1086" height="1448" style="object-position:center 78%"><div><span class="cap">{{ t.veh1_cap }}</span><h3>{{ t.veh1_t }}</h3><p>{{ t.veh1_d }}</p></div></article>
-      <article class="card veh"><img src="/static/img/solati-front.webp" alt="{{ t.veh_alt2 }}" loading="lazy" width="1400" height="1050"><div><span class="cap mint">{{ t.veh2_cap }}</span><h3>{{ t.veh2_t }}</h3><p>{{ t.veh2_d }}</p></div></article>
+      <article class="card veh"><img src="/static/img/solati.webp" alt="{{ t.veh_alt2 }}" loading="lazy" width="1382" height="922"><div><span class="cap mint">{{ t.veh2_cap }}</span><h3>{{ t.veh2_t }}</h3><p>{{ t.veh2_d }}</p></div></article>
     </div>
   </div>
 </section>
@@ -250,7 +251,7 @@
     <div><div class="logo">{% include 'bear.svg' %}<span><b>{{ t.brand }}</b><small>{{ t.brand_sub }}</small></span></div><p>{{ t.footer_about }}</p></div>
     <div><p>TEL {{ cfg.phone }}</p><p><a href="{{ cfg.line_url }}" target="_blank" rel="noopener">LINE</a></p><p><a href="{{ t.other_lang_path }}">{{ t.other_lang }}</a></p></div>
   </div>
-  <p class="credit">{{ t.footer_photo_credit }} · © {{ year }} {{ t.brand }}. {{ t.footer_rights }}</p>
+  <p class="credit">© {{ year }} {{ t.brand }}. {{ t.footer_rights }}</p>
 </footer>
 
 <div class="mbar">
