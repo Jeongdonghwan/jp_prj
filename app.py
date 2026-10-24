@@ -242,6 +242,11 @@ def admin_review_set(i):
 
 
 # --- SEO ---
+@app.route("/favicon.ico")
+def favicon():  # 브라우저·검색엔진이 루트에서 직접 요청한다
+    return app.send_static_file("favicon.ico")
+
+
 @app.route("/robots.txt")
 def robots():
     return Response(f"User-agent: *\nAllow: /\nDisallow: /admin/\nSitemap: {CFG['site_url']}/sitemap.xml\n", mimetype="text/plain")
