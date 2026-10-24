@@ -50,8 +50,31 @@ if __name__ == "__main__":
     build(sys.argv[1], KOREA)
     build(sys.argv[1], ILLUST)
     build(sys.argv[2], CARS)
-    # OG 이미지 1200x630 (한강 야경 중앙 크롭)
-    og = ImageOps.exif_transpose(Image.open(os.path.join(sys.argv[1], "한국여행 이미지2.jpg"))).convert("RGB")
-    og = ImageOps.fit(og, (1200, 630), centering=(0.5, 0.45))
-    og.save(os.path.join(OUT, "og.jpg"), "JPEG", quality=85)
+    make_og(sys.argv[1])
+
+
+def make_og(src_dir):
+    """OG 1200x630: 왼쪽 브랜드 문구 + 오른쪽 히어로 일러스트 전체."""
+    from PIL import ImageDraw, ImageFont
+    W, H = 1200, 630
+    og = Image.new("RGB", (W, H))
+    top, bot = (191, 228, 255), (255, 246, 230)  # 하늘색 → 크림 (사이트 히어로와 동일)
+    for y in range(H):
+        k = y / H
+        ImageDraw.Draw(og).line([(0, y), (W, y)], fill=tuple(int(a + (b - a) * k) for a, b in zip(top, bot)))
+    ill = ImageOps.exif_transpose(Image.open(os.path.join(src_dir, "히어로2.jpg"))).convert("RGB")
+    ill = ImageOps.fit(ill, (550, 550))
+    frame = Image.new("RGB", (570, 570), "white"); frame.paste(ill, (10, 10))
+    og.paste(frame, (W - 570 - 40, (H - 570) // 2))
+    d = ImageDraw.Draw(og)
+    font = lambda w, size: ImageFont.truetype(f"C:/Windows/Fonts/YuGoth{w}.ttc", size)  # ponytail: Windows 전용 빌드 도구
+    ink, pink = (58, 46, 42), (232, 84, 120)
+    d.text((60, 120), "KUMA TRAVEL", font=font("B", 26), fill=pink)
+    d.text((56, 160), "クマトラベル", font=font("B", 72), fill=ink)
+    d.text((60, 262), "韓国・ソウル 日本語OK", font=font("B", 34), fill=ink)
+    d.text((60, 308), "プライベート空港送迎・貸切", font=font("B", 34), fill=ink)
+    d.rounded_rectangle((56, 390, 520, 470), radius=40, fill=(255, 212, 92))
+    d.text((84, 408), "仁川⇄ソウル 150,000ウォン", font=font("B", 32), fill=ink)
+    d.text((60, 500), "往復予約で10%OFF  ♥  LINEで予約", font=font("M", 26), fill=pink)
+    og.save(os.path.join(OUT, "og.jpg"), "JPEG", quality=88)
     print("og", og.size)
