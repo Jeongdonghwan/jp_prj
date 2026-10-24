@@ -16,6 +16,10 @@ _lock = threading.Lock()
 CFG = {
     "site_url": os.getenv("SITE_URL", "http://localhost:5000").rstrip("/"),
     "phone": os.getenv("PHONE", "010-6432-7759"),
+    "email": os.getenv("EMAIL", "jk080222@naver.com"),
+    # 서치콘솔/서치어드바이저 소유확인 content 값 (쉼표로 여러 개 가능)
+    "google_verify": [v for v in os.getenv("GOOGLE_VERIFY", "").split(",") if v.strip()],
+    "naver_verify": [v for v in os.getenv("NAVER_VERIFY", "").split(",") if v.strip()],
     "line_url": os.getenv("LINE_URL", "https://line.me/ti/p/LIBV24b97K"),
 }
 I18N = {
@@ -83,11 +87,17 @@ def _ip():
     return request.headers.get("X-Forwarded-For", request.remote_addr or "").split(",")[0].strip()
 
 
-def _jsonld(t, reviews, avg):
+def _lastmod(lang):
+    """본문을 만드는 파일의 최신 수정시각 (레이아웃 외 날짜 위조 없음)."""
+    files = [os.path.join(BASE, "templates", "index.html"), os.path.join(BASE, "i18n", f"{lang}.json")]
+    return datetime.fromtimestamp(max(os.path.getmtime(f) for f in files))
+
+
+def _jsonld(t, reviews, avg, lp=None, path="/"):
     u = CFG["site_url"]
     biz = {
         "@type": "LocalBusiness", "@id": u + "/#business", "name": t["brand"] + " / Kuma Travel", "url": u,
-        "telephone": "+82-" + CFG["phone"][1:], "image": u + "/static/img/og.jpg", "description": t["meta_desc"],
+        "telephone": "+82-" + CFG["phone"][1:], "email": CFG["email"], "image": u + "/static/img/og.jpg", "description": t["meta_desc"],
         "priceRange": "₩80,000 - ₩500,000", "areaServed": ["Seoul", "Incheon", "Gimpo"],
         "address": {"@type": "PostalAddress", "addressLocality": "Seoul", "addressCountry": "KR"},
         "openingHours": "Mo-Su 00:00-24:00",
@@ -101,17 +111,41 @@ def _jsonld(t, reviews, avg):
                          for r in reviews[:10]]
     faq = {"@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in t["faq"]]}
-    return {"@context": "https://schema.org", "@graph": [biz, faq]}
+    site = {"@type": "WebSite", "@id": u + "/#website", "name": t["brand"], "alternateName": "Kuma Travel",
+            "url": u + "/", "inLanguage": ["ja", "ko"], "publisher": {"@id": u + "/#business"}}
+    graph = [site, biz, faq]
+    if lp:
+        graph.append({"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": t["brand"], "item": u + "/"},
+            {"@type": "ListItem", "position": 2, "name": lp["kw"], "item": u + path}]})
+    return {"@context": "https://schema.org", "@graph": graph}
 
 
-def render(lang):
-    t = I18N[lang]
+LANDINGS = I18N["ja"]["landings"]  # 일본어 키워드 전용 페이지 (slug → 문구)
+
+
+def render(lang, slug=None):
+    t, lp = I18N[lang], None
+    if slug:  # 랜딩: 메인 문구 위에 키워드 문구만 덮어쓴다
+        lp = LANDINGS[slug]
+        t = {**t, "meta_title": lp["meta_title"], "meta_desc": lp["meta_desc"], "hero_h1": lp["h1"],
+             "hero_sub": lp["lead"], "hero_eyebrow": lp["kw"] + "｜" + t["brand"],
+             "intro_title": lp["intro_title"], "intro": lp["intro"], "faq": lp["faq"] + t["faq"]}
+    path = f"/{slug}" if slug else ("/ko" if lang == "ko" else "/")
     reviews = [r for r in _load("reviews.json") if r.get("approved")][::-1]
     avg = round(sum(r["rating"] for r in reviews) / len(reviews), 1) if reviews else 0
     return render_template(
-        "index.html", t=t, lang=lang, cfg=CFG, prices=PRICES, gallery=GALLERY, ld=_jsonld(t, reviews, avg),
+        "index.html", t=t, lang=lang, cfg=CFG, prices=PRICES, gallery=GALLERY, ld=_jsonld(t, reviews, avg, lp, path),
         reviews=reviews, avg=avg, sent=request.args.get("sent"), year=datetime.now().year,
+        lp=lp, path=path, landings=LANDINGS,
     )
+
+
+@app.route("/<slug>")
+def landing(slug):
+    if slug not in LANDINGS:
+        abort(404)
+    return render("ja", slug)
 
 
 @app.route("/")
@@ -217,15 +251,38 @@ def sitemap():
     u = CFG["site_url"]
     imgs = "".join(f"<image:image><image:loc>{u}/static/img/{n}.webp</image:loc></image:image>" for n, _, _ in GALLERY)
     urls = "".join(
-        f"<url><loc>{u}{p}</loc><changefreq>weekly</changefreq>"
+        f"<url><loc>{u}{p}</loc><lastmod>{_lastmod(lang).strftime('%Y-%m-%d')}</lastmod><changefreq>weekly</changefreq>"
         f'<xhtml:link rel="alternate" hreflang="ja" href="{u}/"/>'
         f'<xhtml:link rel="alternate" hreflang="ko" href="{u}/ko"/>'
         f'<xhtml:link rel="alternate" hreflang="x-default" href="{u}/"/>{imgs}</url>'
-        for p in ("/", "/ko"))
+        for p, lang in (("/", "ja"), ("/ko", "ko")))
+    urls += "".join(f"<url><loc>{u}/{s}</loc><lastmod>{_lastmod('ja').strftime('%Y-%m-%d')}</lastmod>"
+                    f"<changefreq>weekly</changefreq></url>" for s in LANDINGS)
     xml = ('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
            'xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'
            f"{urls}</urlset>")
     return Response(xml, mimetype="application/xml")
+
+
+@app.route("/rss")
+def rss():
+    """네이버 서치어드바이저 제출용. 원페이지라 언어별 메인 2개가 항목."""
+    from xml.sax.saxutils import escape
+    from email.utils import format_datetime
+    u = CFG["site_url"]
+    items = ""
+    pages = [("/", "ja", I18N["ja"]), ("/ko", "ko", I18N["ko"])] + [
+        (f"/{s}", "ja", {**I18N["ja"], **lp}) for s, lp in LANDINGS.items()]
+    for path, lang, t in pages:
+        paras = t["intro"] + [t["svc1_d"], t["svc2_d"], t["svc3_d"], t["price_rt_note"]] + [f"{q} {a}" for q, a in t["faq"]]
+        html = "".join(f"<p>{escape(x)}</p>" for x in paras)
+        items += (f"<item><title>{escape(t['meta_title'])}</title><link>{u}{path}</link><guid>{u}{path}</guid>"
+                  f"<description>{escape(t['meta_desc'])}</description><content:encoded><![CDATA[{html}]]></content:encoded>"
+                  f"<pubDate>{format_datetime(_lastmod(lang).astimezone())}</pubDate></item>")
+    xml = ('<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel>'
+           f"<title>{escape(I18N['ja']['brand'])} / Kuma Travel</title><link>{u}/</link>"
+           f"<description>{escape(I18N['ja']['meta_desc'])}</description>{items}</channel></rss>")
+    return Response(xml, mimetype="application/rss+xml")
 
 
 if __name__ == "__main__":

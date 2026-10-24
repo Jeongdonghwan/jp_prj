@@ -83,6 +83,16 @@ html[lang=ko] .btn{font-weight:400}
 .hero-badge .bear{width:36px;height:36px}
 .wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:60px}
 
+/* intro (메인 고유 소개 + 키워드 허브) */
+.intro{padding:36px 0 8px}
+.intro p{color:var(--ink2);margin:0 0 12px}
+.crumb{font-size:.85rem;color:var(--mute);margin-bottom:8px}
+.crumb a{color:var(--pink3)}
+.hub{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:18px}
+.hub b{margin-right:4px}
+.hub a{background:#fff;border:2px solid var(--line);border-radius:999px;padding:5px 14px;font-weight:700;font-size:.88rem}
+.hub a:hover,.hub a[aria-current]{border-color:var(--pink);color:var(--pink3)}
+
 /* memories strip */
 .memories{padding:20px 0 10px}
 .strip{display:flex;gap:22px;overflow-x:auto;padding:14px 6px 26px;scroll-snap-type:x mandatory;scrollbar-width:thin}
@@ -194,6 +204,7 @@ table.price{width:100%;border-collapse:separate;border-spacing:0;background:#fff
 .ck h3{font-size:1.1rem}.ck p{color:var(--mute);font-size:.9rem}
 .ck img{margin:12px auto;border-radius:12px}
 .ck .tel{font-family:var(--head);font-size:1.7rem;font-weight:900;display:block;margin-top:6px;color:var(--pink3)}
+.ck .mail{display:inline-block;margin-top:4px;font-weight:700;color:var(--pink3);word-break:break-all;border-bottom:2px dashed var(--pink2)}
 .cform{padding:26px}
 .cform .btn{width:100%;margin-top:6px}
 

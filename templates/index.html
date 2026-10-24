@@ -6,11 +6,14 @@
 <title>{{ t.meta_title }}</title>
 <meta name="description" content="{{ t.meta_desc }}">
 <meta name="keywords" content="{{ t.meta_keywords }}">
-{% set here = cfg.site_url ~ ('/ko' if lang == 'ko' else '/') %}
+{% set here = cfg.site_url ~ path %}
 <link rel="canonical" href="{{ here }}">
-<link rel="alternate" hreflang="ja" href="{{ cfg.site_url }}/">
+{% for v in cfg.google_verify %}<meta name="google-site-verification" content="{{ v }}">
+{% endfor %}{% for v in cfg.naver_verify %}<meta name="naver-site-verification" content="{{ v }}">
+{% endfor %}<link rel="alternate" type="application/rss+xml" title="{{ t.brand }}" href="{{ cfg.site_url }}/rss">
+{% if not lp %}<link rel="alternate" hreflang="ja" href="{{ cfg.site_url }}/">
 <link rel="alternate" hreflang="ko" href="{{ cfg.site_url }}/ko">
-<link rel="alternate" hreflang="x-default" href="{{ cfg.site_url }}/">
+<link rel="alternate" hreflang="x-default" href="{{ cfg.site_url }}/">{% endif %}
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{ t.meta_title }}">
 <meta property="og:description" content="{{ t.meta_desc }}">
@@ -76,6 +79,20 @@
     </div>
   </div>
   <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 Q180 0 360 30 T720 30 T1080 30 T1440 30 V60 H0Z" fill="var(--bg)"/></svg>
+</section>
+
+<section class="intro">
+  <div class="wrap narrow">
+    {% if lp %}<nav class="crumb"><a href="/">{{ t.brand }}</a> › <span>{{ lp.kw }}</span></nav>{% endif %}
+    <h2>{{ t.intro_title }}</h2>
+    {% for para in t.intro %}<p>{{ para }}</p>{% endfor %}
+    {% if lang == 'ja' %}
+    <div class="hub"><b>{{ t.hub_title }}</b>
+      {% for s, l in landings.items() %}<a href="/{{ s }}"{% if lp and lp.kw == l.kw %} aria-current="page"{% endif %}>{{ l.kw }}</a>{% endfor %}
+      {% if lp %}<a href="/">{{ t.landing_back }}</a>{% endif %}
+    </div>
+    {% endif %}
+  </div>
 </section>
 
 <section class="memories" aria-label="{{ t.memories_title }}">
@@ -225,6 +242,7 @@
       <div class="contact-side">
         <div class="card ck"><h3>{{ t.contact_line_t }}</h3><p>{{ t.contact_line_d }}</p><img src="/static/img/line-qr.png" alt="LINE QR" width="160" height="160" loading="lazy"><a class="btn btn-line" href="{{ cfg.line_url }}" target="_blank" rel="noopener">{{ t.cta_line }}</a></div>
         <div class="card ck"><h3>📞 {{ t.contact_phone_t }}</h3><a class="tel" href="tel:+82{{ cfg.phone[1:] | replace('-','') }}">{{ cfg.phone }}</a></div>
+        <div class="card ck"><h3>✉️ {{ t.contact_mail_t }}</h3><p>{{ t.contact_mail_d }}</p><a class="mail" href="mailto:{{ cfg.email }}?subject={{ t.mail_subject | urlencode }}&body={{ t.mail_body | urlencode }}">{{ cfg.email }}</a></div>
       </div>
       <form class="card cform" method="post" action="/contact">
         <input type="hidden" name="lang" value="{{ lang }}"><input type="text" name="website" class="hp" tabindex="-1" autocomplete="off">
@@ -252,7 +270,7 @@
 <footer class="ftr">
   <div class="wrap ftr-in">
     <div><div class="logo">{% include 'bear.svg' %}<span><b>{{ t.brand }}</b><small>{{ t.brand_sub }}</small></span></div><p>{{ t.footer_about }}</p></div>
-    <div><p>TEL {{ cfg.phone }}</p><p><a href="{{ cfg.line_url }}" target="_blank" rel="noopener">LINE</a></p><p><a href="{{ t.other_lang_path }}">{{ t.other_lang }}</a></p></div>
+    <div><p>TEL {{ cfg.phone }}</p><p>MAIL <a class="mail" href="mailto:{{ cfg.email }}?subject={{ t.mail_subject | urlencode }}&body={{ t.mail_body | urlencode }}">{{ cfg.email }}</a></p><p><a href="{{ cfg.line_url }}" target="_blank" rel="noopener">LINE</a></p><p><a href="{{ t.other_lang_path }}">{{ t.other_lang }}</a></p></div>
   </div>
   <p class="credit">© {{ year }} {{ t.brand }}. {{ t.footer_rights }}</p>
 </footer>
