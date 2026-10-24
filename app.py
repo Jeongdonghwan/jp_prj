@@ -16,7 +16,7 @@ _lock = threading.Lock()
 CFG = {
     "site_url": os.getenv("SITE_URL", "http://localhost:5000").rstrip("/"),
     "phone": os.getenv("PHONE", "010-6432-7759"),
-    "line_url": os.getenv("LINE_URL", "https://line.me/"),
+    "line_url": os.getenv("LINE_URL", "https://line.me/ti/p/LIBV24b97K"),
 }
 I18N = {
     lang: json.load(open(os.path.join(BASE, "i18n", f"{lang}.json"), encoding="utf-8"))
