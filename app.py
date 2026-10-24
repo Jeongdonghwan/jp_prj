@@ -18,8 +18,9 @@ CFG = {
     "phone": os.getenv("PHONE", "010-6432-7759"),
     "email": os.getenv("EMAIL", "jk080222@naver.com"),
     # 서치콘솔/서치어드바이저 소유확인 content 값 (쉼표로 여러 개 가능)
-    "google_verify": [v for v in os.getenv("GOOGLE_VERIFY", "").split(",") if v.strip()],
-    "naver_verify": [v for v in os.getenv("NAVER_VERIFY", "").split(",") if v.strip()],
+    # .env 값이 비어 있으면 기본값 사용
+    "google_verify": [v for v in (os.getenv("GOOGLE_VERIFY") or "ED3mSc609HBmdh4KZIKgzaEbzZ3VWrHkO2gtpcL8Jm4").split(",") if v.strip()],
+    "naver_verify": [v for v in (os.getenv("NAVER_VERIFY") or "c23f951eeaa408be500be348fb90f690a7ec3e6d").split(",") if v.strip()],
     "line_url": os.getenv("LINE_URL", "https://line.me/ti/p/LIBV24b97K"),
 }
 I18N = {
