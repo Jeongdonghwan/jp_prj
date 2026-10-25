@@ -191,12 +191,12 @@ def review():
         "name": f.get("name", "").strip()[:40], "city": f.get("city", "").strip()[:40],
         "service": f.get("service", "").strip()[:40], "rating": rating,
         "body": f.get("body", "").strip()[:1000], "lang": f.get("lang", "ja"),
-        "at": datetime.now().strftime("%Y-%m-%d"), "approved": False,
+        "at": datetime.now().strftime("%Y-%m-%d"), "approved": True,  # 검수 없이 바로 게시
     }
     if not row["name"] or not row["body"]:
         abort(400)
     _append("reviews.json", row)
-    _mail(f"[KumaTravel] 새 후기 {row['name']} ★{rating}", row["body"] + f"\n\n승인: {CFG['site_url']}/admin/reviews")
+    _mail(f"[KumaTravel] 새 후기 {row['name']} ★{rating}", row["body"] + f"\n\n바로 게시됨. 숨김·삭제: {CFG['site_url']}/admin/reviews?key=관리비밀번호")
     return redirect(_back(row["lang"], "sent=review") + "#reviews")
 
 
