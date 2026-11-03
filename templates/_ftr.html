@@ -1,0 +1,15 @@
+<footer class="ftr">
+  <div class="wrap ftr-in">
+    <div><div class="logo">{% include 'bear.svg' %}<span><b>{{ t.brand }}</b><small>{{ t.brand_sub }}</small></span></div><p>{{ t.footer_about }}</p></div>
+    <div><p>TEL {{ cfg.phone }}</p><p>MAIL <a class="mail" href="mailto:{{ cfg.email }}?subject={{ t.mail_subject | urlencode }}&body={{ t.mail_body | urlencode }}">{{ cfg.email }}</a></p><p><a href="{{ cfg.line_url }}" target="_blank" rel="noopener">LINE</a></p>{% if lang == 'ja' %}<p><a href="/guide">空港アクセスガイド</a></p>{% endif %}<p><a href="{{ t.other_lang_path }}">{{ t.other_lang }}</a></p></div>
+  </div>
+  <p class="credit">© {{ year }} {{ t.brand }}. {{ t.footer_rights }}</p>
+</footer>
+
+<div class="mbar">
+  <a href="{{ cfg.line_url }}" target="_blank" rel="noopener" class="m-line">{{ t.cta_line_short }}</a>
+  <a href="tel:+82{{ cfg.phone[1:] | replace('-','') }}">{{ t.cta_call }}</a>
+  <a href="{{ base }}#price">{{ t.nav_price }}</a>
+</div>
+<a class="fab" href="{{ cfg.line_url }}" target="_blank" rel="noopener" aria-label="LINE">{{ t.cta_line }}</a>
+

@@ -3,6 +3,7 @@ from datetime import datetime
 from email.message import EmailMessage
 from flask import Flask, render_template, request, redirect, abort, Response, session
 from dotenv import load_dotenv
+import guide
 
 load_dotenv()
 app = Flask(__name__)
@@ -142,8 +143,70 @@ def render(lang, slug=None):
     )
 
 
+# --- 공항 가이드 페이지 (guide.py 조합, 묶음별 순차 공개) ---
+def _guide_lastmod():
+    files = [os.path.join(BASE, f) for f in ("guide.py", "seo/pages.json", "seo/places.json", "templates/guide.html")]
+    return datetime.fromtimestamp(max(os.path.getmtime(f) for f in files))
+
+
+def _guide_ld(path, name, g=None, rel=()):
+    u = CFG["site_url"]
+    crumbs = [("クマトラベル", "/"), ("空港アクセスガイド", "/guide")] + ([(name, path)] if g else [])
+    graph = [{"@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": i + 1, "name": n, "item": u + h} for i, (n, h) in enumerate(crumbs)]}]
+    if g:
+        graph.append({"@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in g["faq"]]})
+        svc = {"@type": "Service", "name": name, "serviceType": "空港送迎", "areaServed": "Seoul",
+               "provider": {"@type": "LocalBusiness", "@id": u + "/#business", "name": "クマトラベル / Kuma Travel"}}
+        if g["c"]["flat"]:
+            svc["offers"] = {"@type": "Offer", "price": g["c"]["flat"], "priceCurrency": "KRW"}
+        graph.append(svc)
+    graph.append({"@type": "ItemList", "itemListElement": [
+        {"@type": "ListItem", "position": i + 1, "name": guide.label(q), "url": f"{u}/{q['id']}"} for i, q in enumerate(rel)]})
+    return {"@context": "https://schema.org", "@graph": graph}
+
+
+def _hub_groups():
+    pages = guide.open_pages()
+    cats = [("仁川空港からソウル市内へ", lambda q: q["airport"] == "icn" and q["place"] and not q["direction"].startswith("출국")),
+            ("金浦空港からソウル市内へ", lambda q: q["airport"] == "gmp" and q["place"] and not q["direction"].startswith("출국")),
+            ("ソウル市内から空港へ", lambda q: q["place"] and q["direction"].startswith("출국")),
+            ("空港の基本情報・状況別", lambda q: not q["place"])]
+    return [(n, [(f"/{q['id']}", guide.label(q)) for q in pages if f(q)]) for n, f in cats]
+
+
+def render_guide(p=None):
+    t = I18N["ja"]
+    if p:
+        g = guide.compose(p)
+        rel = guide.related(p)
+        path, title, desc, h1, lead = f"/{p['id']}", g["title"], g["desc"], g["h1"], g["lead"]
+        groups = [("関連ページ", [(f"/{q['id']}", guide.label(q)) for q in rel]),
+                  ("サービス", [("/incheon-airport-sougei", "仁川空港⇄ソウル送迎"), ("/seoul-sougei", "ソウル送迎サービス"),
+                             ("/seoul-charter", "ソウルチャーター車"), ("/guide", "空港アクセスガイド一覧")])]
+    else:
+        g, rel, path = None, guide.open_pages()[:30], "/guide"
+        title = "仁川空港・金浦空港アクセスガイド｜行き方・タクシー・送迎｜クマトラベル"
+        desc = "仁川空港・金浦空港からソウル市内の各エリアへの行き方、タクシー料金の目安、荷物配送、深夜・早朝の移動方法をエリア別にまとめました。"
+        h1, lead, groups = "仁川空港・金浦空港 アクセスガイド", desc + "日本語で予約できる定額送迎のご案内もあります。", _hub_groups()
+    return render_template("guide.html", t=t, lang="ja", cfg=CFG, prices=PRICES, year=datetime.now().year, path=path,
+                           title=title, desc=desc, h1=h1, lead=lead, g=g, groups=groups, intent=p and p["intent"],
+                           fare_at=guide.FARE_AT, ld=_guide_ld(path, h1, g, rel))
+
+
+@app.route("/guide")
+def guide_hub():
+    return render_guide()
+
+
 @app.route("/<slug>")
 def landing(slug):
+    if slug in guide.MERGED:
+        return redirect("/" + guide.MERGED[slug], 301)
+    p = guide.BY_ID.get(slug)
+    if p and guide.is_open(p):
+        return render_guide(p)
     if slug not in LANDINGS:
         abort(404)
     return render("ja", slug)
@@ -319,6 +382,9 @@ def sitemap():
         for p, lang in (("/", "ja"), ("/ko", "ko")))
     urls += "".join(f"<url><loc>{u}/{s}</loc><lastmod>{_lastmod('ja').strftime('%Y-%m-%d')}</lastmod>"
                     f"<changefreq>weekly</changefreq></url>" for s in LANDINGS)
+    gm = _guide_lastmod().strftime("%Y-%m-%d")
+    urls += "".join(f"<url><loc>{u}/{p}</loc><lastmod>{gm}</lastmod></url>"
+                    for p in ["guide"] + [q["id"] for q in guide.open_pages()])
     xml = ('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
            'xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'
            f"{urls}</urlset>")
@@ -340,6 +406,13 @@ def rss():
         items += (f"<item><title>{escape(t['meta_title'])}</title><link>{u}{path}</link><guid>{u}{path}</guid>"
                   f"<description>{escape(t['meta_desc'])}</description><content:encoded><![CDATA[{html}]]></content:encoded>"
                   f"<pubDate>{format_datetime(_lastmod(lang).astimezone())}</pubDate></item>")
+    for q in guide.open_pages():  # 가이드 페이지: 리드 + 본문 문단 + FAQ
+        g = guide.compose(q)
+        paras = [g["lead"]] + [x for _, ps in g["secs"] for x in ps] + [f"{a} {b}" for a, b in g["faq"]]
+        html = "".join(f"<p>{escape(x)}</p>" for x in paras)
+        items += (f"<item><title>{escape(g['title'])}</title><link>{u}/{q['id']}</link><guid>{u}/{q['id']}</guid>"
+                  f"<description>{escape(g['desc'])}</description><content:encoded><![CDATA[{html}]]></content:encoded>"
+                  f"<pubDate>{format_datetime(datetime.combine(guide.LAUNCH + guide.timedelta(days=guide.WAVE_DAY[q['wave']]), datetime.min.time()).astimezone())}</pubDate></item>")
     xml = ('<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel>'
            f"<title>{escape(I18N['ja']['brand'])} / Kuma Travel</title><link>{u}/</link>"
            f"<description>{escape(I18N['ja']['meta_desc'])}</description>{items}</channel></rss>")

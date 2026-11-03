@@ -1,0 +1,22 @@
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a href="{{ '/ko' if lang == 'ko' else '/' }}" class="logo" aria-label="{{ t.brand }}">
+      {% include 'bear.svg' %}
+      <span><b>{{ t.brand }}</b><small>{{ t.brand_sub }}</small></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="{{ base }}#service">{{ t.nav_service }}</a>
+      <a href="{{ base }}#price">{{ t.nav_price }}</a>
+      <a href="{{ base }}#vehicle">{{ t.nav_vehicle }}</a>
+      <a href="{{ base }}#gallery">{{ t.nav_gallery }}</a>
+      <a href="{{ base }}#reviews">{{ t.nav_reviews }}</a>
+      <a href="{{ base }}#faq">{{ t.nav_faq }}</a>
+      <a href="{{ base }}#contact">{{ t.nav_contact }}</a>
+    </nav>
+    <div class="hdr-r">
+      <a class="lang" href="{{ t.other_lang_path }}" hreflang="{{ 'ko' if lang == 'ja' else 'ja' }}">{{ t.other_lang }}</a>
+      <a class="btn btn-line" href="{{ cfg.line_url }}" target="_blank" rel="noopener">{{ t.cta_line }}</a>
+      <button class="burger" aria-label="menu" aria-expanded="false" onclick="document.body.classList.toggle('nav-open');this.setAttribute('aria-expanded',document.body.classList.contains('nav-open'))"><span></span></button>
+    </div>
+  </div>
+</header>

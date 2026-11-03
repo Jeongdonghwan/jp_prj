@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="{{ desc }}">
+{% set here = cfg.site_url ~ path %}
+<link rel="canonical" href="{{ here }}">
+<link rel="alternate" type="application/rss+xml" title="{{ t.brand }}" href="{{ cfg.site_url }}/rss">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="{{ t.brand }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ desc }}">
+<meta property="og:url" content="{{ here }}">
+<meta property="og:image" content="{{ cfg.site_url }}/static/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ title }}">
+<meta name="twitter:image" content="{{ cfg.site_url }}/static/img/og.jpg">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+<meta name="theme-color" content="#BFE4FF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+<script type="application/ld+json">{{ ld | tojson }}</script>
+</head>
+<body class="gd">
+{% set base = '/' %}{% include '_hdr.html' %}
+
+<main>
+<article>
+<header class="gd-hero">
+  <div class="wrap narrow">
+    <nav class="crumb"><a href="/">{{ t.brand }}</a> › <a href="/guide">空港アクセスガイド</a>{% if g %} › <span>{{ g.h1 }}</span>{% endif %}</nav>
+    <h1>{{ h1 }}</h1>
+    <p class="lead">{{ lead }}</p>
+  </div>
+</header>
+
+{% if g %}
+<div class="wrap narrow gd-body">
+  <section class="gd-box" aria-label="要点まとめ">
+    <h2 class="mini">要点まとめ</h2>
+    <dl>{% for k, v in g.box %}<div><dt>{{ k }}</dt><dd>{{ v }}</dd></div>{% endfor %}</dl>
+    <a class="btn btn-line" href="{{ cfg.line_url }}" target="_blank" rel="noopener">{{ t.cta_line }}</a>
+  </section>
+
+  {% for h, paras in g.secs %}
+  <section class="gd-sec">
+    <h2 class="mini">{{ h }}</h2>
+    {% for x in paras %}{% set a = x.split('：', 1) %}{% if a | length == 2 and a[0] | length < 16 %}<p class="gd-li"><b>{{ a[0] }}</b>{{ a[1] }}</p>{% else %}<p>{{ x }}</p>{% endif %}{% endfor %}
+    {% if loop.index == 1 %}
+    <figure class="gd-fig"><img src="/static/img/{{ g.img[0] }}-thumb.webp" alt="{{ g.img_alt }}" width="{{ g.img[1] }}" height="{{ g.img[2] }}" loading="lazy"><img src="/static/img/staria-limo-thumb.webp" alt="クマトラベルの送迎車スタリア" width="600" height="800" loading="lazy"></figure>
+    {% endif %}
+  </section>
+  {% if loop.index == 1 and g.table %}
+  <section class="gd-sec">
+    <h2 class="mini">交通手段の比較</h2>
+    <div class="gd-scroll"><table class="price gd-table">
+      <thead><tr>{% for x in g.table[0] %}<th>{{ x }}</th>{% endfor %}</tr></thead>
+      <tbody>{% for r in g.table[1:] %}<tr{% if loop.last %} class="rt"{% endif %}>{% for x in r %}<td>{{ x }}</td>{% endfor %}</tr>{% endfor %}</tbody>
+    </table></div>
+    <p class="note">料金は{{ fare_at }}時点の公開運賃と道路距離からの目安です。最新の運賃は各交通機関の公式案内でご確認ください。</p>
+  </section>
+  {% endif %}
+  {% endfor %}
+
+  {% if g.flow %}
+  <section class="gd-sec">
+    <h2 class="mini">送迎をご利用の場合の流れ</h2>
+    <img class="gd-wide" src="/static/img/illust-welcome-thumb.webp" alt="空港の到着ロビーでお出迎えするクマトラベルのドライバー" width="600" height="548" loading="lazy">
+    <ol class="flow">{% for h, d in g.flow %}<li><span class="n">{{ loop.index }}</span><div><h3>{{ h }}</h3><p>{{ d }}</p></div></li>{% endfor %}</ol>
+  </section>
+  {% endif %}
+  {% if intent == 'nimotsu' %}
+  <a class="bag" href="#cta"><img src="/static/img/luggage-banner-thumb.webp" alt="{{ t.bag_alt }}" width="800" height="400" loading="lazy">
+    <div class="bag-txt"><div><h3>{{ t.bag_t }}</h3><p>{{ t.bag_d }}</p></div><b>{{ t.bag_cta }}</b></div></a>
+  {% endif %}
+
+  <section class="gd-sec" id="faq">
+    <h2 class="mini">よくある質問</h2>
+    {% for q, a in g.faq %}<details class="faq"{% if loop.first %} open{% endif %}><summary><span class="q">Q</span>{{ q }}</summary><p>{{ a }}</p></details>{% endfor %}
+  </section>
+</div>
+{% endif %}
+
+</article>
+</main>
+
+<aside class="wrap narrow gd-body">
+  {% for grp, items in groups %}
+  <section class="gd-sec gd-links">
+    <h2 class="mini">{{ grp }}</h2>
+    <ul>{% for href, txt in items %}<li><a href="{{ href }}">{{ txt }}</a></li>{% endfor %}</ul>
+  </section>
+  {% endfor %}
+
+  <section class="card gd-cta" id="cta">
+    <h2 class="mini">ご予約・お見積りは日本語で</h2>
+    <p>日付・便名・人数・行き先のホテル名をお送りください。仁川空港⇄ソウル市内 {{ "{:,}".format(prices.icn) }}ウォン、金浦空港⇄ソウル市内 {{ "{:,}".format(prices.gmp) }}ウォン（片道・車1台）、往復で10%OFF。</p>
+    <div class="hero-cta">
+      <a class="btn btn-line btn-lg" href="{{ cfg.line_url }}" target="_blank" rel="noopener">{{ t.cta_line }}</a>
+      <a class="btn btn-pink btn-lg" href="/#contact">お問い合わせフォーム</a>
+    </div>
+    <p class="note">TEL <a href="tel:+82{{ cfg.phone[1:] | replace('-','') }}">{{ cfg.phone }}</a></p>
+  </section>
+</aside>
+
+{% include '_ftr.html' %}
+</body>
+</html>

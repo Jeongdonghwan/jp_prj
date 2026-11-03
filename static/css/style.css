@@ -267,3 +267,30 @@ table.price{width:100%;border-collapse:separate;border-spacing:0;background:#fff
 .bag-txt p{color:var(--ink2);margin:0;font-size:.95rem}
 .bag-txt b{margin-left:auto;white-space:nowrap;background:var(--pink);color:#fff;padding:10px 18px;border-radius:999px;font-size:.9rem}
 @media(max-width:640px){.bag-txt{flex-wrap:wrap}.bag-txt b{margin-left:0}}
+
+/* 공항 가이드 페이지 */
+.gd-hero{background:var(--sky);padding:40px 0 34px}
+.gd-hero h1{font-size:clamp(1.6rem,4vw,2.3rem)}
+.gd-hero .lead{color:var(--ink2);margin:0}
+.gd-body{padding-top:28px;padding-bottom:12px}
+.gd-sec{margin:0 0 36px}
+.gd-sec p{margin:0 0 .9em}
+.gd-box{background:var(--yellow2);border-radius:var(--r);padding:22px 24px;margin:0 0 36px}
+.gd-box dl{margin:0 0 16px}
+.gd-box dl div{display:flex;gap:12px;padding:8px 0;border-bottom:1px dashed #E9D8A6}
+.gd-box dt{flex:0 0 9.5em;font-weight:700}
+.gd-box dd{margin:0}
+.gd-sec .gd-li{padding:10px 0 10px 16px;border-left:4px solid var(--pink2);margin-bottom:10px}
+.gd-li b{display:inline-block;margin-right:.6em;color:var(--pink3)}
+.gd-sec .gd-li{padding:6px 0 6px 14px;margin-bottom:6px}
+.gd-fig{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 0}
+.gd-fig img,.gd-wide{border-radius:18px;width:100%;aspect-ratio:4/3;object-fit:cover}
+.gd-wide{margin:0 0 18px;aspect-ratio:16/9}
+.gd-scroll{overflow-x:auto}
+.gd-table{min-width:560px;font-size:.92rem}
+.gd-links ul{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+.gd-links a{display:block;padding:8px 14px;border:2px solid var(--line);border-radius:12px;background:var(--card)}
+.gd-links a:hover{border-color:var(--sky2)}
+.gd-cta{padding:26px;margin-bottom:40px}
+@media (max-width:640px){.gd-box dl div{flex-direction:column;gap:2px}.gd-box dt{flex:none}}
+@media (max-width:720px){.gd-table th:nth-child(3),.gd-table td:nth-child(3):not([colspan]){display:table-cell}.gd-table td{padding:10px}}

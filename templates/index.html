@@ -38,28 +38,7 @@
 </head>
 <body>
 
-<header class="hdr">
-  <div class="wrap hdr-in">
-    <a href="{{ '/ko' if lang == 'ko' else '/' }}" class="logo" aria-label="{{ t.brand }}">
-      {% include 'bear.svg' %}
-      <span><b>{{ t.brand }}</b><small>{{ t.brand_sub }}</small></span>
-    </a>
-    <nav class="nav" id="nav">
-      <a href="#service">{{ t.nav_service }}</a>
-      <a href="#price">{{ t.nav_price }}</a>
-      <a href="#vehicle">{{ t.nav_vehicle }}</a>
-      <a href="#gallery">{{ t.nav_gallery }}</a>
-      <a href="#reviews">{{ t.nav_reviews }}</a>
-      <a href="#faq">{{ t.nav_faq }}</a>
-      <a href="#contact">{{ t.nav_contact }}</a>
-    </nav>
-    <div class="hdr-r">
-      <a class="lang" href="{{ t.other_lang_path }}" hreflang="{{ 'ko' if lang == 'ja' else 'ja' }}">{{ t.other_lang }}</a>
-      <a class="btn btn-line" href="{{ cfg.line_url }}" target="_blank" rel="noopener">{{ t.cta_line }}</a>
-      <button class="burger" aria-label="menu" aria-expanded="false" onclick="document.body.classList.toggle('nav-open');this.setAttribute('aria-expanded',document.body.classList.contains('nav-open'))"><span></span></button>
-    </div>
-  </div>
-</header>
+{% set base = '' %}{% include '_hdr.html' %}
 
 <main>
 <section class="hero">
@@ -93,6 +72,7 @@
     {% if lang == 'ja' %}
     <div class="hub"><b>{{ t.hub_title }}</b>
       {% for s, l in landings.items() %}<a href="/{{ s }}"{% if lp and lp.kw == l.kw %} aria-current="page"{% endif %}>{{ l.kw }}</a>{% endfor %}
+      <a href="/guide">空港アクセスガイド</a>
       {% if lp %}<a href="/">{{ t.landing_back }}</a>{% endif %}
     </div>
     {% endif %}
@@ -275,22 +255,8 @@
 </section>
 </main>
 
-<footer class="ftr">
-  <div class="wrap ftr-in">
-    <div><div class="logo">{% include 'bear.svg' %}<span><b>{{ t.brand }}</b><small>{{ t.brand_sub }}</small></span></div><p>{{ t.footer_about }}</p></div>
-    <div><p>TEL {{ cfg.phone }}</p><p>MAIL <a class="mail" href="mailto:{{ cfg.email }}?subject={{ t.mail_subject | urlencode }}&body={{ t.mail_body | urlencode }}">{{ cfg.email }}</a></p><p><a href="{{ cfg.line_url }}" target="_blank" rel="noopener">LINE</a></p><p><a href="{{ t.other_lang_path }}">{{ t.other_lang }}</a></p></div>
-  </div>
-  <p class="credit">© {{ year }} {{ t.brand }}. {{ t.footer_rights }}</p>
-</footer>
-
-<div class="mbar">
-  <a href="{{ cfg.line_url }}" target="_blank" rel="noopener" class="m-line">{{ t.cta_line_short }}</a>
-  <a href="tel:+82{{ cfg.phone[1:] | replace('-','') }}">{{ t.cta_call }}</a>
-  <a href="#price">{{ t.nav_price }}</a>
-</div>
-<a class="fab" href="{{ cfg.line_url }}" target="_blank" rel="noopener" aria-label="LINE">{{ t.cta_line }}</a>
-
-<div class="lb" id="lb" hidden><button class="lb-x" aria-label="close">×</button><button class="lb-p" aria-label="prev">‹</button><figure><img alt=""><figcaption></figcaption></figure><button class="lb-n" aria-label="next">›</button></div>
+{% include '_ftr.html' %}
+<div class="lb" id="lb" hidden><button class="lb-x" aria-label="close">×</button><button class="lb-p" aria-label="prev">‹</button><figure><img alt="ギャラリー拡大画像"><figcaption></figcaption></figure><button class="lb-n" aria-label="next">›</button></div>
 <script src="/static/js/main.js" defer></script>
 </body>
 </html>
