@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>구마트래블 관리</title>
+<link rel="icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#3A2E2A;--ink2:#5C4E48;--mute:#8F827B;--line:#F0E4D4;--bg:#FFFBF3;--card:#fff;
+  --pink:#FF6F91;--pink2:#FFE6EC;--yellow:#FFD45C;--yellow2:#FFF4CC;--mint:#C9F0DF;--mint2:#3FBF8A;--sky:#E3F3FF;
+  --sh:0 5px 0 var(--line),0 12px 26px rgba(58,46,42,.06)}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Sans KR",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:"Jua",sans-serif;font-weight:400;margin:0}
+button,input,select,textarea{font:inherit;color:inherit}
+.top{background:var(--card);border-bottom:2px solid var(--line);position:sticky;top:0;z-index:5}
+.top .in{max-width:1000px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.top h1{font-size:1.35rem;display:flex;align-items:center;gap:8px}
+.top h1 img{width:34px;height:34px}
+.nav{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+.nav a{padding:8px 16px;border-radius:999px;font-weight:700;font-size:.92rem;background:var(--bg);border:2px solid var(--line)}
+.nav a.on{background:var(--pink);border-color:var(--pink);color:#fff}
+.nav a.ghost{border-color:transparent;color:var(--mute)}
+main{max-width:1000px;margin:0 auto;padding:24px 16px 80px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.stat{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:14px 16px;box-shadow:var(--sh)}
+.stat b{display:block;font-family:"Jua";font-size:1.8rem;line-height:1.2}
+.stat span{color:var(--mute);font-size:.85rem}
+.stat.pink{background:var(--pink2)}.stat.yellow{background:var(--yellow2)}.stat.mint{background:var(--mint)}
+.tabs{display:flex;gap:6px;margin-bottom:16px}
+.tabs a{padding:6px 14px;border-radius:999px;font-size:.88rem;font-weight:700;color:var(--mute)}
+.tabs a.on{background:var(--ink);color:#fff}
+.toast{background:var(--mint);border-radius:14px;padding:10px 16px;margin-bottom:16px;font-weight:700}
+.list{display:grid;gap:14px}
+.item{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:18px 20px;box-shadow:var(--sh)}
+.item.off{opacity:.6;background:#fafafa}
+.item.done{opacity:.55}
+.head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.head .who{font-weight:700}
+.head .meta{color:var(--mute);font-size:.85rem}
+.stars{color:#F5A623;letter-spacing:1px}
+.badge{font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--mint);color:#1d7a55}
+.badge.off{background:#eee;color:#888}
+.badge.lang{background:var(--sky);color:#2b6ca3}
+.body{margin:10px 0 0;white-space:pre-wrap;color:var(--ink2)}
+.acts{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.btn{border:2px solid var(--line);background:var(--card);padding:7px 14px;border-radius:999px;font-weight:700;font-size:.85rem;cursor:pointer}
+.btn:hover{background:var(--bg)}
+.btn.pri{background:var(--pink);border-color:var(--pink);color:#fff}
+.btn.del{color:#d4384f;border-color:#f6cdd4}
+.btn.del:hover{background:#fff0f2}
+details{margin-top:12px}
+details summary{list-style:none}
+details summary::-webkit-details-marker{display:none}
+.edit{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px;padding:16px;background:var(--bg);border-radius:16px}
+.edit label{display:grid;gap:4px;font-size:.8rem;color:var(--mute);font-weight:700}
+.edit .full{grid-column:1/-1}
+.edit input,.edit select,.edit textarea{border:2px solid var(--line);border-radius:12px;padding:8px 10px;background:#fff;width:100%}
+.edit textarea{min-height:110px;resize:vertical}
+.edit .chk{display:flex;align-items:center;gap:8px;grid-column:1/-1;color:var(--ink);font-size:.9rem}
+.edit .chk input{width:auto}
+.grid2{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin-top:10px;font-size:.92rem}
+.grid2 dt{color:var(--mute)}.grid2 dd{margin:0}
+.empty{text-align:center;color:var(--mute);padding:60px 0}
+.login{min-height:100vh;display:grid;place-items:center;padding:16px}
+.login form{background:var(--card);border:2px solid var(--line);border-radius:28px;padding:36px 30px;box-shadow:var(--sh);width:100%;max-width:360px;text-align:center}
+.login img{width:72px;height:72px;margin:0 auto 8px;display:block}
+.login h1{font-size:1.6rem;margin-bottom:18px}
+.login input{width:100%;border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:12px}
+.login .btn{width:100%;padding:12px}
+.err{color:#d4384f;font-size:.9rem;margin-bottom:10px}
+@media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}.edit{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+{% if page == 'login' %}
+<div class="login">
+  <form method="post" action="/admin">
+    <img src="/static/icon-192.png" alt="">
+    <h1>구마트래블 관리</h1>
+    {% if err %}<p class="err">비밀번호가 맞지 않아요</p>{% endif %}
+    <input type="password" name="pw" placeholder="관리 비밀번호" autofocus required>
+    <button class="btn pri">로그인</button>
+  </form>
+</div>
+{% else %}
+<header class="top"><div class="in">
+  <h1><img src="/static/icon-192.png" alt="">구마트래블 관리</h1>
+  <nav class="nav">
+    <a href="/admin/reviews" class="{{ 'on' if page == 'reviews' }}">후기 {{ stats.all }}</a>
+    <a href="/admin/inquiries" class="{{ 'on' if page == 'inquiries' }}">문의 {{ inq_n }}</a>
+    <a href="/" target="_blank" class="ghost">사이트 보기</a>
+    <a href="/admin/logout" class="ghost">로그아웃</a>
+  </nav>
+</div></header>
+<main>
+{% set msgs = {'save': '수정했어요', 'toggle': '게시 상태를 바꿨어요', 'delete': '삭제했어요', 'done': '처리 상태를 바꿨어요'} %}
+{% if msg in msgs %}<div class="toast">✅ {{ msgs[msg] }}</div>{% endif %}
+
+{% if page == 'reviews' %}
+  <div class="stats">
+    <div class="stat"><b>{{ stats.all }}</b><span>전체 후기</span></div>
+    <div class="stat mint"><b>{{ stats.on }}</b><span>게시 중</span></div>
+    <div class="stat"><b>{{ stats.off }}</b><span>숨김</span></div>
+    <div class="stat yellow"><b>★ {{ stats.avg }}</b><span>게시 후기 평균</span></div>
+  </div>
+  <div class="tabs">
+    {% for k, v in (('all','전체'),('on','게시 중'),('off','숨김')) %}<a href="?f={{ k }}" class="{{ 'on' if f == k }}">{{ v }}</a>{% endfor %}
+  </div>
+  <div class="list">
+  {% for i, r in rows %}
+    <article class="item {{ '' if r.approved else 'off' }}">
+      <div class="head">
+        <span class="who">{{ r.name }}</span>
+        <span class="stars">{{ '★' * r.rating }}{{ '☆' * (5 - r.rating) }}</span>
+        <span class="meta">{{ r.city }}{% if r.service %} · {{ r.service }}{% endif %} · {{ r.at }}</span>
+        <span class="badge lang">{{ 'JP' if r.lang == 'ja' else 'KR' }}</span>
+        <span class="badge {{ '' if r.approved else 'off' }}">{{ '게시 중' if r.approved else '숨김' }}</span>
+      </div>
+      <p class="body">{{ r.body }}</p>
+      <details>
+        <summary class="acts">
+          <span class="btn">✏️ 수정</span>
+          <button class="btn" form="t{{ i }}">{{ '🙈 숨기기' if r.approved else '👀 게시하기' }}</button>
+          <button class="btn del" form="d{{ i }}">🗑 삭제</button>
+        </summary>
+        <form class="edit" method="post" action="/admin/reviews/{{ i }}?f={{ f }}">
+          <input type="hidden" name="act" value="save">
+          <label>이름<input name="name" value="{{ r.name }}" maxlength="40" required></label>
+          <label>지역<input name="city" value="{{ r.city }}" maxlength="40"></label>
+          <label>서비스<input name="service" value="{{ r.service }}" maxlength="40"></label>
+          <label>별점<select name="rating">{% for n in range(5, 0, -1) %}<option value="{{ n }}" {{ 'selected' if n == r.rating }}>{{ '★' * n }}</option>{% endfor %}</select></label>
+          <label>작성일<input type="date" name="at" value="{{ r.at }}"></label>
+          <label class="full">내용<textarea name="body" maxlength="1000" required>{{ r.body }}</textarea></label>
+          <label class="chk"><input type="checkbox" name="approved" value="1" {{ 'checked' if r.approved }}> 사이트에 게시</label>
+          <div class="full"><button class="btn pri">저장</button></div>
+        </form>
+      </details>
+      <form id="t{{ i }}" method="post" action="/admin/reviews/{{ i }}?f={{ f }}"><input type="hidden" name="act" value="toggle"></form>
+      <form id="d{{ i }}" method="post" action="/admin/reviews/{{ i }}?f={{ f }}" onsubmit="return confirm('이 후기를 삭제할까요? 되돌릴 수 없어요.')"><input type="hidden" name="act" value="delete"></form>
+    </article>
+  {% else %}
+    <p class="empty">🐻 아직 후기가 없어요</p>
+  {% endfor %}
+  </div>
+
+{% else %}
+  <div class="list">
+  {% for i, q in rows %}
+    <article class="item {{ 'done' if q.done }}">
+      <div class="head">
+        <span class="who">{{ q.name }}</span>
+        <span class="meta">{{ q.at | replace('T', ' ') }}</span>
+        <span class="badge lang">{{ 'JP' if q.lang == 'ja' else 'KR' }}</span>
+        {% if q.done %}<span class="badge off">처리 완료</span>{% endif %}
+      </div>
+      <dl class="grid2">
+        <dt>연락처</dt><dd>{{ q.contact }}</dd>
+        <dt>서비스</dt><dd>{{ q.service }}</dd>
+        <dt>날짜·인원</dt><dd>{{ q.date }} · {{ q.people }}명</dd>
+        <dt>경로</dt><dd>{{ q.origin }} → {{ q.destination }}</dd>
+      </dl>
+      {% if q.message %}<p class="body">{{ q.message }}</p>{% endif %}
+      <div class="acts">
+        <form method="post" action="/admin/inquiries/{{ i }}"><button class="btn" name="act" value="done">{{ '↩️ 미처리로' if q.done else '✅ 처리 완료' }}</button></form>
+        <form method="post" action="/admin/inquiries/{{ i }}" onsubmit="return confirm('이 문의를 삭제할까요?')"><button class="btn del" name="act" value="delete">🗑 삭제</button></form>
+      </div>
+    </article>
+  {% else %}
+    <p class="empty">🐻 아직 문의가 없어요</p>
+  {% endfor %}
+  </div>
+{% endif %}
+</main>
+{% endif %}
+</body>
+</html>

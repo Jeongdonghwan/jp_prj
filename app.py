@@ -1,7 +1,7 @@
-import os, json, smtplib, threading, time
+import os, json, hmac, smtplib, threading, time
 from datetime import datetime
 from email.message import EmailMessage
-from flask import Flask, render_template, request, redirect, abort, Response, url_for
+from flask import Flask, render_template, request, redirect, abort, Response, session
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -54,7 +54,7 @@ def _append(name, row):
     with _lock:
         rows = _load(name)
         rows.append(row)
-        json.dump(rows, open(os.path.join(DATA, name), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        _save(name, rows)
 
 
 def _mail(subject, body):
@@ -196,7 +196,7 @@ def review():
     if not row["name"] or not row["body"]:
         abort(400)
     _append("reviews.json", row)
-    _mail(f"[KumaTravel] 새 후기 {row['name']} ★{rating}", row["body"] + f"\n\n바로 게시됨. 숨김·삭제: {CFG['site_url']}/admin/reviews?key=관리비밀번호")
+    _mail(f"[KumaTravel] 새 후기 {row['name']} ★{rating}", row["body"] + f"\n\n바로 게시됨. 수정·숨김·삭제: {CFG['site_url']}/admin")
     return redirect(_back(row["lang"], "sent=review") + "#reviews")
 
 
@@ -204,41 +204,96 @@ def _back(lang, qs):
     return ("/ko" if lang == "ko" else "/") + "?" + qs
 
 
-# --- 관리: 후기 승인 (?key=ADMIN_PW) ---
-def _auth():
-    if request.args.get("key") != os.getenv("ADMIN_PW", "1234"):
-        abort(403)
+# --- 관리 (/admin, ADMIN_PW 로그인 → 세션) ---
+app.config["SESSION_COOKIE_SAMESITE"] = "Lax"  # 다른 사이트에서 관리 POST 위조 차단
+
+
+def _admin():
+    if not session.get("admin"):
+        abort(redirect("/admin"))
+
+
+def _save(name, rows):
+    json.dump(rows, open(os.path.join(DATA, name), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+
+
+@app.route("/admin", methods=["GET", "POST"])
+def admin_login():
+    err = False
+    if request.method == "POST":
+        if hmac.compare_digest(request.form.get("pw", ""), os.getenv("ADMIN_PW", "1234")):
+            session["admin"] = True
+            return redirect("/admin/reviews")
+        time.sleep(1)  # 무작위 대입 지연
+        err = True
+    if session.get("admin"):
+        return redirect("/admin/reviews")
+    return render_template("admin.html", page="login", err=err)
+
+
+@app.route("/admin/logout")
+def admin_logout():
+    session.clear()
+    return redirect("/admin")
 
 
 @app.route("/admin/reviews")
 def admin_reviews():
-    _auth()
-    rows = _load("reviews.json")
-    key = request.args.get("key")
-    items = "".join(
-        f"<li>[{'승인' if r['approved'] else '대기'}] ★{r['rating']} {r['name']} ({r['city']}) {r['at']}<br>{r['body']}"
-        f"<form method=post action='/admin/reviews/{i}?key={key}' style='display:inline'>"
-        f"<button name=approved value={'0' if r['approved'] else '1'}>{'숨김' if r['approved'] else '승인'}</button>"
-        f"<button name=delete value=1 onclick=\"return confirm('삭제?')\">삭제</button></form></li>"
-        for i, r in enumerate(rows))
-    inq = "".join(f"<li>{q['at']} {q['name']} / {q['contact']} / {q['service']} {q['date']} {q['people']}명 "
-                  f"{q['origin']}→{q['destination']}<br>{q['message']}</li>" for q in _load("inquiries.json")[::-1])
-    return f"<meta charset=utf-8><h2>후기</h2><ul>{items}</ul><h2>문의</h2><ul>{inq}</ul>"
+    _admin()
+    rows = list(enumerate(_load("reviews.json")))[::-1]  # (원래 위치, 후기) 최신순
+    f = request.args.get("f", "all")
+    shown = [x for x in rows if f == "all" or x[1].get("approved") == (f == "on")]
+    on = [r for _, r in rows if r.get("approved")]
+    stats = {"all": len(rows), "on": len(on), "off": len(rows) - len(on),
+             "avg": round(sum(r["rating"] for r in on) / len(on), 1) if on else 0}
+    return render_template("admin.html", page="reviews", rows=shown, f=f, stats=stats,
+                           inq_n=len(_load("inquiries.json")), msg=request.args.get("msg"))
 
 
 @app.post("/admin/reviews/<int:i>")
-def admin_review_set(i):
-    _auth()
+def admin_review_set(i):  # ponytail: 위치 번호로 식별, 관리자 1명 기준. 여럿이 동시에 지우면 id 필드로.
+    _admin()
+    act = request.form.get("act")
     with _lock:
         rows = _load("reviews.json")
         if i >= len(rows):
             abort(404)
-        if request.form.get("delete"):
+        if act == "delete":
             rows.pop(i)
-        else:
-            rows[i]["approved"] = request.form.get("approved") == "1"
-        json.dump(rows, open(os.path.join(DATA, "reviews.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    return redirect(f"/admin/reviews?key={request.args.get('key')}")
+        elif act == "toggle":
+            rows[i]["approved"] = not rows[i].get("approved")
+        elif act == "save":
+            f = request.form
+            r = rows[i]
+            for k, n in (("name", 40), ("city", 40), ("service", 40), ("body", 1000), ("at", 10)):
+                r[k] = f.get(k, r.get(k, "")).strip()[:n]
+            r["rating"] = max(1, min(5, int(f.get("rating") or r["rating"])))
+            r["approved"] = f.get("approved") == "1"
+        _save("reviews.json", rows)
+    return redirect(f"/admin/reviews?f={request.args.get('f', 'all')}&msg={act}")
+
+
+@app.route("/admin/inquiries")
+def admin_inquiries():
+    _admin()
+    rows = list(enumerate(_load("inquiries.json")))[::-1]
+    return render_template("admin.html", page="inquiries", rows=rows, inq_n=len(rows),
+                           stats={"all": len(_load("reviews.json"))}, msg=request.args.get("msg"))
+
+
+@app.post("/admin/inquiries/<int:i>")
+def admin_inquiry_set(i):
+    _admin()
+    with _lock:
+        rows = _load("inquiries.json")
+        if i >= len(rows):
+            abort(404)
+        if request.form.get("act") == "delete":
+            rows.pop(i)
+        elif request.form.get("act") == "done":
+            rows[i]["done"] = not rows[i].get("done")
+        _save("inquiries.json", rows)
+    return redirect("/admin/inquiries?msg=" + request.form.get("act", ""))
 
 
 # --- SEO ---
