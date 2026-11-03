@@ -2,7 +2,7 @@
 
   python -I tools/airport_suggest.py    # 1) 자동완성 수집 (2분)
   python -I tools/airport_keywords.py   # 2) 필터·번역·엑셀
-  → keywords/구마트래블_공항키워드_일본어한국어.xlsx
+  → keywords/구마트래블_키워드_전체.xlsx (공항 실검색 + 패턴 조합 + gen_keywords.py 서비스 조합)
 """
 import json, os, re, sys
 from collections import Counter
@@ -12,7 +12,7 @@ from openpyxl.utils import get_column_letter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW = os.path.join(ROOT, "keywords", "airport_suggest_raw.json")
-OUT = os.path.join(ROOT, "keywords", "구마트래블_공항키워드_일본어한국어.xlsx")
+OUT = os.path.join(ROOT, "keywords", "구마트래블_키워드_전체.xlsx")
 
 # --- 분류 규칙 (소문자 기준) ---
 A = r"タクシー|送迎|ハイヤー|チャーター|貸切|uber|ウーバー|カカオ|レンタカー|ジャンボ|大型|リムジン(?!バス)|専用車|配車|ドライバー"
@@ -174,6 +174,34 @@ def ko(ja):
     return s, miss
 
 
+# --- 실검색 상위 패턴을 서울 전 지역에 적용한 조합 (자동완성엔 아직 없지만 같은 형태로 검색될 말) ---
+C_AIRPORTS = [("仁川空港", "인천공항"), ("金浦空港", "김포공항"), ("仁川国際空港", "인천국제공항")]
+C_AREAS = [("ソウル", "서울"), ("ソウル市内", "서울 시내"), ("明洞", "명동"), ("ミョンドン", "명동"), ("弘大", "홍대"), ("ホンデ", "홍대"),
+           ("江南", "강남"), ("カンナム", "강남"), ("東大門", "동대문"), ("トンデムン", "동대문"), ("南大門", "남대문"),
+           ("景福宮", "경복궁"), ("仁寺洞", "인사동"), ("梨泰院", "이태원"), ("イテウォン", "이태원"), ("聖水", "성수"),
+           ("ソンス", "성수"), ("汝矣島", "여의도"), ("蚕室", "잠실"), ("チャムシル", "잠실"), ("狎鴎亭", "압구정"), ("新沙", "신사"),
+           ("新村", "신촌"), ("鍾路", "종로"), ("益善洞", "익선동"), ("北村", "북촌"), ("龍山", "용산"), ("ソウル駅", "서울역"),
+           ("光化門", "광화문"), ("乙支路", "을지로"), ("延南洞", "연남동"), ("合井", "합정"), ("三成", "삼성"), ("COEX", "코엑스"),
+           ("ロッテワールド", "롯데월드"), ("麻浦", "마포"), ("清潭洞", "청담동"), ("永登浦", "영등포"), ("江南駅", "강남역"), ("弘大入口駅", "홍대입구역")]
+C_FWD = [("タクシー", "택시", 2), ("タクシー 料金", "택시 요금", 2), ("タクシー いくら", "택시 얼마", 2), ("タクシー 時間", "택시 시간", 2),
+         ("タクシー 深夜", "택시 심야", 2), ("タクシー 予約", "택시 예약", 2), ("送迎", "픽업", 2), ("送迎 料金", "픽업 요금", 2),
+         ("行き方", "가는 법", 3), ("移動", "이동", 3), ("アクセス", "가는 길", 3), ("所要時間", "소요시간", 3),
+         ("深夜", "심야", 3), ("早朝", "새벽", 3), ("荷物配送", "짐 배송", 3)]
+C_REV = [("タクシー", "택시", 2), ("タクシー 料金", "택시 요금", 2), ("タクシー 早朝", "택시 새벽", 2), ("送迎", "픽업", 2),
+         ("行き方", "가는 법", 3), ("所要時間", "소요시간", 3)]
+
+
+def combos():
+    for aj, ak in C_AIRPORTS:
+        for pj, pk in C_AREAS:
+            for ij, ik, pri in C_FWD:
+                yield f"{aj} {pj} {ij}", f"{ak} {pk} {ik}", ij, aj, pri
+    for aj, ak in C_AIRPORTS[:2]:
+        for pj, pk in C_AREAS:
+            for ij, ik, pri in C_REV:
+                yield f"{pj}から{aj} {ij}", f"{pk}에서 {ak} {ik}", ij, aj, pri
+
+
 def main():
     raw = json.load(open(RAW, encoding="utf-8"))
     rows, seen = [], set()
@@ -203,26 +231,44 @@ def main():
                "이동·가는 법": "/incheon-airport-sougei · 블로그" if ap != "김포" else "/seoul-sougei · 블로그",
                "대중교통 비교": "블로그(버스·전철 vs 픽업 비교 글)"}[cat]
         rows.append([k, kr, cat, ap, pop, x["hits"], x["best_rank"], pri, use, "번역 확인: " + " ".join(miss) if miss else ""])
-    rows.sort(key=lambda r: (r[7], -r[5], r[6]))
+    for r in rows:
+        r.append("실제 검색어")
+    for ja, kr, intent, aj, pri in combos():
+        if ja in seen:
+            continue
+        seen.add(ja)
+        cat = ("차량·택시·픽업" if re.search(A, intent) else "짐 배송" if "荷物" in intent else "이동·가는 법")
+        ap = "인천" if "仁川" in aj else "김포"
+        use = "/seoul-sougei" if ap == "김포" else "/incheon-airport-sougei"
+        rows.append([ja, kr, cat, ap, "조합", 0, None, pri, use, "", "패턴 조합"])
+    import runpy
+    for ja, kr, kind, place, svc, pri, pg, note in runpy.run_path(os.path.join(ROOT, "tools", "gen_keywords.py"))["rows"]:
+        if ja in seen:
+            continue
+        seen.add(ja)
+        ap = "인천" if "仁川" in ja else "김포" if "金浦" in ja else "-"
+        rows.append([ja, kr, kind, ap, "조합", 0, None, pri, pg, note, "서비스 조합"])
+    order = {"실제 검색어": 0, "패턴 조합": 1, "서비스 조합": 2}
+    rows.sort(key=lambda r: (r[7], order[r[10]], -r[5], r[6] or 99))
 
     wb = Workbook()
     ws = wb.active
     ws.title = "공항 키워드"
-    ws.append(["No", "일본어 키워드(실제 검색어)", "한국어 키워드", "분류", "공항", "인기도", "자동완성 등장 수",
+    ws.append(["No", "일본어 키워드", "한국어 키워드", "출처", "분류", "공항", "인기도", "자동완성 등장 수",
                "최고 순위", "우선순위", "공략 페이지", "월검색수 구글(일본)", "월검색수 네이버", "비고"])
     for c in ws[1]:
         c.font, c.fill, c.alignment = Font(bold=True, color="FFFFFF"), PatternFill("solid", fgColor="FF6F91"), Alignment(horizontal="center")
     for i, r in enumerate(rows, 1):
-        ws.append([i, *r[:9], None, None, r[9]])
-    for i, w in enumerate([7, 42, 40, 14, 9, 8, 10, 8, 8, 34, 14, 12, 22], 1):
+        ws.append([i, r[0], r[1], r[10], *r[2:9], None, None, r[9]])
+    for i, w in enumerate([7, 42, 40, 11, 14, 9, 8, 10, 8, 8, 34, 14, 12, 22], 1):
         ws.column_dimensions[get_column_letter(i)].width = w
     ws.freeze_panes = "B2"
     ws.auto_filter.ref = ws.dimensions
     wb.save(OUT)
 
     sys.stdout.reconfigure(encoding="utf-8")
-    print("rows", len(rows), Counter(r[2] for r in rows), Counter(r[4] for r in rows))
-    miss = Counter(t for r in rows if r[9] for t in r[9][7:].split())
+    print("rows", len(rows), Counter(r[10] for r in rows), Counter(r[2] for r in rows), Counter(r[4] for r in rows))
+    miss = Counter(t for r in rows if r[9].startswith("번역") for t in r[9][7:].split())
     print("untranslated", len(miss), " ".join(f"{k}:{v}" for k, v in miss.most_common()))
     print(OUT)
 

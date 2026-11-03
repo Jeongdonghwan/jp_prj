@@ -157,28 +157,29 @@ for ja, ko in INFO:
 
 rows.sort(key=lambda r: r[5])  # 우선순위 1 → 3, 같은 순위 안에서는 생성 순서 유지
 
-HEAD = PatternFill("solid", fgColor="FF6F91")
-wb = Workbook()
-ws = wb.active
-ws.title = "키워드"
-ws.append(["No", "일본어 키워드", "한국어 키워드", "분류", "장소/경로", "서비스", "우선순위",
-           "연결 페이지", "월검색수 구글(일본)", "월검색수 네이버", "비고"])
-for c in ws[1]:
-    c.font, c.fill, c.alignment = Font(bold=True, color="FFFFFF"), HEAD, Alignment(horizontal="center")
-for i, r in enumerate(rows, 1):
-    ws.append([i, *r[:6], r[6], None, None, r[7]])
-for i, w in enumerate([7, 40, 36, 14, 26, 18, 9, 30, 16, 14, 24], 1):
-    ws.column_dimensions[get_column_letter(i)].width = w
-ws.freeze_panes = "B2"
-ws.auto_filter.ref = ws.dimensions
+if __name__ == "__main__":  # import 시에는 rows 만 제공 (airport_keywords.py 가 합칠 때 사용)
+    HEAD = PatternFill("solid", fgColor="FF6F91")
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "키워드"
+    ws.append(["No", "일본어 키워드", "한국어 키워드", "분류", "장소/경로", "서비스", "우선순위",
+               "연결 페이지", "월검색수 구글(일본)", "월검색수 네이버", "비고"])
+    for c in ws[1]:
+        c.font, c.fill, c.alignment = Font(bold=True, color="FFFFFF"), HEAD, Alignment(horizontal="center")
+    for i, r in enumerate(rows, 1):
+        ws.append([i, *r[:6], r[6], None, None, r[7]])
+    for i, w in enumerate([7, 40, 36, 14, 26, 18, 9, 30, 16, 14, 24], 1):
+        ws.column_dimensions[get_column_letter(i)].width = w
+    ws.freeze_panes = "B2"
+    ws.auto_filter.ref = ws.dimensions
 
-out = os.path.join(ROOT, "keywords", "구마트래블_키워드_일본어한국어.xlsx")
-os.makedirs(os.path.dirname(out), exist_ok=True)
-wb.save(out)
+    out = os.path.join(ROOT, "keywords", "구마트래블_키워드_일본어한국어.xlsx")
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    wb.save(out)
 
-sys.stdout.reconfigure(encoding="utf-8")
-from collections import Counter
-print("total", len(rows))
-print(Counter(r[2] for r in rows))
-print(Counter(r[5] for r in rows))
-print(out)
+    sys.stdout.reconfigure(encoding="utf-8")
+    from collections import Counter
+    print("total", len(rows))
+    print(Counter(r[2] for r in rows))
+    print(Counter(r[5] for r in rows))
+    print(out)

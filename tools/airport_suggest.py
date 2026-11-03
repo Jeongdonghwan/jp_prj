@@ -1,7 +1,8 @@
 """일본 구글 자동완성(hl=ja, gl=jp)으로 인천·김포공항 관련 실제 검색어를 모은다.
 자동완성에 뜬다 = 일본에서 실제로 자주 검색된다. 뜬 횟수·순위로 인기 점수를 매긴다.
 
-  python -I tools/airport_suggest.py   → keywords/airport_suggest_raw.json
+  python -I tools/airport_suggest.py          → keywords/airport_suggest_raw.json
+  python -I tools/airport_suggest.py --deep   → 송영 관련 검색어로 한 번 더 확장(누적)
 """
 import json, os, sys, time, urllib.parse, urllib.request
 from collections import defaultdict
@@ -31,9 +32,24 @@ def suggest(q):
     return q, []
 
 
+DEEP = r"タクシー|送迎|荷物|スーツケース|行き方|移動|から|深夜|早朝|料金|いくら"
+SKIP = r"ラウンジ|免税|ご飯|お土産|両替|バス|電車|arex|地下鉄|鉄道|列車|時刻表"
+
+
 def main():
-    qs = [s + x for s in SEEDS for x in SUFFIX]
+    deep = "--deep" in sys.argv
+    if deep:  # 2단계: 1단계에서 찾은 송영 관련 검색어를 다시 씨앗으로 (기존 결과에 누적)
+        import re
+        old = json.load(open(OUT, encoding="utf-8"))
+        rel = [r for r in old if re.search(DEEP, r["kw"]) and not re.search(SKIP, r["kw"].lower())]
+        top = [r["kw"] for r in rel[:80]]
+        qs = [r["kw"] + " " for r in rel] + [k + " " + c for k in top for c in KANA]
+    else:
+        qs = [s + x for s in SEEDS for x in SUFFIX]
     hits = defaultdict(lambda: {"n": 0, "best": 99, "seed": ""})
+    if deep:
+        for r in old:
+            hits[r["kw"]] = {"n": r["hits"], "best": r["best_rank"] - 1, "seed": r["seed"]}
     with ThreadPoolExecutor(4) as ex:
         for q, res in ex.map(suggest, qs):
             for rank, k in enumerate(res):
