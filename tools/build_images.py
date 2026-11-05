@@ -25,6 +25,10 @@ ILLUST = [(f"여행객들 AI 이미지 ({i}).jpg", f"memory-{i:02d}") for i in r
     ("중단.jpg", "illust-seoul"),
     ("연락처.jpg", "illust-contact"),
 ]
+K = "KakaoTalk_20261103_164121381"
+MEMORY2 = [(f"{K}.jpg", "memory-15"), (f"{K}_01.jpg", "memory-16"), (f"{K}_02.jpg", "memory-17"), (f"{K}_03.jpg", "memory-18"),
+           (f"{K}_05.jpg", "memory-19"), (f"{K}_06.jpg", "memory-20"), ("KakaoTalk_20261103_200632481.png", "memory-21"),
+           ("KakaoTalk_20261103_200643848.png", "memory-22"), (f"{K}_04.jpg", "paradise-city")]  # 2026-11 추가분
 CARS = [
     ("staria-limo.jpg", "staria-limo"),
     ("쏠라티.jpg", "solati"),
@@ -50,6 +54,8 @@ if __name__ == "__main__":
     build(sys.argv[1], KOREA)
     build(sys.argv[1], ILLUST)
     build(sys.argv[2], CARS)
+    if len(sys.argv) > 3:
+        build(sys.argv[3], MEMORY2)
     make_og(sys.argv[1])
 
 

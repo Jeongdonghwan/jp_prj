@@ -30,7 +30,7 @@ I18N = {
 }
 PRICES = {"icn": 150000, "gmp": 80000, "half": 300000, "full": 500000, "rt_off": 0.10}
 
-GALLERY = [(f"memory-{i:02d}", "memory", f"cap_m{i}") for i in range(1, 15)] + [  # (파일명, 카테고리, 캡션 키)
+GALLERY = [(f"memory-{i:02d}", "memory", f"cap_m{i}") for i in range(1, 23)] + [  # (파일명, 카테고리, 캡션 키)
     ("gwanghwamun-snow", "scenery", "cap_gwanghwamun"),
     ("hangang-night", "scenery", "cap_hangang"),
     ("gyeongbokgung-guard", "scenery", "cap_guard"),
@@ -40,6 +40,7 @@ GALLERY = [(f"memory-{i:02d}", "memory", f"cap_m{i}") for i in range(1, 15)] + [
     ("bukhansan-view", "scenery", "cap_bukhansan"),
     ("seoul-night-skyline", "scenery", "cap_skyline"),
     ("namsan-sunset", "scenery", "cap_namsan_sunset"),
+    ("paradise-city", "scenery", "cap_paradise"),
     ("staria-limo", "vehicle", "cap_staria"),
     ("genesis-vip", "vehicle", "cap_genesis"),
     ("solati", "vehicle", "cap_solati"),

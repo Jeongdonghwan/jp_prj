@@ -95,7 +95,7 @@ PX = {
     "incheon-city": dict(n="仁川市内", feat="仁川駅前のチャイナタウン・月尾島、富平の地下街などがある港町エリア。", spots="仁川チャイナタウン・月尾島・富平地下商店街",
                          icn="空港鉄道で桂陽駅へ出て仁川地下鉄1号線に乗り換えるなど、目的地によって経路が変わります。", gmp="地下鉄やバスを乗り継ぐ必要があり、行き先によっては車が早いエリアです。", img="seoul-night-skyline"),
     "paradise-city": dict(n="パラダイスシティ", feat="仁川空港のすぐそばの統合型リゾート。ホテル・カジノ・スパがある。", spots="パラダイスシティ・シメール（スパ）・ワンダーボックス",
-                          icn="空港のすぐ隣で、ホテルの無料シャトルバスが空港と結んでいます。", gmp="空港鉄道で仁川空港まで戻り、シャトルに乗り継ぐ必要があります。", img="seoul-night-skyline"),
+                          icn="空港のすぐ隣で、ホテルの無料シャトルバスが空港と結んでいます。", gmp="空港鉄道で仁川空港まで戻り、シャトルに乗り継ぐ必要があります。", img="paradise-city"),
     "unseo": dict(n="雲西", feat="仁川空港のある永宗島の町。空港勤務者向けのホテルや飲食店が集まる。", spots="雲西駅・永宗島・乙旺里海水浴場",
                   icn="空港鉄道の各駅停車で第1ターミナルから2駅です。深夜着で空港近くに泊まる人がよく使います。", gmp="空港鉄道で仁川空港方面へ戻る形になります。", img="seoul-night-skyline"),
     "magok": dict(n="麻谷", feat="金浦空港のすぐ東の新しい街。ボタニックパークやメイフィールドホテル、LGサイエンスパークがある。", spots="ソウル植物園・麻谷ナル駅・鉢山駅",
@@ -181,7 +181,7 @@ def timing(c, P, dep):
 NO_KM = {("icn", "paradise-city"), ("icn", "unseo")}  # OSRM 경로가 우회해 신뢰 낮음 → 거리 숨김
 IMG = {"seoul-night-skyline": (600, 740), "gwanghwamun-snow": (600, 800), "namsan-tower-winter": (467, 700),
        "gyeongbokgung-guard": (600, 800), "lotte-tower-night": (600, 764), "hangang-night": (600, 800),
-       "namsan-sunset": (600, 600), "namsan-moon": (600, 752)}
+       "namsan-sunset": (600, 600), "namsan-moon": (600, 752), "paradise-city": (600, 800)}
 
 
 def pick(slug, key, opts):
