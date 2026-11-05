@@ -122,6 +122,11 @@ html[lang=ko] .btn{font-weight:400}
 .veh img{aspect-ratio:3/2;object-fit:cover;width:100%}
 .veh div{padding:22px}
 .veh h3{font-size:1.2rem}
+.wc{display:flex;gap:24px;align-items:center;margin-top:24px;padding:20px 28px}
+.wc img{width:110px;height:auto;flex:none;transform:rotate(-4deg)}
+.wc h3{font-size:1.2rem;margin-bottom:6px}
+.wc p{color:var(--ink2);margin:0;font-size:.95rem}
+@media(max-width:640px){.wc{padding:18px;gap:16px}.wc img{width:80px}}
 .cap{display:inline-block;background:var(--pink);color:#fff;font-weight:700;font-size:.78rem;padding:3px 12px;border-radius:999px;margin-bottom:8px}
 .cap.mint{background:var(--mint2)}
 
