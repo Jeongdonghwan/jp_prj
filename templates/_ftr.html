@@ -1,7 +1,7 @@
 <footer class="ftr">
   <div class="wrap ftr-in">
     <div><div class="logo">{% include 'bear.svg' %}<span><b>{{ t.brand }}</b><small>{{ t.brand_sub }}</small></span></div><p>{{ t.footer_about }}</p></div>
-    <div><p>TEL {{ cfg.phone }}</p><p>MAIL <a class="mail" href="mailto:{{ cfg.email }}?subject={{ t.mail_subject | urlencode }}&body={{ t.mail_body | urlencode }}">{{ cfg.email }}</a></p><p><a href="{{ cfg.line_url }}" target="_blank" rel="noopener">LINE</a></p>{% if lang == 'ja' %}<p><a href="/guide">空港アクセスガイド</a></p>{% endif %}<p><a href="{{ t.other_lang_path }}">{{ t.other_lang }}</a></p></div>
+    <div><p>TEL {{ cfg.phone }}</p><p>MAIL <a class="mail" href="mailto:{{ cfg.email }}?subject={{ t.mail_subject | urlencode }}&body={{ t.mail_body | urlencode }}">{{ cfg.email }}</a></p><p><a href="{{ cfg.line_url }}" target="_blank" rel="noopener">LINE</a></p><p><a href="{{ '/ko/guide' if lang == 'ko' else '/en/guide' if lang == 'en' else '/guide' }}">{{ {'ko': '공항 이동 가이드', 'en': 'Airport Transfer Guide'}.get(lang, '空港アクセスガイド') }}</a></p><p><a href="{{ t.other_lang_path }}">{{ t.other_lang }}</a></p></div>
   </div>
   <p class="credit">© {{ year }} {{ t.brand }}. {{ t.footer_rights }}</p>
 </footer>

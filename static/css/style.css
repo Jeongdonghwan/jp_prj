@@ -88,6 +88,8 @@ html[lang=ko] .btn{font-weight:400}
 .intro p{color:var(--ink2);margin:0 0 12px}
 .crumb{font-size:.85rem;color:var(--mute);margin-bottom:8px}
 .crumb a{color:var(--pink3)}
+.gd-lang{font-size:.85rem;color:var(--mute);margin-top:10px}
+.gd-lang a{color:var(--pink3)}
 .hub{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:18px}
 .hub b{margin-right:4px}
 .hub a{background:#fff;border:2px solid var(--line);border-radius:999px;padding:5px 14px;font-weight:700;font-size:.88rem}

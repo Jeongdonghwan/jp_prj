@@ -82,7 +82,7 @@ PX = {
                    icn="空港から最も遠いエリアの一つで、リムジンバスのロッテワールド方面行きを使う人が多いです。電車だと乗り換え2回以上になります。", gmp="地下鉄9号線の急行で東へ向かい、2号線などに乗り換えます。", img="lotte-tower-night"),
     "samseong": dict(n="三成・COEX", feat="COEXモールと星の庭図書館、展示会場のあるビジネス街。出張の利用も多い。", spots="COEX・スターフィールド図書館・奉恩寺・宣陵",
                      icn="リムジンバスのCOEX方面行きを使うのが一般的です。電車なら空港鉄道で金浦空港へ出て9号線に乗り換えます。", gmp="地下鉄9号線の急行で奉恩寺駅まで乗り換えなしで行けます。", img="seoul-night-skyline"),
-    "yeouido": dict(n="汝矣島", feat="国会議事堂と金融街、漢江公園のある中洲。ザ・現代ソウルも人気。", spots="ザ・現代ソウル・汝矣島漢江公園・63ビル",
+    "yeouido": dict(n="汝矣島", feat="国会議事堂と金融街、漢江公園のある中洲。ザ・現代ソウルも人気。", spots="ザ現代ソウル・汝矣島漢江公園・63ビル",
                     icn="空港鉄道で金浦空港へ出て地下鉄9号線の急行に乗り換えるか、孔徳駅で5号線に乗り換えます。", gmp="地下鉄9号線の急行または5号線で汝矣島駅まで乗り換えなしです。", img="hangang-night"),
     "yeongdeungpo": dict(n="永登浦", feat="タイムスクエアと永登浦駅周辺の商業エリア。九老デジタル団地方面への拠点にも。", spots="タイムスクエア・永登浦駅・汝矣島",
                          icn="空港鉄道で金浦空港へ出て地下鉄5号線に乗り換え、永登浦区庁方面へ向かいます。", gmp="地下鉄5号線で永登浦区庁駅まで乗り換えなしです。", img="seoul-night-skyline"),
@@ -103,11 +103,11 @@ PX = {
 }
 # 장소별 추가 사실: (현지 팁, 주요 호텔, 도착일 보내는 법, 밤 분위기, 전철 환승 횟수 인천·김포, 인천발 리무진버스 유무)
 PX2 = {
-    "seoul": ("市庁・光化門周辺は一方通行と工事が多いので、ホテルの車寄せの位置を事前に確認しておくとスムーズです。", "ロッテホテルソウル・ウェスティン朝鮮ソウル・ザ・プラザ・フォーシーズンズホテルソウル",
+    "seoul": ("市庁・光化門周辺は一方通行と工事が多いので、ホテルの車寄せの位置を事前に確認しておくとスムーズです。", "ロッテホテルソウル・ウェスティン朝鮮ソウル・ザプラザ・フォーシーズンズホテルソウル",
               "到着日は清渓川沿いを散歩して、光化門広場の夜景を見るのが定番です。", "光化門周辺は夜になると店が早めに閉まり、流しのタクシーもつかまりにくくなります。", 1, 0, True),
     "myeongdong": ("明洞の中心は歩行者の多い路地で、車が入れない時間帯があります。ホテルによっては大通り側で乗り降りします。", "ロッテホテルソウル・ナインツリー明洞・L7明洞・ソラリア西鉄ホテル明洞",
                    "チェックイン後すぐに屋台通りやコスメ店に出られるのが明洞の強み。夕方から屋台が並びます。", "屋台は夜まで出ていますが、深夜になると人通りがぐっと減ります。", 1, 1, True),
-    "hongdae": ("弘大入口駅の周辺は週末の夜に道路が混むため、車の乗り降りは大通り沿いになることが多いです。", "ホリデイ・イン・エクスプレス弘大・RYSE・L7弘大",
+    "hongdae": ("弘大入口駅の周辺は週末の夜に道路が混むため、車の乗り降りは大通り沿いになることが多いです。", "ホリデイインエクスプレス弘大・RYSE・L7弘大",
                 "到着日の夜は弘大のストリートライブや、延南洞のカフェ巡りが人気です。", "金曜・土曜の夜は深夜まで人が多く、タクシー待ちの列ができることもあります。", 0, 0, True),
     "gangnam": ("江南は範囲が広く、江南駅・新論峴・狎鴎亭のどこのホテルかで所要時間が10分以上変わります。", "ノボテルアンバサダー江南・東横イン江南",
                 "美容クリニックの予約がある方は、到着日に江南駅周辺を下見しておくと翌日迷いません。", "江南大路は夜遅くまで渋滞することがあり、金曜の夜は特に混みます。", 1, 0, True),
@@ -796,6 +796,90 @@ def kw_siblings(k, n=8):
     return sorted(sib, key=lambda x: hashlib.md5(f"{k['slug']}:{x['slug']}".encode()).hexdigest())[:n]
 
 
+# ---- 한국어·영어 가이드 (/ko/<id>, /en/<id>): 일본어 본문을 번역한 seo/guide_tr/{lang}_*.json ----
+TR_KEYS = ("title", "desc", "h1", "lead", "box", "secs", "table", "flow", "faq", "img_alt")
+
+
+def src(p):
+    g = compose(p)
+    d = {k: g[k] for k in TR_KEYS}
+    d["label"] = label(p)
+    d["_src"] = hashlib.md5(json.dumps(d, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+    return d
+
+
+def _load_tr():
+    import glob
+    tr = {"ko": {}, "en": {}}
+    for f in glob.glob(os.path.join(BASE, "seo", "guide_tr", "*_*.json")):
+        lang = os.path.basename(f).split("_")[0]
+        if lang in tr:
+            tr[lang].update(json.load(open(f, encoding="utf-8")))
+    return tr
+
+
+TR = _load_tr()
+
+
+def compose_tr(p, lang):
+    """번역본이 있으면 그 본문, 숫자 사실(c)과 이미지는 일본어 조합에서 가져온다."""
+    t = TR[lang].get(p["id"])
+    if not t:
+        return None
+    g = compose(p)
+    return {**g, **{k: t[k] for k in TR_KEYS}, "label": t["label"]}
+
+
+# 템플릿·허브 고정 문구 (본문은 TR, 이건 화면 틀)
+UI = {
+    "ja": dict(guide="空港アクセスガイド", box="要点まとめ", table="交通手段の比較",
+               fare_note="料金は{at}時点の公開運賃と道路距離からの目安です。最新の運賃は各交通機関の公式案内でご確認ください。",
+               flow="送迎をご利用の場合の流れ", welcome_alt="空港の到着ロビーでお出迎えするクマトラベルのドライバー", car_alt="クマトラベルの送迎車スタリア",
+               faq="よくある質問", cta_h="ご予約・お見積りは日本語で", cta_p="日付・便名・人数・行き先のホテル名をお送りください。仁川空港⇄ソウル市内 {icn}ウォン、金浦空港⇄ソウル市内 {gmp}ウォン（片道・車1台）、往復で10%OFF。",
+               form="お問い合わせフォーム", related="関連ページ", services="サービス", kids="この区間でよく調べられている質問",
+               svc=[("/incheon-airport-sougei", "仁川空港⇄ソウル送迎"), ("/seoul-sougei", "ソウル送迎サービス"), ("/seoul-charter", "ソウルチャーター車"), ("/guide", "空港アクセスガイド一覧")],
+               hub_t="仁川空港・金浦空港アクセスガイド｜行き方・タクシー・送迎｜クマトラベル",
+               hub_d="仁川空港・金浦空港からソウル市内の各エリアへの行き方、タクシー料金の目安、荷物配送、深夜・早朝の移動方法をエリア別にまとめました。",
+               hub_h1="仁川空港・金浦空港 アクセスガイド", hub_more="日本語で予約できる定額送迎のご案内もあります。",
+               cats=["仁川空港からソウル市内へ", "金浦空港からソウル市内へ", "ソウル市内から空港へ", "空港の基本情報・状況別"], locale="ja_JP", main="/"),
+    "ko": dict(guide="공항 이동 가이드", box="핵심 요약", table="교통수단 비교",
+               fare_note="요금은 {at} 기준 공개 운임과 도로 거리로 계산한 예상치입니다. 최신 요금은 각 교통기관의 공식 안내에서 확인해 주세요.",
+               flow="송영 이용 시 진행 순서", welcome_alt="공항 도착 로비에서 손님을 맞이하는 구마트래블 기사", car_alt="구마트래블 송영 차량 스타리아",
+               faq="자주 묻는 질문", cta_h="예약·견적 문의", cta_p="날짜·항공편명·인원·목적지 호텔명을 보내 주세요. 인천공항⇄서울 시내 {icn}원, 김포공항⇄서울 시내 {gmp}원(편도·차량 1대), 왕복 예약 시 10% 할인.",
+               form="문의 양식", related="관련 페이지", services="서비스", kids="",
+               svc=[("/ko", "구마트래블 송영·대절 안내"), ("/ko/guide", "공항 이동 가이드 전체")],
+               hub_t="인천공항·김포공항 이동 가이드｜가는 법·택시·송영｜구마트래블",
+               hub_d="인천공항·김포공항에서 서울 시내 각 지역까지 가는 법, 택시 요금 예상치, 짐 배송, 심야·새벽 이동 방법을 지역별로 정리했습니다.",
+               hub_h1="인천공항·김포공항 이동 가이드", hub_more="정액 송영 예약 안내도 있습니다.",
+               cats=["인천공항에서 서울 시내로", "김포공항에서 서울 시내로", "서울 시내에서 공항으로", "공항 기본 정보·상황별"], locale="ko_KR", main="/ko"),
+    "en": dict(guide="Airport Transfer Guide", box="Key facts", table="Transport compared",
+               fare_note="Fares are estimates from published rates and road distance as of {at}. Check each operator's official site for current fares.",
+               flow="How the transfer works", welcome_alt="Kuma Travel driver greeting guests in the airport arrivals hall", car_alt="Kuma Travel transfer van (Hyundai Staria)",
+               faq="FAQ", cta_h="Booking and quotes", cta_p="Send us the date, flight number, number of passengers and your hotel name. Incheon Airport⇄central Seoul KRW {icn}, Gimpo Airport⇄central Seoul KRW {gmp} (one way, per vehicle), 10% off round trips.",
+               form="Contact form", related="Related pages", services="Services", kids="",
+               svc=[("/", "Kuma Travel (Japanese)"), ("/ko", "Kuma Travel (Korean)"), ("/en/guide", "All airport guides")],
+               hub_t="Incheon & Gimpo Airport Transfer Guide｜Train, Bus, Taxi, Private Transfer｜Kuma Travel",
+               hub_d="How to get from Incheon and Gimpo airports to each area of Seoul: train, bus and taxi fare estimates, luggage delivery, and late-night or early-morning options.",
+               hub_h1="Incheon & Gimpo Airport Transfer Guide", hub_more="Fixed-price private transfers are also available.",
+               cats=["Incheon Airport to Seoul", "Gimpo Airport to Seoul", "Seoul to the airport", "Airport basics by situation"], locale="en_US", main="/"),
+}
+FARE_AT_L = {"ja": FARE_AT, "ko": "2026년 11월", "en": "November 2026"}
+LANGS = ("ja", "ko", "en")
+
+
+def path(lang, pid=""):
+    return ("" if lang == "ja" else f"/{lang}") + (f"/{pid}" if pid else "/guide")
+
+
+def langs_of(p):
+    """이 페이지가 있는 언어들 (번역본이 없으면 빠진다)."""
+    return [l for l in LANGS if l == "ja" or p["id"] in TR[l]]
+
+
+def label_l(q, lang):
+    return label(q) if lang == "ja" else TR[lang].get(q["id"], {}).get("label")
+
+
 def demo():
     today = LAUNCH + timedelta(days=6)
     assert len(open_pages(LAUNCH)) < len(open_pages(today)) == len(PAGES)
@@ -809,6 +893,9 @@ def demo():
         g = compose_kw(k)
         text = g["lead"] + "".join("".join(ps) for _, ps in g["secs"]) + "".join(q + a for q, a in g["faq"])
         assert "None" not in text and "{" not in text and len(text) > 600, (k["slug"], len(text))
+    for l in ("ko", "en"):  # 일본어 본문이 바뀌면 번역본이 낡는다 → tools/guide_export.py 후 다시 번역
+        stale = [p["id"] for p in PAGES if p["id"] in TR[l] and TR[l][p["id"]].get("_src") != src(p)["_src"]]
+        print(l, len(TR[l]), "translated,", len(stale), "stale", stale[:5])
     print("ok", len(PAGES), "pages,", len(KW), "keyword pages")
 
 

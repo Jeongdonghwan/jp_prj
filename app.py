@@ -151,15 +151,29 @@ def _guide_lastmod():
     return datetime.fromtimestamp(max(os.path.getmtime(f) for f in files))
 
 
-def _guide_ld(path, name, g=None, rel=()):  # rel: [(경로, 이름)]
-    u = CFG["site_url"]
-    crumbs = [("クマトラベル", "/"), ("空港アクセスガイド", "/guide")] + ([g["parent"][::-1]] if g and g.get("parent") else []) + ([(name, path)] if g else [])
+# 영어 화면 틀 (영어 메인은 없음 → 헤더 메뉴는 일본어 메인으로)
+EN_T = {**I18N["ja"], "brand": "Kuma Travel", "brand_sub": "KUMA TRAVEL", "nav_service": "Services", "nav_price": "Prices",
+        "nav_vehicle": "Vehicles", "nav_gallery": "Gallery", "nav_reviews": "Reviews", "nav_faq": "FAQ", "nav_contact": "Contact",
+        "cta_line": "Ask on LINE", "cta_line_short": "LINE", "cta_call": "Call", "other_lang": "日本語", "other_lang_path": "/",
+        "footer_about": "Kuma Travel is a private airport transfer and car charter service in Seoul, Korea.",
+        "mail_subject": "[Booking] Kuma Travel", "mail_body": "Name:\nPassengers:\nDate:\nFrom (airport/flight):\nTo:\nService:\nNotes:\n",
+        "bag_t": "Luggage delivery", "bag_d": "We deliver your suitcases between Incheon or Gimpo Airport and your hotel so you can sightsee hands-free. Paid, advance booking only.",
+        "bag_cta": "Ask us", "bag_alt": "Luggage delivery from Incheon and Gimpo airports to your hotel"}
+
+
+def _t(lang):
+    return EN_T if lang == "en" else I18N[lang]
+
+
+def _guide_ld(path, name, g=None, rel=(), lang="ja"):  # rel: [(경로, 이름)]
+    u, ui = CFG["site_url"], guide.UI[lang]
+    crumbs = [(_t(lang)["brand"], ui["main"]), (ui["guide"], guide.path(lang))] + ([g["parent"][::-1]] if g and g.get("parent") else []) + ([(name, path)] if g else [])
     graph = [{"@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": i + 1, "name": n, "item": u + h} for i, (n, h) in enumerate(crumbs)]}]
     if g:
         graph.append({"@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in g["faq"]]})
-        svc = {"@type": "Service", "name": name, "serviceType": "空港送迎", "areaServed": "Seoul",
+        svc = {"@type": "Service", "name": name, "serviceType": {"ja": "空港送迎", "ko": "공항 송영", "en": "Airport transfer"}[lang], "areaServed": "Seoul",
                "provider": {"@type": "LocalBusiness", "@id": u + "/#business", "name": "クマトラベル / Kuma Travel"}}
         if g["c"]["flat"]:
             svc["offers"] = {"@type": "Offer", "price": g["c"]["flat"], "priceCurrency": "KRW"}
@@ -169,44 +183,71 @@ def _guide_ld(path, name, g=None, rel=()):  # rel: [(경로, 이름)]
     return {"@context": "https://schema.org", "@graph": graph}
 
 
-def _hub_groups():
+def _links(pages, lang):
+    return [(guide.path(lang, q["id"]), guide.label_l(q, lang)) for q in pages if guide.label_l(q, lang)]
+
+
+def _hub_groups(lang):
     pages = guide.open_pages()
-    cats = [("仁川空港からソウル市内へ", lambda q: q["airport"] == "icn" and q["place"] and not q["direction"].startswith("출국")),
-            ("金浦空港からソウル市内へ", lambda q: q["airport"] == "gmp" and q["place"] and not q["direction"].startswith("출국")),
-            ("ソウル市内から空港へ", lambda q: q["place"] and q["direction"].startswith("출국")),
-            ("空港の基本情報・状況別", lambda q: not q["place"])]
-    return [(n, [(f"/{q['id']}", guide.label(q)) for q in pages if f(q)]) for n, f in cats]
+    fs = [lambda q: q["airport"] == "icn" and q["place"] and not q["direction"].startswith("출국"),
+          lambda q: q["airport"] == "gmp" and q["place"] and not q["direction"].startswith("출국"),
+          lambda q: q["place"] and q["direction"].startswith("출국"),
+          lambda q: not q["place"]]
+    return [(n, _links([q for q in pages if f(q)], lang)) for n, f in zip(guide.UI[lang]["cats"], fs)]
 
 
-SERVICES = ("サービス", [("/incheon-airport-sougei", "仁川空港⇄ソウル送迎"), ("/seoul-sougei", "ソウル送迎サービス"),
-                       ("/seoul-charter", "ソウルチャーター車"), ("/guide", "空港アクセスガイド一覧")])
-
-
-def render_guide(p=None):
-    t = I18N["ja"]
+def render_guide(p=None, lang="ja"):
+    t, ui = _t(lang), guide.UI[lang]
+    alts = []  # hreflang: 같은 페이지의 다른 언어판
     if p:
-        g = guide.compose(p)
-        rel = [(f"/{q['id']}", guide.label(q)) for q in guide.related(p)]
-        path, title, desc, h1, lead = f"/{p['id']}", g["title"], g["desc"], g["h1"], g["lead"]
-        kids = [(f"/q/{k['slug']}", k["kw"]) for k in guide.KIDS.get(p["id"], []) if guide.kw_open(k)]
-        groups = [("関連ページ", rel)] + ([("この区間でよく調べられている質問", kids)] if kids else []) + [
-                  ("サービス", [("/incheon-airport-sougei", "仁川空港⇄ソウル送迎"), ("/seoul-sougei", "ソウル送迎サービス"),
-                             ("/seoul-charter", "ソウルチャーター車"), ("/guide", "空港アクセスガイド一覧")])]
+        g = guide.compose(p) if lang == "ja" else guide.compose_tr(p, lang)
+        if not g:
+            abort(404)
+        rel = _links(guide.related(p), lang)
+        path, title, desc, h1, lead = guide.path(lang, p["id"]), g["title"], g["desc"], g["h1"], g["lead"]
+        kids = [(f"/q/{k['slug']}", k["kw"]) for k in guide.KIDS.get(p["id"], []) if guide.kw_open(k)] if lang == "ja" else []
+        groups = [(ui["related"], rel)] + ([(ui["kids"], kids)] if kids else []) + [(ui["services"], ui["svc"])]
+        alts = [(l, guide.path(l, p["id"])) for l in guide.langs_of(p)]
     else:
-        g, path = None, "/guide"
-        rel = [(f"/{q['id']}", guide.label(q)) for q in guide.open_pages()[:30]]
-        title = "仁川空港・金浦空港アクセスガイド｜行き方・タクシー・送迎｜クマトラベル"
-        desc = "仁川空港・金浦空港からソウル市内の各エリアへの行き方、タクシー料金の目安、荷物配送、深夜・早朝の移動方法をエリア別にまとめました。"
-        h1, lead, groups = "仁川空港・金浦空港 アクセスガイド", desc + "日本語で予約できる定額送迎のご案内もあります。", _hub_groups()
-        groups.append(("キーワード別の質問", [("/guide/keywords", f"よく調べられている質問 {sum(guide.kw_open(k) for k in guide.KW)}件の一覧")]))
-    return render_template("guide.html", t=t, lang="ja", cfg=CFG, prices=PRICES, year=datetime.now().year, path=path,
-                           title=title, desc=desc, h1=h1, lead=lead, g=g, groups=groups, intent=p and p["intent"],
-                           fare_at=guide.FARE_AT, ld=_guide_ld(path, h1, g, rel))
+        g, path = None, guide.path(lang)
+        rel = _links(guide.open_pages()[:30], lang)
+        title, desc, h1 = ui["hub_t"], ui["hub_d"], ui["hub_h1"]
+        lead, groups = desc + ui["hub_more"], _hub_groups(lang)
+        if lang == "ja":
+            groups.append(("キーワード別の質問", [("/guide/keywords", f"よく調べられている質問 {sum(guide.kw_open(k) for k in guide.KW)}件の一覧")]))
+        alts = [(l, guide.path(l)) for l in guide.LANGS]
+    groups = [x for x in groups if x[1]]
+    return render_template("guide.html", t=t, lang=lang, ui=ui, cfg=CFG, prices=PRICES, year=datetime.now().year, path=path,
+                           title=title, desc=desc, h1=h1, lead=lead, g=g, groups=groups, intent=p and p["intent"], alts=alts,
+                           fare_at=guide.FARE_AT_L[lang], ld=_guide_ld(path, h1, g, rel, lang))
+
+
+def _guide_page(slug, lang):
+    if slug in guide.MERGED:
+        return redirect(guide.path(lang, guide.MERGED[slug]), 301)
+    p = guide.BY_ID.get(slug)
+    if not p or not guide.is_open(p):
+        abort(404)
+    return render_guide(p, lang)
 
 
 @app.route("/guide")
 def guide_hub():
     return render_guide()
+
+
+@app.route("/<lang>/guide")
+def guide_hub_l(lang):
+    if lang not in ("ko", "en"):
+        abort(404)
+    return render_guide(None, lang)
+
+
+@app.route("/<lang>/<slug>")
+def guide_page_l(lang, slug):
+    if lang not in ("ko", "en"):
+        abort(404)
+    return _guide_page(slug, lang)
 
 
 @app.route("/q/<slug>")
@@ -218,8 +259,8 @@ def guide_kw(slug):
     path = f"/q/{slug}"
     sib = [(f"/q/{x['slug']}", x["kw"]) for x in guide.kw_siblings(k)]
     groups = [("このページの詳しい解説", [g["parent"]]), ("同じ区間の質問", sib),
-              ("関連ページ", [(f"/{q['id']}", guide.label(q)) for q in guide.related(guide.BY_ID[k["parent"]], n=4)]), SERVICES]
-    return render_template("guide.html", t=I18N["ja"], lang="ja", cfg=CFG, prices=PRICES, year=datetime.now().year, path=path,
+              ("関連ページ", [(f"/{q['id']}", guide.label(q)) for q in guide.related(guide.BY_ID[k["parent"]], n=4)]), ("サービス", guide.UI["ja"]["svc"])]
+    return render_template("guide.html", t=I18N["ja"], lang="ja", ui=guide.UI["ja"], alts=[], cfg=CFG, prices=PRICES, year=datetime.now().year, path=path,
                            title=g["title"], desc=g["desc"], h1=g["h1"], lead=g["lead"], g=g, groups=groups,
                            intent=guide.BY_ID[k["parent"]]["intent"], fare_at=guide.FARE_AT, ld=_guide_ld(path, g["h1"], g, sib))
 
@@ -233,18 +274,15 @@ def guide_kw_index():
     title = f"仁川空港・金浦空港 よく調べられている質問{n}件｜クマトラベル"
     desc = "仁川空港・金浦空港からソウル市内への移動について、よく検索されている質問を区間別にまとめました。料金・時間・乗り場・深夜早朝の移動など。"
     path = "/guide/keywords"
-    return render_template("guide.html", t=I18N["ja"], lang="ja", cfg=CFG, prices=PRICES, year=datetime.now().year, path=path,
+    return render_template("guide.html", t=I18N["ja"], lang="ja", ui=guide.UI["ja"], alts=[], cfg=CFG, prices=PRICES, year=datetime.now().year, path=path,
                            title=title, desc=desc, h1=f"よく調べられている質問 {n}件", lead=desc, g=None, groups=groups,
                            intent=None, fare_at=guide.FARE_AT, ld=_guide_ld(path, title))
 
 
 @app.route("/<slug>")
 def landing(slug):
-    if slug in guide.MERGED:
-        return redirect("/" + guide.MERGED[slug], 301)
-    p = guide.BY_ID.get(slug)
-    if p and guide.is_open(p):
-        return render_guide(p)
+    if slug in guide.MERGED or slug in guide.BY_ID:
+        return _guide_page(slug, "ja")
     if slug not in LANDINGS:
         abort(404)
     return render("ja", slug)
@@ -423,7 +461,9 @@ def sitemap():
     gm = _guide_lastmod().strftime("%Y-%m-%d")
     urls += "".join(f"<url><loc>{u}/{p}</loc><lastmod>{gm}</lastmod></url>"
                     for p in ["guide", "guide/keywords"] + [q["id"] for q in guide.open_pages()]
-                    + [f"q/{quote(k['slug'])}" for k in guide.KW if guide.kw_open(k)])
+                    + [f"q/{quote(k['slug'])}" for k in guide.KW if guide.kw_open(k)]
+                    + [f"{l}/guide" for l in ("ko", "en")]
+                    + [f"{l}/{q['id']}" for q in guide.open_pages() for l in ("ko", "en") if q["id"] in guide.TR[l]])
     xml = ('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
            'xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'
            f"{urls}</urlset>")
