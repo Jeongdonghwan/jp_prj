@@ -103,11 +103,11 @@ details summary::-webkit-details-marker{display:none}
   <div class="stats">
     <div class="stat"><b>{{ stats.all }}</b><span>전체 후기</span></div>
     <div class="stat mint"><b>{{ stats.on }}</b><span>게시 중</span></div>
-    <div class="stat"><b>{{ stats.off }}</b><span>숨김</span></div>
+    <div class="stat"><b>{{ stats.off }}</b><span>승인 대기·숨김</span></div>
     <div class="stat yellow"><b>★ {{ stats.avg }}</b><span>게시 후기 평균</span></div>
   </div>
   <div class="tabs">
-    {% for k, v in (('all','전체'),('on','게시 중'),('off','숨김')) %}<a href="?f={{ k }}" class="{{ 'on' if f == k }}">{{ v }}</a>{% endfor %}
+    {% for k, v in (('all','전체'),('on','게시 중'),('off','승인 대기·숨김')) %}<a href="?f={{ k }}" class="{{ 'on' if f == k }}">{{ v }}</a>{% endfor %}
   </div>
   <div class="list">
   {% for i, r in rows %}
@@ -117,13 +117,13 @@ details summary::-webkit-details-marker{display:none}
         <span class="stars">{{ '★' * r.rating }}{{ '☆' * (5 - r.rating) }}</span>
         <span class="meta">{{ r.city }}{% if r.service %} · {{ r.service }}{% endif %} · {{ r.at }}</span>
         <span class="badge lang">{{ 'JP' if r.lang == 'ja' else 'KR' }}</span>
-        <span class="badge {{ '' if r.approved else 'off' }}">{{ '게시 중' if r.approved else '숨김' }}</span>
+        <span class="badge {{ '' if r.approved else 'off' }}">{{ '게시 중' if r.approved else '승인 대기·숨김' }}</span>
       </div>
       <p class="body">{{ r.body }}</p>
       <details>
         <summary class="acts">
           <span class="btn">✏️ 수정</span>
-          <button class="btn" form="t{{ i }}">{{ '🙈 숨기기' if r.approved else '👀 게시하기' }}</button>
+          <button class="btn" form="t{{ i }}">{{ '🙈 숨기기' if r.approved else '✅ 승인(게시)' }}</button>
           <button class="btn del" form="d{{ i }}">🗑 삭제</button>
         </summary>
         <form class="edit" method="post" action="/admin/reviews/{{ i }}?f={{ f }}">
