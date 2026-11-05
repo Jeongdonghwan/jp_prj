@@ -343,7 +343,7 @@ def _pickup(min_drive, flight_h=10):
 
 def compose(p):
     c = ctx(p)
-    s, A, P, R = p["id"], c["A"], c["P"], c["route"]
+    s, A, P, R = p.get("seed", p["id"]), c["A"], c["P"], c["route"]  # seed: 키워드 페이지는 자기 슬러그로 문장 변형을 고른다
     it, pl, dep = p["intent"], p["place"], c["dep"]
     fl = c["flat"]
     price_s = won(fl) if fl else "お見積り"
@@ -716,6 +716,86 @@ def label(q):
     return AIRPORT_T[q["id"]][1]
 
 
+# ---- 키워드 페이지 (/q/<키워드>): 대표 키워드가 아닌 보조 키워드 1개 = 1페이지 ----
+# 상위 가이드 페이지의 사실(거리·요금·시간)을 쓰되, 첫 답·제목·FAQ·고른 섹션을 그 키워드의 질문에 맞춘다.
+def kw_slug(kw):
+    import re
+    return re.sub(r"[\s/?#%&]+", "-", kw.strip()).strip("-")
+
+
+KW = []
+for _p in PAGES:
+    for _i, _k in enumerate(x for x in _p["kws"] if x != _p["main"]):  # 묶음을 1~4에 고르게, 상위 페이지보다 먼저 열리지 않게
+        KW.append({"kw": _k, "slug": kw_slug(_k), "parent": _p["id"], "wave": max(_p["wave"], 1 + _i % 4)})
+KW_BY = {k["slug"]: k for k in KW}
+assert len(KW_BY) == len(KW), "키워드 슬러그 중복"
+KIDS = {}
+for _k in KW:
+    KIDS.setdefault(_k["parent"], []).append(_k)
+
+HINT = [(r"バス|リムジン", "リムジンバス"), (r"電車|地下鉄|arex|AREX|鉄道|駅", "電車"), (r"カカオ|uber|ウーバー|配車|アプリ", "配車アプリ"),
+        (r"荷物|スーツケース|配送|預", "荷物"), (r"料金|いくら|値段|運賃|相場|金額|安い", "料金の目安"), (r"時間|何分|所要|かかる|距離", "所要時間"),
+        (r"深夜|夜|終電", "深夜の移動"), (r"早朝|朝|始発", "早朝の移動"), (r"乗り場|どこ|場所|出口", "乗り場・待ち合わせ"),
+        (r"予約|申し込|手配", "予約方法"), (r"安全|ぼったくり|詐欺|注意", "安全に乗るコツ"),
+        (r"子連れ|子供|家族", "子連れ"), (r"おすすめ|一番|便利|楽", "おすすめの方法"), (r"ホテル", "ホテルまで")]
+
+
+def kw_open(k, today=None):
+    return is_open(k, today)
+
+
+def compose_kw(k):
+    import re
+    p = BY_ID[k["parent"]]
+    base = compose({**p, "seed": k["slug"]})
+    c, kw, s = base["c"], k["kw"], k["slug"]
+    hint = next((h for pat, h in HINT if re.search(pat, kw, re.I)), pick(s, "hint", ["行き方と料金", "移動方法まとめ", "知っておきたいこと"]))
+    mode = r"バス|リムジン|電車|地下鉄|arex|鉄道|荷物|スーツケース"  # 교통수단·짐이 들어간 키워드는 그 답을 먼저
+    hits = sorted(((q, a, pat) for pat, q, a in _faqs(c) if re.search(pat, kw, re.I) and a), key=lambda x: not re.search(mode, x[2], re.I))
+    hits = [(q, a) for q, a, _ in hits]
+    secs = [(q, [a]) for q, a in hits[:3]]
+    tp = topics({"kws": [kw]}, c)
+    if tp:
+        secs.append((f"「{kw}」で調べている方へ", tp))
+    pool = [x for x in base["secs"] if not x[0].endswith("よく調べられていること")]
+    h = lambda key: int(hashlib.md5(f"{s}:{key}".encode()).hexdigest(), 16)
+    order = sorted(range(len(pool)), key=lambda i: h(i))[:4]
+    for i in sorted(order):  # 섹션마다 문단 일부만 (같은 구간 페이지끼리 같은 글이 통째로 겹치지 않게)
+        ps = pool[i][1]
+        keep = [x for j, x in enumerate(ps) if h(f"{i}:{j}") % 5 < 3] or [ps[h(i) % len(ps)]]
+        secs.append((pool[i][0], keep))
+    # 다른 지역까지 거리·요금 5곳 (키워드마다 해시로 고른다 → 같은 구간 페이지끼리도 숫자가 달라진다)
+    ap = c["ap"]
+    other = [x for x in PX if x != p["place"] and (ap, x) not in NO_KM and x in DIST]
+    other = sorted(other, key=lambda x: hashlib.md5(f"{s}:o:{x}".encode()).hexdigest())
+    other = other[:5 if sum(len(x) for _, ps in secs for x in ps) > 700 else 9]  # 짧은 페이지는 지역을 더 넣어 1,300자 이상
+    tn, tk = AP[ap]["terms"][0]
+    rows = []
+    for x in other:
+        km, mn = DIST[x][tk]["km"], DIST[x][tk]["min"]
+        lo, hi = taxi_est(km, ap)
+        f = flat(ap, x)
+        rows.append(f"{PX[x]['n']}：{tn}から{km}km・車で約{mn}分。タクシーは{won(lo)}〜{won(hi)}が目安、送迎は{won(f) + '（定額）' if f else 'お見積り'}。{PX[x]['feat']}")
+    secs.append((f"{AP[ap]['ja']}からほかのエリアまでの目安", rows))
+    lead = (hits[0][1].split("。")[0] + "。" if hits else "") + pick(s, "klead", [
+        f"「{kw}」について、{c['route']}の移動に必要な情報をまとめました。",
+        f"このページでは「{kw}」で調べている方向けに、{hint}を中心に整理しています。",
+        f"{c['route']}を移動する前に、「{kw}」の答えをひと目で確認できるようにしました。"])
+    used = {hits[0][0]} if hits else set()
+    rest = sorted((x for x in base["faq"] + DEFAULT_FAQ if x[0] not in used and x not in hits), key=lambda x: h(x[0]))
+    faq = list(dict.fromkeys(hits[3:] + rest))[:4]
+    title = f"{kw}｜{hint}｜クマトラベル"
+    desc = (lead + (f" 道路距離{c['legs'][0][1]}km・車で約{c['legs'][0][2]}分。" if c["legs"] else ""))[:150]
+    return {**base, "h1": f"{kw}｜{hint}", "lead": lead, "secs": secs, "faq": faq, "flow": None,
+            "table": base["table"] if pick(s, "tbl", [0, 1]) else None, "title": title, "desc": desc,
+            "parent": (f"/{p['id']}", label(p))}
+
+
+def kw_siblings(k, n=8):
+    sib = [x for x in KIDS[k["parent"]] if x is not k and kw_open(x)]
+    return sorted(sib, key=lambda x: hashlib.md5(f"{k['slug']}:{x['slug']}".encode()).hexdigest())[:n]
+
+
 def demo():
     today = LAUNCH + timedelta(days=6)
     assert len(open_pages(LAUNCH)) < len(open_pages(today)) == len(PAGES)
@@ -725,7 +805,11 @@ def demo():
         assert "None" not in text and "{" not in text, p["id"]
         assert len(g["faq"]) >= 4, p["id"]
     assert taxi_est(55.6, "icn") == (58000, 72000)
-    print("ok", len(PAGES), "pages")
+    for k in KW:
+        g = compose_kw(k)
+        text = g["lead"] + "".join("".join(ps) for _, ps in g["secs"]) + "".join(q + a for q, a in g["faq"])
+        assert "None" not in text and "{" not in text and len(text) > 600, (k["slug"], len(text))
+    print("ok", len(PAGES), "pages,", len(KW), "keyword pages")
 
 
 if __name__ == "__main__":

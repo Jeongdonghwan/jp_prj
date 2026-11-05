@@ -37,7 +37,7 @@
 <article>
 <header class="gd-hero">
   <div class="wrap narrow">
-    <nav class="crumb"><a href="/">{{ t.brand }}</a> › <a href="/guide">空港アクセスガイド</a>{% if g %} › <span>{{ g.h1 }}</span>{% endif %}</nav>
+    <nav class="crumb"><a href="/">{{ t.brand }}</a> › <a href="/guide">空港アクセスガイド</a>{% if g and g.parent %} › <a href="{{ g.parent[0] }}">{{ g.parent[1] }}</a>{% endif %}{% if g %} › <span>{{ g.h1 }}</span>{% endif %}</nav>
     <h1>{{ h1 }}</h1>
     <p class="lead">{{ lead }}</p>
   </div>
