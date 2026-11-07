@@ -219,7 +219,7 @@ def render_guide(p=None, lang="ja"):
     groups = [x for x in groups if x[1]]
     return render_template("guide.html", t=t, lang=lang, ui=ui, cfg=CFG, prices=PRICES, year=datetime.now().year, path=path,
                            title=title, desc=desc, h1=h1, lead=lead, g=g, groups=groups, intent=p and p["intent"], alts=alts,
-                           fare_at=guide.FARE_AT_L[lang], ld=_guide_ld(path, h1, g, rel, lang))
+                           ld=_guide_ld(path, h1, g, rel, lang))
 
 
 def _guide_page(slug, lang):
@@ -262,7 +262,7 @@ def guide_kw(slug):
               ("関連ページ", [(f"/{q['id']}", guide.label(q)) for q in guide.related(guide.BY_ID[k["parent"]], n=4)]), ("サービス", guide.UI["ja"]["svc"])]
     return render_template("guide.html", t=I18N["ja"], lang="ja", ui=guide.UI["ja"], alts=[], cfg=CFG, prices=PRICES, year=datetime.now().year, path=path,
                            title=g["title"], desc=g["desc"], h1=g["h1"], lead=g["lead"], g=g, groups=groups,
-                           intent=guide.BY_ID[k["parent"]]["intent"], fare_at=guide.FARE_AT, ld=_guide_ld(path, g["h1"], g, sib))
+                           intent=guide.BY_ID[k["parent"]]["intent"], ld=_guide_ld(path, g["h1"], g, sib))
 
 
 @app.route("/guide/keywords")
@@ -276,7 +276,7 @@ def guide_kw_index():
     path = "/guide/keywords"
     return render_template("guide.html", t=I18N["ja"], lang="ja", ui=guide.UI["ja"], alts=[], cfg=CFG, prices=PRICES, year=datetime.now().year, path=path,
                            title=title, desc=desc, h1=f"よく調べられている質問 {n}件", lead=desc, g=None, groups=groups,
-                           intent=None, fare_at=guide.FARE_AT, ld=_guide_ld(path, title))
+                           intent=None, ld=_guide_ld(path, title))
 
 
 @app.route("/<slug>")

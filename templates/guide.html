@@ -70,7 +70,7 @@
       <thead><tr>{% for x in g.table[0] %}<th>{{ x }}</th>{% endfor %}</tr></thead>
       <tbody>{% for r in g.table[1:] %}<tr{% if loop.last %} class="rt"{% endif %}>{% for x in r %}<td>{{ x }}</td>{% endfor %}</tr>{% endfor %}</tbody>
     </table></div>
-    <p class="note">{{ ui.fare_note.format(at=fare_at) }}</p>
+    <p class="note">{{ ui.fare_note }}</p>
   </section>
   {% endif %}
   {% endfor %}

@@ -1,57 +1,63 @@
 {
  "icn-nimotsu": {
   "title": "Luggage Delivery from Incheon Airport to Your Hotel｜Hands-Free Sightseeing｜Kuma Travel",
-  "desc": "Landed at Incheon Airport? Send your suitcase ahead to the hotel and explore Seoul hands-free from arrival day. 54.5km by road, about 54 min by car.",
-  "h1": "Sending Your Suitcase from Incheon Airport to Your Hotel",
-  "lead": "Landed at Incheon Airport? Send just your suitcase ahead to the hotel. Here is how to use luggage delivery and baggage storage to explore Seoul hands-free from the day you arrive.",
+  "desc": "Land at Incheon Airport, send your suitcases ahead to the hotel and enjoy Seoul hands-free from day one. 54.5 km, about 54 min by car.",
+  "h1": "Send Your Suitcases from Incheon Airport to Your Hotel",
+  "lead": "Land at Incheon Airport and send just your suitcases ahead to the hotel. This guide shows how luggage delivery lets you enjoy Seoul hands-free from the day you arrive.",
   "box": [
    [
     "From Terminal 1",
-    "54.5km, about 54 min by car (estimate)"
+    "54.5 km, about 54 min by car (estimate)"
    ],
    [
     "From Terminal 2",
-    "59.8km, about 55 min by car (estimate)"
+    "59.8 km, about 55 min by car (estimate)"
    ],
    [
     "Kuma Travel transfer",
-    "KRW 150,000 (flat rate, 1 vehicle), same price late at night and early morning"
+    "KRW 150,000 (per vehicle, fixed price), same price late at night and early in the morning"
+   ],
+   [
+    "Round-trip booking",
+    "10% off the total"
+   ],
+   [
+    "Vehicle",
+    "Staria, up to 6 people, 4 to 5 large suitcases"
    ]
   ],
   "secs": [
    [
-    "Send your suitcase to the hotel",
+    "Send your suitcases to the hotel",
     [
-     "Kuma Travel offers a luggage delivery service (paid, advance booking required) that brings your suitcases from Incheon Airport to your hotel in Seoul. The price depends on the number of bags and the destination, so we send you a quote via LINE.",
-     "Hand over your bags and head straight to the sights by train. Your luggage reaches the hotel front desk before check-in.",
-     "If you would like to send luggage from your hotel to the airport on your departure day, just ask."
+     "Kuma Travel offers a luggage delivery service (paid, advance booking required) that brings your suitcases from Incheon Airport to your hotel in Seoul. The price depends on the number of bags and the destination, so we quote it on LINE.",
+     "Hand over your luggage and go straight to sightseeing. It reaches the hotel front desk by check-in time.",
+     "If you want to send luggage from your hotel to the airport on your departure day, just ask."
     ]
    ],
    [
-    "Store your bags at Incheon Airport",
+    "Traveling together with your luggage",
     [
-     "Terminals 1 and 2 at Incheon Airport both have paid baggage storage, handy during a layover or for some last-minute sightseeing on your departure day.",
-     "If you and your bags are traveling together anyway, a transfer (KRW 150,000 to central Seoul, 1 vehicle) can be simpler and cheaper overall. A Staria fits 4–5 large suitcases, and a Solati takes 15 or more."
+     "To travel together with your luggage, you can also book a transfer (KRW 150,000 to central Seoul, per vehicle). A Staria holds 4 to 5 large suitcases and a Solati holds 15 or more."
     ]
    ],
    [
-    "Distance and time from Incheon Airport to major areas",
+    "Distance and drive time from Incheon Airport to main areas",
     [
-     "Euljiro：55.9km, about 56 min by car, taxi approx. KRW 58,000–72,000",
-     "Yeongdeungpo：46.6km, about 47 min by car, taxi approx. KRW 51,000–62,000",
-     "Itaewon：55.0km, about 56 min by car, taxi approx. KRW 58,000–71,000",
-     "Gangnam：60.0km, about 59 min by car, taxi approx. KRW 62,000–77,000",
-     "Seoul Station：53.7km, about 54 min by car, taxi approx. KRW 57,000–70,000",
-     "Walkerhill：68.0km, about 73 min by car, taxi approx. KRW 69,000–85,000",
-     "Distances are road distances from Terminal 1, and times assume no traffic. Taxi fares are estimates based on metered rates as of November 2026 and exclude the late-night surcharge. Kuma Travel transfers are a flat KRW 150,000 to any area in central Seoul."
+     "Euljiro：55.9 km, about 56 min by car",
+     "Yeongdeungpo：46.6 km, about 47 min by car",
+     "Itaewon：55.0 km, about 56 min by car",
+     "Gangnam：60.0 km, about 59 min by car",
+     "Seoul Station：53.7 km, about 54 min by car",
+     "Walkerhill：68.0 km, about 73 min by car",
+     "Distances are by road from Terminal 1 and times are estimates without traffic. Kuma Travel transfers are a fixed KRW 150,000 to any area of Seoul."
     ]
    ],
    [
-    "Common questions: Incheon Airport to central Seoul",
+    "Common requests for Incheon Airport to central Seoul transfers",
     [
-     "Many people search by hotel, with queries like sending luggage to a hotel, from a hotel, Incheon Airport hotels and luggage to the hotel. Whatever your hotel, just send us its name or address and we will take you to the front entrance.",
-     "For international flights, plan to be at Incheon Airport 2–3 hours before departure. Security gets crowded during the morning departure rush and on holiday weekends, so we recommend arriving early.",
-     "On cost alone, the train (AREX airport railroad and subway) is cheapest, followed by the airport limousine bus and then taxis. A transfer, however, is KRW 150,000 split among your group, so 4 travelers sharing the vehicle pay KRW 37,500 each."
+     "For international flights, aim to reach Incheon Airport 2 to 3 hours before departure. Kuma Travel works back from your flight time and road conditions to suggest a pickup time.",
+     "The KRW 150,000 transfer price can be split across your group: KRW 37,500 per person for 4. A round-trip booking gets 10% off the total."
     ]
    ]
   ],
@@ -59,396 +65,382 @@
   "flow": null,
   "faq": [
    [
-    "How much is a taxi from Incheon Airport to central Seoul?",
-    "Regular taxis are metered, and a ride to Seoul City Hall costs roughly KRW 57,000–71,000 (estimate based on fares as of November 2026). A surcharge applies from 22:00 to 4:00. The Kuma Travel transfer is a flat KRW 150,000 (Staria up to 6 passengers, price for 1 vehicle) and does not change with the time of day or traffic."
+    "How much is a transfer from Incheon Airport to central Seoul?",
+    "Kuma Travel's transfer is a fixed KRW 150,000 (Staria, up to 6 people, price per vehicle). The price is set when you book and does not change late at night, early in the morning or in traffic. A round-trip booking gets 10% off the total."
    ],
    [
-    "How long does it take by car from Incheon Airport to central Seoul?",
-    "With no traffic, plan on about 54 minutes from Terminal 1 (54.5km) and about 55 minutes from Terminal 2 (59.8km). Morning and evening rush hours and weekend afternoons can take longer."
+    "How long is the drive from Incheon Airport to central Seoul?",
+    "Without traffic, allow about 54 minutes (54.5 km) from Terminal 1 and about 55 minutes (59.8 km) from Terminal 2. It can take longer during morning and evening rush hours and on weekend afternoons."
    ],
    [
-    "Can I get from central Seoul to Incheon Airport in time for an early-morning flight?",
-    "Yes. We can arrange pickups before the first train runs. For a 7:00 flight, for example, plan to leave central Seoul around 2:40. We work backward from your flight and road conditions to suggest a pickup time."
+    "Can you get me between central Seoul and Incheon Airport in time for an early-morning flight?",
+    "Yes. We pick you up at your hotel even very early in the morning. For a 7:00 flight, for example, plan to leave central Seoul around 2:40. We work back from your flight and road conditions to suggest a pickup time."
    ],
    [
     "Where do we meet at Incheon Airport?",
-    "At both Terminals 1 and 2, we wait at the arrivals hall exit on the 1st floor holding a sign with your name. Korean Air and some other airlines arrive at Terminal 2, so please give us your flight number when you book."
+    "At both Terminal 1 and Terminal 2, we wait at the arrivals hall exit on the 1st floor with a board showing your name. Korean Air and some other airlines arrive at Terminal 2, so please tell us your flight number when you book."
    ],
    [
-    "Can we ride to central Seoul with lots of large suitcases?",
-    "A Staria fits 4–5 large suitcases, and a Solati takes 15 or more. Regular taxis have small trunks that can be full with just 2 bags."
+    "Can you take us to central Seoul with many large suitcases?",
+    "A Staria holds 4 to 5 large suitcases and a Solati holds 15 or more. The driver helps with loading and unloading."
    ]
   ],
   "img_alt": "Seoul at night",
-  "label": "Sending Your Suitcase from Incheon Airport to Your Hotel",
-  "_src": "18f3dcad5534726030a6839323b9946f"
+  "label": "Send Your Suitcases from Incheon Airport to Your Hotel",
+  "_src": "31ac9ad145b2d2cf9a12362e2619c721"
  },
  "icn-dongdaemun-ikikata": {
-  "title": "Incheon Airport ⇄ Dongdaemun｜Train, Bus, Taxi and Transfer Compared｜Kuma Travel",
-  "desc": "Which way gets you from Incheon Airport to Dongdaemun without changing? We compare every option on this 58.1km route. Road distance 58.1km, about 58 min by car.",
-  "h1": "Incheon Airport to Dongdaemun｜Travel Times and Fares",
-  "lead": "Which way gets you from Incheon Airport to Dongdaemun without changing? We compare each transport option on this 58.1km road route.",
+  "title": "Incheon Airport ⇄ Dongdaemun｜Direct Transfer to Your Hotel Door｜Kuma Travel",
+  "desc": "Incheon Airport to Dongdaemun by road is 58.1 km, about 58 min by car. Load your suitcases and ride straight to your hotel.",
+  "h1": "How to Get from Incheon Airport to Dongdaemun｜Easy Fixed-Price Transfer",
+  "lead": "Incheon Airport to Dongdaemun is 58.1 km by road. Here is how to load your suitcases into the vehicle and ride straight to your hotel.",
   "box": [
    [
     "From Terminal 1",
-    "58.1km, about 58 min by car (estimate)"
+    "58.1 km, about 58 min by car (estimate)"
    ],
    [
     "From Terminal 2",
-    "63.4km, about 59 min by car (estimate)"
+    "63.4 km, about 59 min by car (estimate)"
    ],
    [
     "Kuma Travel transfer",
-    "KRW 150,000 (flat rate, 1 vehicle), same price late at night and early morning"
+    "KRW 150,000 (per vehicle, fixed price), same price late at night and early in the morning"
    ],
    [
-    "Regular taxi",
-    "KRW 60,000–75,000 (estimate, late-night surcharge extra)"
+    "Round-trip booking",
+    "10% off the total"
+   ],
+   [
+    "Vehicle",
+    "Staria, up to 6 people, 4 to 5 large suitcases"
    ]
   ],
   "secs": [
    [
-    "4 ways to get from Incheon Airport to Dongdaemun",
+    "Going direct from Incheon Airport to Dongdaemun",
     [
-     "Rail, 1 change：Take the AREX airport railroad to Seoul Station, then Line 4 to Dongdaemun History & Culture Park Station. Airport limousine buses also stop in front of Dongdaemun hotels.",
-     "Limousine bus：Airport limousine buses run from Incheon Airport toward Dongdaemun, and you walk from the stop to your hotel. The fare is around KRW 17,000.",
-     "Taxi：Board at the taxi stand right outside the arrivals hall. Expect about KRW 60,000–75,000 (estimate based on fares as of November 2026, late-night surcharge extra).",
-     "Transfer：No changes from the arrivals hall exit to your hotel entrance. The price is a flat KRW 150,000 (1 vehicle). Most Dongdaemun hotels are on main roads with the entrance close to the drop-off point, so even lots of luggage is easy."
+     "Booking：Send us your date, flight number and Dongdaemun hotel name by LINE, phone or email (Japanese and Korean).",
+     "Meet and greet：At both Terminal 1 and Terminal 2, we wait at the arrivals hall exit on the 1st floor with a board showing your name.",
+     "The ride：We load your luggage and head to Dongdaemun. It is 58.1 km from Terminal 1, about 58 minutes without traffic.",
+     "Price：Fixed price of KRW 150,000 (per vehicle). Many Dongdaemun hotels are on main roads, with the entrance close to the drop-off area, so even a lot of luggage is easy to manage."
     ]
    ],
    [
-    "When a transfer makes sense",
+    "When a transfer helps most",
     [
-     "Late or early：The wholesale fashion malls stay open from late night until dawn, so the area is lively even in the small hours. With a transfer, we wait for your flight, and the price is the same as during the day.",
-     "Lots of luggage：Most Dongdaemun hotels are on main roads with the entrance close to the drop-off point, so even lots of luggage is easy.",
-     "Kids or seniors：We provide child seats free of charge, and there are no changes all the way to your Dongdaemun hotel entrance.",
-     "Traveling light：Take the AREX airport railroad to Seoul Station, then Line 4 to Dongdaemun History & Culture Park Station. The train is the cheapest option."
+     "Late or early：The wholesale fashion malls open from late at night until dawn, so the area stays lively through the night. We wait for your flight, and the price is the same as in the daytime.",
+     "Lots of luggage：Many Dongdaemun hotels are on main roads, with the entrance close to the drop-off area, so even a lot of luggage is easy to manage.",
+     "Families：Child seats are available free of charge, and the ride goes straight to the entrance of your Dongdaemun hotel with no changes.",
+     "Solo travelers：Genesis VIP transfers are also available. Please contact us for the price."
     ]
    ],
    [
     "Estimated hotel arrival by flight time",
     [
-     "From Incheon Airport, the route crosses Yeongjong Bridge or Incheon Bridge and enters Seoul via the Incheon International Airport Expressway. For Dongdaemun, it usually continues along Gangbyeonbuk-ro (north of the Han River), detouring onto city streets when the riverside road is congested.",
+     "From Incheon Airport, we cross the Yeongjong Bridge or Incheon Bridge and enter Seoul on the Incheon International Airport Expressway. To reach Dongdaemun we usually continue on Gangbyeonbuk-ro (north of the Han River), and we detour onto city streets when the riverside road is busy.",
      "9:00 arrival：at your Dongdaemun hotel around 11:20",
      "13:00 arrival：at your Dongdaemun hotel around 15:20",
      "17:00 arrival：at your Dongdaemun hotel around 19:20",
      "21:00 arrival：at your Dongdaemun hotel around 23:00",
      "23:00 arrival：at your Dongdaemun hotel around 1:00",
-     "Estimates allow about 50 minutes for immigration and baggage claim, with daytime driving times multiplied by 1.4 for traffic."
+     "These estimates allow about 50 minutes for immigration and baggage claim, and multiply daytime drive times by 1.4 for traffic."
     ]
    ],
    [
     "Departure day：Dongdaemun to Incheon Airport",
     [
-     "On the way back, we meet you in your Dongdaemun hotel lobby and drop you off in front of the Incheon Airport departures hall (3rd floor). Book a round trip and get 10% off the total.",
-     "Going back by train means 1 transfer. Rather than hauling your bags around after check-out, heading straight from the hotel to the airport makes timing easier to predict.",
+     "On the way back, we wait in the lobby of your Dongdaemun hotel and drive you to the front of the Incheon Airport departures hall (3rd floor). A round-trip booking gets 10% off the total.",
+     "With no changes between the hotel lobby and the departures hall, the trip after check-out is easy to time and you have no luggage worries.",
      "8:00 departure：leave Dongdaemun around 3:30",
      "11:00 departure：leave Dongdaemun around 6:30",
      "14:00 departure：leave Dongdaemun around 9:30",
      "18:00 departure：leave Dongdaemun around 13:30",
      "21:00 departure：leave Dongdaemun around 16:30",
-     "Estimates assume arriving at the airport 3 hours before an international flight, with driving times multiplied by 1.4 for traffic."
+     "These estimates assume arriving at the airport 3 hours before an international flight, and multiply drive times by 1.4 for traffic."
     ]
    ],
    [
     "About the Dongdaemun area",
     [
-     "A district of DDP and fashion malls open late into the night, lively even if you arrive after midnight. Highlights include Dongdaemun Design Plaza (DDP), Gwangjang Market and Dongdaemun Fashion Town. Nearby areas are Euljiro (about 1.5km), Myeongdong (about 2.1km) and Jongno/Insadong (about 2.3km).",
-     "On arrival day：The DDP light-up runs into the evening, so you can take a short stroll even after a late arrival."
+     "A district of DDP and fashion malls that open until late, lively even if you arrive after midnight. Main sights include Dongdaemun Design Plaza (DDP), Gwangjang Market and Dongdaemun Fashion Town. Nearby areas are Euljiro (about 1.5 km), Myeongdong (about 2.1 km) and Jongno/Insadong (about 2.3 km).",
+     "On arrival day：DDP stays lit up into the night, so you can take a short walk even if you arrive late."
     ]
    ],
    [
-    "Common questions: Incheon Airport to Dongdaemun",
+    "Common requests for Incheon Airport to Dongdaemun transfers",
     [
-     "Many people search by hotel name, such as Sotetsu Hotel, Sotetsu Hotels, The Splaisir and Hotel Skypark Dongdaemun. Whatever your hotel, just send us its name or address and we will take you to the front entrance.",
-     "First and last service times for the AREX airport railroad and airport limousine buses vary by route and season, so check the official timetables. Immigration and baggage claim at Incheon Airport can take a while, so a flight landing just before the last departure may not make it.",
-     "At Incheon Airport, arrivals are on the 1st floor and departures on the 3rd floor, while the AREX station and limousine bus stops are in the Transportation Center (B1). With a transfer, we meet you at the arrivals exit, so there is no need to hunt around the airport."
+     "Sotetsu Hotel, Sotetsu Hotels, Splaisir, Hotel Skypark Dongdaemun or any other hotel: just send us the name or address and we will take you to the entrance.",
+     "Kuma Travel transfers run around your flight's arrival time. Even if immigration or baggage claim at Incheon Airport takes a while, you can get to your hotel with no schedule to worry about.",
+     "At Incheon Airport, the arrivals hall is on the 1st floor and the departures hall is on the 3rd floor. We meet at the hall exit, so there is no need to search around the airport."
     ]
    ]
   ],
   "table": [
    [
-    "Option",
-    "Approx. fare",
-    "Transfers",
-    "With lots of luggage",
-    "Late night"
+    "Vehicle",
+    "Passengers",
+    "Luggage",
+    "Price"
    ],
    [
-    "Train",
-    "KRW 9,500 (express), etc.",
-    "1 transfer",
-    "Station stairs and transfers are hard",
-    "Not after the last train"
+    "Solati",
+    "7 to 15",
+    "15 or more",
+    "Contact us"
    ],
    [
-    "Airport limousine bus",
-    "About KRW 17,000",
-    "Walk from the stop",
-    "Bags go in the luggage hold",
-    "Not after the last bus"
-   ],
-   [
-    "Regular taxi",
-    "KRW 60,000–75,000",
-    "None",
-    "Small trunk",
-    "20–40% surcharge"
-   ],
-   [
-    "Kuma Travel transfer",
-    "KRW 150,000",
-    "None (to the door)",
-    "4–5 large cases OK",
-    "Same price"
+    "Staria",
+    "Up to 6",
+    "4 to 5 large",
+    "KRW 150,000 (fixed price)"
    ]
   ],
   "flow": [
    [
     "Arrival",
-    "At both Terminals 1 and 2, we wait at the arrivals hall exit on the 1st floor holding a sign with your name."
+    "At both Terminal 1 and Terminal 2, we wait at the arrivals hall exit on the 1st floor with a board showing your name."
    ],
    [
-    "Drive",
-    "We load your luggage and head to your Dongdaemun hotel: 58.1km from Terminal 1, about 58 minutes without traffic."
+    "Ride",
+    "We load your luggage and head to your Dongdaemun hotel. It is 58.1 km from Terminal 1, about 58 minutes without traffic."
    ],
    [
     "Hotel",
-    "Drop-off at the front entrance. The DDP light-up runs into the evening, so you can take a short stroll even after a late arrival."
+    "Drop-off at the hotel entrance. DDP stays lit up into the night, so you can take a short walk even if you arrive late."
    ]
   ],
   "faq": [
    [
-    "How much is a taxi from Incheon Airport to Dongdaemun?",
-    "Regular taxis are metered, and a ride to Dongdaemun Design Plaza (DDP) costs roughly KRW 60,000–75,000 (estimate based on fares as of November 2026). A surcharge applies from 22:00 to 4:00. The Kuma Travel transfer is a flat KRW 150,000 (Staria up to 6 passengers, price for 1 vehicle) and does not change with the time of day or traffic."
+    "How much is a transfer from Incheon Airport to Dongdaemun?",
+    "Kuma Travel's transfer is a fixed KRW 150,000 (Staria, up to 6 people, price per vehicle). The price is set when you book and does not change late at night, early in the morning or in traffic. A round-trip booking gets 10% off the total."
    ],
    [
-    "How long does it take by car from Incheon Airport to Dongdaemun?",
-    "With no traffic, plan on about 58 minutes from Terminal 1 (58.1km) and about 59 minutes from Terminal 2 (63.4km). Morning and evening rush hours and weekend afternoons can take longer."
+    "How long is the drive from Incheon Airport to Dongdaemun?",
+    "Without traffic, allow about 58 minutes (58.1 km) from Terminal 1 and about 59 minutes (63.4 km) from Terminal 2. It can take longer during morning and evening rush hours and on weekend afternoons."
    ],
    [
-    "Can I get to Dongdaemun if I land at Incheon Airport late at night?",
-    "The AREX airport railroad and airport limousine buses run less often late at night and stop entirely for part of the night. The wholesale fashion malls stay open from late night until dawn, so the area is lively even in the small hours. Kuma Travel transfers wait for your flight, so even after a late arrival we take you to your hotel at the same price."
+    "If I land at Incheon Airport late at night, can you still take me to Dongdaemun?",
+    "Yes. The driver waits for your flight and takes you to your hotel at the same price, even for a late-night arrival. The wholesale fashion malls open from late at night until dawn, so the area stays lively through the night."
    ],
    [
-    "Can I get from Dongdaemun to Incheon Airport in time for an early-morning flight?",
-    "Yes. We can arrange pickups before the first train runs. For a 7:00 flight, for example, plan to leave Dongdaemun around 2:30. We work backward from your flight and road conditions to suggest a pickup time."
+    "Can you get me between Dongdaemun and Incheon Airport in time for an early-morning flight?",
+    "Yes. We pick you up at your hotel even very early in the morning. For a 7:00 flight, for example, plan to leave Dongdaemun around 2:30. We work back from your flight and road conditions to suggest a pickup time."
    ],
    [
-    "How do I book a transfer between Incheon Airport and Dongdaemun?",
-    "Send us your date, flight number, group size and Dongdaemun hotel name via LINE, phone, email or the inquiry form on our site. Booking is handled in Japanese and Korean."
+    "How do I book a transfer from Incheon Airport to Dongdaemun?",
+    "Send us your date, flight number, group size and Dongdaemun hotel name by LINE, phone, email or the contact form on this site (Japanese and Korean)."
    ]
   ],
-  "img_alt": "Dongdaemun scenery",
-  "label": "Incheon Airport to Dongdaemun",
-  "_src": "ec4726388f5c6d8e82e6a2a20acbe259"
+  "img_alt": "View of Dongdaemun",
+  "label": "How to Get from Incheon Airport to Dongdaemun",
+  "_src": "45c9d1adff22fa4056e1d984627f81c2"
  },
  "icn-gangnam-ikikata": {
-  "title": "Incheon Airport ⇄ Gangnam｜Train, Bus, Taxi and Transfer Compared｜Kuma Travel",
-  "desc": "Heading to Gangnam Station or Sinnonhyeon? Times and fares from Incheon Airport to Gangnam, from train (1 transfer) to transfer. 60.0km, about 59 min by car.",
-  "h1": "Incheon Airport to Gangnam｜Travel Times and Fares",
-  "lead": "Heading to Gangnam Station or Sinnonhyeon? Here is which way to get from Incheon Airport to Gangnam works best, from the train (1 transfer) to a private transfer, with times and fares.",
+  "title": "Incheon Airport ⇄ Gangnam｜Direct Transfer to Your Hotel Door｜Kuma Travel",
+  "desc": "Heading to Gangnam Station or Sinnonhyeon? How the Incheon Airport to Gangnam transfer works and how long it takes: 60.0 km, about 59 min by car.",
+  "h1": "How to Get from Incheon Airport to Gangnam｜Easy Fixed-Price Transfer",
+  "lead": "Heading to Gangnam Station or Sinnonhyeon? Leave your luggage at the hotel and travel light. Here is how the Incheon Airport to Gangnam transfer works and how long it takes.",
   "box": [
    [
     "From Terminal 1",
-    "60.0km, about 59 min by car (estimate)"
+    "60.0 km, about 59 min by car (estimate)"
    ],
    [
     "From Terminal 2",
-    "65.3km, about 60 min by car (estimate)"
+    "65.3 km, about 60 min by car (estimate)"
    ],
    [
     "Kuma Travel transfer",
-    "KRW 150,000 (flat rate, 1 vehicle), same price late at night and early morning"
+    "KRW 150,000 (per vehicle, fixed price), same price late at night and early in the morning"
    ],
    [
-    "Regular taxi",
-    "KRW 62,000–77,000 (estimate, late-night surcharge extra)"
+    "Round-trip booking",
+    "10% off the total"
+   ],
+   [
+    "Vehicle",
+    "Staria, up to 6 people, 4 to 5 large suitcases"
    ]
   ],
   "secs": [
    [
-    "4 ways to get from Incheon Airport to Gangnam",
+    "Going direct from Incheon Airport to Gangnam",
     [
-     "Rail, 1 change：By train, the usual route is the AREX airport railroad to Gimpo Airport, then a Line 9 express toward Sinnonhyeon. Airport limousine buses also serve major Gangnam hotels.",
-     "Limousine bus：Airport limousine buses run from Incheon Airport toward Gangnam, and you walk from the stop to your hotel. The fare is around KRW 17,000.",
-     "Taxi：Board at the taxi stand right outside the arrivals hall. Expect about KRW 62,000–77,000 (estimate based on fares as of November 2026, late-night surcharge extra).",
-     "Transfer：No changes from the arrivals hall exit to your hotel entrance. The price is a flat KRW 150,000 (1 vehicle). Gangnam covers a wide area, and travel time can differ by 10 minutes or more depending on whether your hotel is near Gangnam Station, Sinnonhyeon or Apgujeong."
+     "Booking：Send us your date, flight number and Gangnam hotel name by LINE, phone or email (Japanese and Korean).",
+     "Meet and greet：At both Terminal 1 and Terminal 2, we wait at the arrivals hall exit on the 1st floor with a board showing your name.",
+     "The ride：We load your luggage and head to Gangnam. It is 60.0 km from Terminal 1, about 59 minutes without traffic.",
+     "Price：Fixed price of KRW 150,000 (per vehicle). Gangnam covers a wide area, and the ride can vary by 10 minutes or more depending on whether your hotel is near Gangnam Station, Sinnonhyeon or Apgujeong."
     ]
    ],
    [
-    "Recommendations by situation",
+    "Tips for your situation",
     [
-     "Late arrival：Gangnam-daero can stay congested late into the night, especially on Fridays. With a transfer, you never have to worry about the late-night taxi surcharge (20–40%).",
-     "Group travel：A Staria seats 6 passengers plus 4–5 large suitcases. 4 travelers sharing the vehicle pay KRW 37,500 each.",
-     "First visit：If you have a beauty clinic appointment, scout the area around Gangnam Station on arrival day so you will not get lost the next morning. Arriving rested means you can start sightseeing from the day you arrive.",
-     "Traveling light：By train, the usual route is the AREX airport railroad to Gimpo Airport, then a Line 9 express toward Sinnonhyeon. The train is the cheapest option."
+     "Late arrivals：Gangnam-daero can stay congested until late, especially on Friday nights. We take you to your hotel at the same price, even late at night.",
+     "Group trips：A Staria carries 6 people and 4 to 5 large suitcases together. That is KRW 37,500 per person for 4.",
+     "First visit：If you have a beauty clinic appointment, scouting the Gangnam Station area on arrival day helps you avoid getting lost the next day. With an easy ride in, you can start sightseeing on the day you arrive.",
+     "Solo travelers：Genesis VIP transfers are also available. Please contact us for the price."
     ]
    ],
    [
     "Estimated hotel arrival by flight time",
     [
-     "From Incheon Airport, the route crosses Yeongjong Bridge or Incheon Bridge and enters Seoul via the Incheon International Airport Expressway. For Gangnam, it usually continues along Olympic-daero (south of the Han River), detouring onto city streets when the riverside road is congested.",
+     "From Incheon Airport, we cross the Yeongjong Bridge or Incheon Bridge and enter Seoul on the Incheon International Airport Expressway. To reach Gangnam we usually continue on Olympic-daero (south of the Han River), and we detour onto city streets when the riverside road is busy.",
      "9:00 arrival：at your Gangnam hotel around 11:20",
      "13:00 arrival：at your Gangnam hotel around 15:20",
      "17:00 arrival：at your Gangnam hotel around 19:20",
      "21:00 arrival：at your Gangnam hotel around 23:00",
      "23:00 arrival：at your Gangnam hotel around 1:00",
-     "Estimates allow about 50 minutes for immigration and baggage claim, with daytime driving times multiplied by 1.4 for traffic."
+     "These estimates allow about 50 minutes for immigration and baggage claim, and multiply daytime drive times by 1.4 for traffic."
     ]
    ],
    [
     "Departure day：Gangnam to Incheon Airport",
     [
-     "On the way back, we meet you in your Gangnam hotel lobby and drop you off in front of the Incheon Airport departures hall (3rd floor). Book a round trip and get 10% off the total.",
-     "Going back by train means 1 transfer. Rather than hauling your bags around after check-out, heading straight from the hotel to the airport makes timing easier to predict.",
+     "On the way back, we wait in the lobby of your Gangnam hotel and drive you to the front of the Incheon Airport departures hall (3rd floor). A round-trip booking gets 10% off the total.",
+     "With no changes between the hotel lobby and the departures hall, the trip after check-out is easy to time and you have no luggage worries.",
      "8:00 departure：leave Gangnam around 3:30",
      "11:00 departure：leave Gangnam around 6:30",
      "14:00 departure：leave Gangnam around 9:30",
      "18:00 departure：leave Gangnam around 13:30",
      "21:00 departure：leave Gangnam around 16:30",
-     "Estimates assume arriving at the airport 3 hours before an international flight, with driving times multiplied by 1.4 for traffic."
+     "These estimates assume arriving at the airport 3 hours before an international flight, and multiply drive times by 1.4 for traffic."
     ]
    ],
    [
     "About the Gangnam area",
     [
-     "The business and beauty-clinic district south of the Han River, spread across Gangnam Station, Sinnonhyeon, Apgujeong and more. Highlights include Gangnam Station, Sinnonhyeon, Apgujeong Rodeo and Garosu-gil. Nearby areas are Samseong/COEX (about 3.2km), Itaewon (about 5.0km) and Seongsu (about 5.8km).",
-     "On arrival day：If you have a beauty clinic appointment, scout the area around Gangnam Station on arrival day so you will not get lost the next morning."
+     "A business and beauty clinic district south of the Han River, spread widely across Gangnam Station, Sinnonhyeon, Apgujeong and more. Main sights include Gangnam Station, Sinnonhyeon, Apgujeong Rodeo and Garosu-gil. Nearby areas are Samseong/COEX (about 3.2 km), Itaewon (about 5.0 km) and Seongsu (about 5.8 km).",
+     "On arrival day：If you have a beauty clinic appointment, scouting the Gangnam Station area on arrival day helps you avoid getting lost the next day."
     ]
    ],
    [
-    "Common questions: Incheon Airport to Gangnam",
+    "Common requests for Incheon Airport to Gangnam transfers",
     [
-     "Many people search by hotel name, such as Toyoko Inn Gangnam, Toyoko Inn and Dormy Inn. Whatever your hotel, just send us its name or address and we will take you to the front entrance.",
-     "First and last service times for the AREX airport railroad and airport limousine buses vary by route and season, so check the official timetables. Immigration and baggage claim at Incheon Airport can take a while, so a flight landing just before the last departure may not make it.",
-     "From Incheon Airport Terminal 1 to Gangnam is 60.0km by road, about 59 minutes with no traffic. On weekdays from 7:00–9:00 and 17:00–19:00, and on weekend afternoons, city traffic builds up and the trip can take about 1.5× as long.",
-     "At Incheon Airport, arrivals are on the 1st floor and departures on the 3rd floor, while the AREX station and limousine bus stops are in the Transportation Center (B1). With a transfer, we meet you at the arrivals exit, so there is no need to hunt around the airport."
+     "Toyoko Inn Gangnam, Toyoko Inn, Dormy Inn or any other hotel: just send us the name or address and we will take you to the entrance.",
+     "Kuma Travel transfers run around your flight's arrival time. Even if immigration or baggage claim at Incheon Airport takes a while, you can get to your hotel with no schedule to worry about.",
+     "Incheon Airport to Gangnam is 60.0 km by road from Terminal 1, about 59 minutes without traffic. City traffic builds on weekdays from 7:00 to 9:00 and 17:00 to 19:00 and on weekend afternoons, and the ride can take about 1.5 times as long, but the price stays the same.",
+     "At Incheon Airport, the arrivals hall is on the 1st floor and the departures hall is on the 3rd floor. We meet at the hall exit, so there is no need to search around the airport."
     ]
    ]
   ],
   "table": [
    [
-    "Option",
-    "Approx. fare",
-    "Transfers",
-    "With lots of luggage",
-    "Late night"
+    "Vehicle",
+    "Passengers",
+    "Luggage",
+    "Price"
    ],
    [
-    "Train",
-    "KRW 9,500 (express), etc.",
-    "1 transfer",
-    "Station stairs and transfers are hard",
-    "Not after the last train"
+    "Solati",
+    "7 to 15",
+    "15 or more",
+    "Contact us"
    ],
    [
-    "Airport limousine bus",
-    "About KRW 17,000",
-    "Walk from the stop",
-    "Bags go in the luggage hold",
-    "Not after the last bus"
-   ],
-   [
-    "Regular taxi",
-    "KRW 62,000–77,000",
-    "None",
-    "Small trunk",
-    "20–40% surcharge"
-   ],
-   [
-    "Kuma Travel transfer",
-    "KRW 150,000",
-    "None (to the door)",
-    "4–5 large cases OK",
-    "Same price"
+    "Staria",
+    "Up to 6",
+    "4 to 5 large",
+    "KRW 150,000 (fixed price)"
    ]
   ],
   "flow": [
    [
     "Arrival",
-    "At both Terminals 1 and 2, we wait at the arrivals hall exit on the 1st floor holding a sign with your name."
+    "At both Terminal 1 and Terminal 2, we wait at the arrivals hall exit on the 1st floor with a board showing your name."
    ],
    [
-    "Drive",
-    "We load your luggage and head to your Gangnam hotel: 60.0km from Terminal 1, about 59 minutes without traffic."
+    "Ride",
+    "We load your luggage and head to your Gangnam hotel. It is 60.0 km from Terminal 1, about 59 minutes without traffic."
    ],
    [
     "Hotel",
-    "Drop-off at the front entrance. If you have a beauty clinic appointment, scout the area around Gangnam Station on arrival day so you will not get lost the next morning."
+    "Drop-off at the hotel entrance. If you have a beauty clinic appointment, scouting the Gangnam Station area on arrival day helps you avoid getting lost the next day."
    ]
   ],
   "faq": [
    [
-    "How long does it take by car from Incheon Airport to Gangnam?",
-    "With no traffic, plan on about 59 minutes from Terminal 1 (60.0km) and about 60 minutes from Terminal 2 (65.3km). Morning and evening rush hours and weekend afternoons can take longer."
+    "How long is the drive from Incheon Airport to Gangnam?",
+    "Without traffic, allow about 59 minutes (60.0 km) from Terminal 1 and about 60 minutes (65.3 km) from Terminal 2. It can take longer during morning and evening rush hours and on weekend afternoons."
    ],
    [
-    "Can I get to Gangnam if I land at Incheon Airport late at night?",
-    "The AREX airport railroad and airport limousine buses run less often late at night and stop entirely for part of the night. Gangnam-daero can stay congested late into the night, especially on Fridays. Kuma Travel transfers wait for your flight, so even after a late arrival we take you to your hotel at the same price."
+    "If I land at Incheon Airport late at night, can you still take me to Gangnam?",
+    "Yes. The driver waits for your flight and takes you to your hotel at the same price, even for a late-night arrival. Gangnam-daero can stay congested until late, especially on Friday nights."
    ],
    [
-    "What languages can I use?",
-    "From booking to day-of contact, we communicate via LINE, phone or email (Japanese and Korean). Drivers on the day speak simple Japanese."
+    "Can I communicate in Japanese?",
+    "Yes. From booking to contact on the day, we can help you in Japanese on LINE. Drivers also speak simple Japanese on the day."
    ],
    [
     "What happens if my flight is delayed?",
     "We track your flight's arrival time and wait for you. There is no extra charge for delays."
    ]
   ],
-  "img_alt": "Gangnam scenery",
-  "label": "Incheon Airport to Gangnam",
-  "_src": "22586ba25dce134577d879bc6bb5dd62"
+  "img_alt": "View of Gangnam",
+  "label": "How to Get from Incheon Airport to Gangnam",
+  "_src": "a4865917f45191ef0b738cfb3c29850a"
  },
  "icn-shinya": {
-  "title": "Getting from Incheon Airport After a Late-Night Arrival｜Kuma Travel",
-  "desc": "Late flights into Incheon Airport mean racing the last trains and buses. How to get into the city calmly and where to stay. 54.5km, about 54 min by car.",
-  "h1": "Landing at Incheon Airport Late at Night? Getting into the City",
-  "lead": "Late flights into Incheon Airport mean racing against the last trains and buses. Here is how to get into the city without stress after a late-night arrival, and how to choose where to stay.",
+  "title": "Same-Price Transfer for Late-Night Arrivals at Incheon Airport｜Kuma Travel",
+  "desc": "Landing late at Incheon Airport? Kuma Travel waits for your flight and takes you to your hotel at the same price. 54.5 km, about 54 min by car.",
+  "h1": "Getting Around After a Late-Night Arrival at Incheon Airport",
+  "lead": "Even if you land at Incheon Airport late at night, a Kuma Travel transfer waits for your flight and takes you to your hotel at the same price.",
   "box": [
    [
     "From Terminal 1",
-    "54.5km, about 54 min by car (estimate)"
+    "54.5 km, about 54 min by car (estimate)"
    ],
    [
     "From Terminal 2",
-    "59.8km, about 55 min by car (estimate)"
+    "59.8 km, about 55 min by car (estimate)"
    ],
    [
     "Kuma Travel transfer",
-    "KRW 150,000 (flat rate, 1 vehicle), same price late at night and early morning"
+    "KRW 150,000 (per vehicle, fixed price), same price late at night and early in the morning"
    ],
    [
-    "Regular taxi",
-    "KRW 57,000–71,000 to Seoul City Hall (estimate, late-night surcharge extra)"
+    "Round-trip booking",
+    "10% off the total"
+   ],
+   [
+    "Vehicle",
+    "Staria, up to 6 people, 4 to 5 large suitcases"
    ]
   ],
   "secs": [
    [
-    "Your options after a late arrival",
+    "Same price for late-night arrivals",
     [
-     "The AREX airport railroad stops running late at night, and airport limousine buses are limited to a few routes and departures. Immigration and baggage claim can take about 1 hour, so avoid cutting connections close to your arrival time.",
-     "Taxis are available late at night, but a 20–40% late-night surcharge applies from 22:00 to 4:00.",
-     "With a transfer, we wait for your flight. Kuma Travel's Incheon Airport transfer is a flat KRW 150,000 to central Seoul (Staria up to 6 passengers, 1 vehicle). The price stays the same late at night, early in the morning and in traffic, and a round-trip booking gets 10% off."
+     "Immigration and baggage claim can take about 1 hour, but we track your flight's arrival time and wait for you. There is no extra charge for delays.",
+     "Kuma Travel's Incheon Airport transfer is a fixed KRW 150,000 to central Seoul (Staria, up to 6 people, per vehicle). The price stays the same late at night, early in the morning and in traffic, and a round-trip booking gets 10% off."
     ]
    ],
    [
-    "Stay near the airport or head into the city?",
+    "Preparing for a late arrival",
     [
-     "If you land late and are not rushing off early the next morning, staying at a hotel near the airport is one option. If you have already booked a hotel in the city, a transfer straight there means no worrying about the late-night taxi surcharge.",
-     "On late-arrival days, currency exchange counters and convenience stores keep shorter hours. If you need cash, bring a small amount of won from home or make sure you can use an airport ATM. Transfers are paid on the day in cash (KRW or JPY) or by credit card."
+     "If you have a hotel booked in the city, the transfer takes you straight there. If you don't need an early start the next morning, you can also stay near the airport and we will pick you up the next day.",
+     "Late at night, currency exchange counters and convenience stores keep shorter hours. You can pay for the transfer on the day in cash (won or yen) or by credit card."
     ]
    ],
    [
-    "Distance and time from Incheon Airport to major areas",
+    "How a late-night arrival works",
     [
-     "Euljiro：55.9km, about 56 min by car, taxi approx. KRW 58,000–72,000",
-     "Namdaemun：55.0km, about 55 min by car, taxi approx. KRW 58,000–71,000",
-     "Itaewon：55.0km, about 56 min by car, taxi approx. KRW 58,000–71,000",
-     "Samseong/COEX：63.4km, about 63 min by car, taxi approx. KRW 65,000–80,000",
-     "Myeongdong：55.6km, about 55 min by car, taxi approx. KRW 58,000–72,000",
-     "Gangnam：60.0km, about 59 min by car, taxi approx. KRW 62,000–77,000",
-     "Distances are road distances from Terminal 1, and times assume no traffic. Taxi fares are estimates based on metered rates as of November 2026 and exclude the late-night surcharge. Kuma Travel transfers are a flat KRW 150,000 to any area in central Seoul."
+     "Booking：Send us your flight number, group size and hotel name on LINE (Japanese and Korean).",
+     "Meet and greet：At both Terminal 1 and Terminal 2, we wait at the arrivals hall exit on the 1st floor with a board showing your name.",
+     "The ride：The driver helps load and unload your luggage. Roads are often clear at night, so you can get to bed at your hotel sooner.",
+     "Kids/wheelchair：Child seats are available free of charge. We also help with loading a wheelchair and getting in and out at no extra charge."
+    ]
+   ],
+   [
+    "Distance and drive time from Incheon Airport to main areas",
+    [
+     "Euljiro：55.9 km, about 56 min by car",
+     "Namdaemun：55.0 km, about 55 min by car",
+     "Itaewon：55.0 km, about 56 min by car",
+     "Samseong/COEX：63.4 km, about 63 min by car",
+     "Myeongdong：55.6 km, about 55 min by car",
+     "Gangnam：60.0 km, about 59 min by car",
+     "Distances are by road from Terminal 1 and times are estimates without traffic. Kuma Travel transfers are a fixed KRW 150,000 to any area of Seoul."
     ]
    ]
   ],
@@ -456,123 +448,127 @@
   "flow": [
    [
     "Booking",
-    "Send us your flight number, group size and hotel name via LINE."
+    "Send us your flight number, group size and hotel name on LINE."
    ],
    [
     "Arrival",
-    "At both Terminals 1 and 2, we wait at the arrivals hall exit on the 1st floor holding a sign with your name. Korean Air and some other airlines arrive at Terminal 2, so please give us your flight number when you book."
+    "At both Terminal 1 and Terminal 2, we wait at the arrivals hall exit on the 1st floor with a board showing your name. Korean Air and some other airlines arrive at Terminal 2, so please tell us your flight number when you book."
    ],
    [
-    "Drive",
-    "We load your luggage and head to the hotel, with no changes."
+    "Ride",
+    "We load your luggage and head to your hotel, with no changes along the way."
    ],
    [
     "Hotel",
-    "Drop-off at the front entrance. You can leave your bags at the front desk even before check-in."
+    "Drop-off at the hotel entrance. You can leave your luggage at the front desk even before check-in."
    ]
   ],
   "faq": [
    [
-    "Can I get to central Seoul if I land at Incheon Airport late at night?",
-    "The AREX airport railroad and airport limousine buses run less often late at night and stop entirely for part of the night. Kuma Travel transfers wait for your flight, so even after a late arrival we take you to your hotel at the same price."
+    "If I land at Incheon Airport late at night, can you still take me to central Seoul?",
+    "Yes. The driver waits for your flight and takes you to your hotel at the same price, even for a late-night arrival."
    ],
    [
-    "What languages can I use?",
-    "From booking to day-of contact, we communicate via LINE, phone or email (Japanese and Korean). Drivers on the day speak simple Japanese."
+    "Can I go from Incheon Airport to central Seoul without changing vehicles?",
+    "Yes. A Kuma Travel transfer takes you in one vehicle from the Incheon Airport arrivals hall to your hotel entrance. The price is a fixed KRW 150,000 (Staria, up to 6 people, price per vehicle)."
+   ],
+   [
+    "Can I communicate in Japanese?",
+    "Yes. From booking to contact on the day, we can help you in Japanese on LINE. Drivers also speak simple Japanese on the day."
    ],
    [
     "What happens if my flight is delayed?",
     "We track your flight's arrival time and wait for you. There is no extra charge for delays."
-   ],
-   [
-    "How do I pay?",
-    "Pay on the day in cash (KRW or JPY) or by credit card."
    ]
   ],
   "img_alt": "Seoul at night",
-  "label": "Landing at Incheon Airport Late at Night? Getting into the City",
-  "_src": "d39afed4c0a099b6334c17243b563b68"
+  "label": "Getting Around After a Late-Night Arrival at Incheon Airport",
+  "_src": "da579e78b55eb522d32f46dbd8821b9f"
  },
  "gmp-seoul-taxi": {
-  "title": "Gimpo Airport ⇄ Central Seoul Taxi Fares and Times｜Flat-Rate Transfer KRW 80,000｜Kuma Travel",
-  "desc": "Rather not change trains with a suitcase? Taxi fares and times from Gimpo Airport to central Seoul, based on distance to City Hall. 21.6km, about 25 min.",
-  "h1": "How Much Is a Taxi from Gimpo Airport to Central Seoul?",
-  "lead": "From the airport to your hotel without changing trains, suitcase in tow. We calculated the taxi fare and travel time from Gimpo Airport to central Seoul based on the road distance to Seoul City Hall.",
+  "title": "Gimpo Airport ⇄ Central Seoul Transfer Price and Time｜Fixed Price KRW 80,000｜Kuma Travel",
+  "desc": "Fixed-price transfer from Gimpo Airport to central Seoul, with no walking with suitcases. 21.6 km to Seoul City Hall, about 25 min by car.",
+  "h1": "Gimpo Airport to Central Seoul Transfer Price｜Fixed Price KRW 80,000",
+  "lead": "Don't want to walk with your suitcases between the airport and your hotel? This guide covers the price and time of a fixed-price transfer from Gimpo Airport to central Seoul, along with the road distance to Seoul City Hall.",
   "box": [
    [
     "From the International Terminal",
-    "21.6km, about 25 min by car (estimate)"
+    "21.6 km, about 25 min by car (estimate)"
    ],
    [
     "Kuma Travel transfer",
-    "KRW 80,000 (flat rate, 1 vehicle), same price late at night and early morning"
+    "KRW 80,000 (per vehicle, fixed price), same price late at night and early in the morning"
    ],
    [
-    "Regular taxi",
-    "KRW 22,000–28,000 (estimate, late-night surcharge extra)"
+    "Round-trip booking",
+    "10% off the total"
+   ],
+   [
+    "Vehicle",
+    "Staria, up to 6 people, 4 to 5 large suitcases"
    ]
   ],
   "secs": [
    [
-    "Estimated taxi fares from Gimpo Airport to central Seoul",
+    "Gimpo Airport to central Seoul transfer price",
     [
-     "The road distance from the International Terminal to Seoul City Hall is 21.6km. The route from Gimpo Airport to central Seoul is mostly on regular city roads, so the taxi fare is much lower than from Incheon Airport. Based on metered rates as of November 2026 (KRW 4,800 base fare plus distance and time charges), a ride to central Seoul costs about KRW 22,000–28,000.",
-     "From 22:00 to 4:00, a late-night surcharge (20–40% depending on the hour) applies. Have your hotel's address ready to show in Korean to avoid any confusion.",
-     "The Kuma Travel transfer is a flat KRW 80,000, unchanged late at night, early in the morning or in traffic. 4 travelers sharing the vehicle pay KRW 20,000 each, which can be cheaper than splitting into 2 taxis."
+     "The road distance to Seoul City Hall is 21.6 km from the International Terminal. Kuma Travel's transfer is a fixed KRW 80,000 per vehicle.",
+     "The price is set when you book and does not change late at night, early in the morning or in traffic. Just tell us your hotel name in Seoul and we will take you to the entrance.",
+     "KRW 20,000 per person for 4. A round-trip booking gets 10% off the total."
     ]
    ],
    [
-    "Regular taxi vs. flat-rate transfer",
+    "Why travelers choose Kuma Travel transfers",
     [
-     "At Gimpo Airport, watch out for unlicensed touts who approach you in the arrivals hall. Always use the official taxi stand and show the driver your hotel name in Korean.",
-     "At Gimpo Airport, the taxi stand is close to the arrivals hall and waits tend to be short. With a transfer, we meet you at the arrivals hall exit and walk you straight to the car. The City Hall and Gwanghwamun area has many one-way streets and roadworks, so checking where your hotel's drop-off point is in advance makes things smoother."
+     "From booking to contact on the day, everything is handled on LINE in Japanese and Korean. There is no need to look up your hotel's Korean name in advance.",
+     "The driver helps load and unload your luggage. We track flight delays ourselves, and there is no extra charge for them. One-way streets and roadworks are common around City Hall and Gwanghwamun, so checking your hotel's drop-off area in advance keeps things smooth."
     ]
    ],
    [
-    "Recommendations by situation",
+    "Tips for your situation",
     [
-     "Late arrival：Around Gwanghwamun, shops close early in the evening and it gets hard to hail a taxi. With a transfer, you never have to worry about the late-night taxi surcharge (20–40%).",
-     "Group travel：A Staria seats 6 passengers plus 4–5 large suitcases. 4 travelers sharing the vehicle pay KRW 20,000 each.",
-     "First visit：On arrival day, a classic plan is a walk along Cheonggyecheon and the night view of Gwanghwamun Square. Arriving rested means you can start sightseeing from the day you arrive.",
-     "Traveling light：Subway Line 5 goes to Gwanghwamun and Jongno with no transfers, and the AREX airport railroad reaches Seoul Station in about 20 minutes. The train is the cheapest option."
+     "Late arrivals：Shops around Gwanghwamun close fairly early in the evening. We take you to your hotel at the same price, even late at night.",
+     "Group trips：A Staria carries 6 people and 4 to 5 large suitcases together. That is KRW 20,000 per person for 4.",
+     "First visit：A classic arrival-day plan is a walk along Cheonggyecheon Stream followed by the night view at Gwanghwamun Square. With an easy ride in, you can start sightseeing on the day you arrive.",
+     "Solo travelers：Genesis VIP transfers are also available. Please contact us for the price."
     ]
    ],
    [
     "Estimated hotel arrival by flight time",
     [
-     "From Gimpo Airport, the route exits on the east side of the airport and heads into central Seoul via roads such as Gangbyeonbuk-ro (north of the Han River). Much of the way is off the expressway, so time spent at traffic lights largely decides the travel time.",
-     "9:00 arrival：at your hotel in central Seoul around 10:30",
-     "13:00 arrival：at your hotel in central Seoul around 14:30",
-     "17:00 arrival：at your hotel in central Seoul around 18:30",
-     "21:00 arrival：at your hotel in central Seoul around 22:20",
-     "23:00 arrival：at your hotel in central Seoul around 0:20",
-     "Estimates allow about 50 minutes for immigration and baggage claim, with daytime driving times multiplied by 1.4 for traffic."
+     "From Gimpo Airport, we leave on the east side of the airport and head to central Seoul on roads such as Gangbyeonbuk-ro (north of the Han River). Much of the route is off the expressway, so time at traffic lights affects the drive.",
+     "9:00 arrival：at your central Seoul hotel around 10:30",
+     "13:00 arrival：at your central Seoul hotel around 14:30",
+     "17:00 arrival：at your central Seoul hotel around 18:30",
+     "21:00 arrival：at your central Seoul hotel around 22:20",
+     "23:00 arrival：at your central Seoul hotel around 0:20",
+     "These estimates allow about 50 minutes for immigration and baggage claim, and multiply daytime drive times by 1.4 for traffic."
     ]
    ],
    [
-    "Departure day：Central Seoul to Gimpo Airport",
+    "Departure day：central Seoul to Gimpo Airport",
     [
-     "On the way back, we meet you in your hotel lobby in central Seoul and drop you off in front of the Gimpo Airport departures hall (International Terminal). Book a round trip and get 10% off the total.",
-     "Going back by train requires no transfers. Rather than hauling your bags around after check-out, heading straight from the hotel to the airport makes timing easier to predict.",
+     "On the way back, we wait in the lobby of your central Seoul hotel and drive you to the front of the Gimpo Airport departures hall (International Terminal). A round-trip booking gets 10% off the total.",
+     "With no changes between the hotel lobby and the departures hall, the trip after check-out is easy to time and you have no luggage worries.",
      "8:00 departure：leave central Seoul around 4:20",
      "11:00 departure：leave central Seoul around 7:20",
      "14:00 departure：leave central Seoul around 10:20",
      "18:00 departure：leave central Seoul around 14:20",
      "21:00 departure：leave central Seoul around 17:20",
-     "Estimates assume arriving at the airport 3 hours before an international flight, with driving times multiplied by 1.4 for traffic."
+     "These estimates assume arriving at the airport 3 hours before an international flight, and multiply drive times by 1.4 for traffic."
     ]
    ],
    [
-    "About central Seoul",
+    "About the central Seoul area",
     [
-     "The downtown core around Gyeongbokgung, Gwanghwamun and City Hall, with the city's highest concentration of hotels. Major hotels include Lotte Hotel Seoul, The Westin Josun Seoul, The Plaza and Four Seasons Hotel Seoul. Just tell us your hotel name and we will take you to its front entrance.",
-     "Drop-off tip：The City Hall and Gwanghwamun area has many one-way streets and roadworks, so checking where your hotel's drop-off point is in advance makes things smoother."
+     "The heart of the city around Gyeongbokgung, Gwanghwamun and City Hall, with the largest concentration of hotels. Major hotels include Lotte Hotel Seoul, The Westin Josun Seoul, The Plaza and Four Seasons Hotel Seoul. Just tell us your hotel name and we will take you to its entrance.",
+     "Drop-off tips：One-way streets and roadworks are common around City Hall and Gwanghwamun, so checking your hotel's drop-off area in advance keeps things smooth."
     ]
    ],
    [
-    "Common questions: Gimpo Airport to central Seoul",
+    "Common requests for Gimpo Airport to central Seoul transfers",
     [
-     "Ride-hailing apps (Kakao T, Uber, etc.) work at Gimpo Airport too, but you need to register a payment method in advance, and choosing a pickup point at the airport can be confusing. If you want to ride as soon as you land, queuing at the taxi stand or booking a transfer is the sure option."
+     "You can book Kuma Travel on LINE (Japanese and Korean), and when you land at Gimpo Airport the driver is waiting with a board showing your name. There is no need to use your phone after you arrive."
     ]
    ]
   ],
@@ -580,242 +576,233 @@
   "flow": [
    [
     "Arrival",
-    "We wait at the arrivals hall exit on the 1st floor of the International Terminal, holding a sign with your name."
+    "We wait at the arrivals hall exit on the 1st floor of the International Terminal with a board showing your name."
    ],
    [
-    "Drive",
-    "We load your luggage and head to your hotel in central Seoul: 21.6km from the International Terminal, about 25 minutes without traffic."
+    "Ride",
+    "We load your luggage and head to your central Seoul hotel. It is 21.6 km from the International Terminal, about 25 minutes without traffic."
    ],
    [
     "Hotel",
-    "Drop-off at the front entrance. On arrival day, a classic plan is a walk along Cheonggyecheon and the night view of Gwanghwamun Square."
+    "Drop-off at the hotel entrance. A classic arrival-day plan is a walk along Cheonggyecheon Stream followed by the night view at Gwanghwamun Square."
    ]
   ],
   "faq": [
    [
-    "Can I get to central Seoul if I land at Gimpo Airport late at night?",
-    "The AREX airport railroad and airport limousine buses run less often late at night and stop entirely for part of the night. Around Gwanghwamun, shops close early in the evening and it gets hard to hail a taxi. Kuma Travel transfers wait for your flight, so even after a late arrival we take you to your hotel at the same price."
+    "If I land at Gimpo Airport late at night, can you still take me to central Seoul?",
+    "Yes. The driver waits for your flight and takes you to your hotel at the same price, even for a late-night arrival. Shops around Gwanghwamun close fairly early in the evening."
    ],
    [
-    "How do I book a transfer between Gimpo Airport and central Seoul?",
-    "Send us your date, flight number, group size and hotel name in central Seoul via LINE, phone, email or the inquiry form on our site. Booking is handled in Japanese and Korean."
+    "How do I book a transfer from Gimpo Airport to central Seoul?",
+    "Send us your date, flight number, group size and central Seoul hotel name by LINE, phone, email or the contact form on this site (Japanese and Korean)."
    ],
    [
-    "What languages can I use?",
-    "From booking to day-of contact, we communicate via LINE, phone or email (Japanese and Korean). Drivers on the day speak simple Japanese."
+    "Can I communicate in Japanese?",
+    "Yes. From booking to contact on the day, we can help you in Japanese on LINE. Drivers also speak simple Japanese on the day."
    ],
    [
     "What happens if my flight is delayed?",
     "We track your flight's arrival time and wait for you. There is no extra charge for delays."
    ]
   ],
-  "img_alt": "Central Seoul scenery",
-  "label": "Gimpo Airport to central Seoul: taxi and transfer",
-  "_src": "347498e692612517bd162b8886ee03f8"
+  "img_alt": "View of central Seoul",
+  "label": "Gimpo Airport to Central Seoul Transfer and Price",
+  "_src": "05ee1d2c710d1319554b7f748c6ecb94"
  },
  "gmp-dongdaemun-ikikata": {
-  "title": "Gimpo Airport to Dongdaemun｜Train, Bus, Taxi and Transfer Compared｜Kuma Travel",
-  "desc": "4 ways from Gimpo Airport to Dongdaemun: train, bus, taxi and transfer. The train is direct. Compare fares, times and hassle. 25.2km, about 29 min by car.",
-  "h1": "Gimpo Airport to Dongdaemun｜Which Way Is Easiest?",
-  "lead": "There are 4 ways to get from Gimpo Airport to Dongdaemun: train, airport limousine bus, taxi and private transfer. The train requires no transfers. Compare fares, travel times and hassle to choose.",
+  "title": "How to Get from Gimpo Airport to Dongdaemun｜Direct Transfer to Your Hotel Door｜Kuma Travel",
+  "desc": "Gimpo Airport to your Dongdaemun hotel entrance with no changes, for a fixed KRW 80,000. 25.2 km, about 29 min by car.",
+  "h1": "How to Get from Gimpo Airport to Dongdaemun｜From Airport to Hotel",
+  "lead": "A Kuma Travel transfer takes you from Gimpo Airport to Dongdaemun with no changes along the way. We meet you at Gimpo Airport and drive you to the entrance of your Dongdaemun hotel for a fixed price of KRW 80,000.",
   "box": [
    [
     "From the International Terminal",
-    "25.2km, about 29 min by car (estimate)"
+    "25.2 km, about 29 min by car (estimate)"
    ],
    [
     "Kuma Travel transfer",
-    "KRW 80,000 (flat rate, 1 vehicle), same price late at night and early morning"
+    "KRW 80,000 (per vehicle, fixed price), same price late at night and early in the morning"
    ],
    [
-    "Regular taxi",
-    "KRW 25,000–32,000 (estimate, late-night surcharge extra)"
+    "Round-trip booking",
+    "10% off the total"
+   ],
+   [
+    "Vehicle",
+    "Staria, up to 6 people, 4 to 5 large suitcases"
    ]
   ],
   "secs": [
    [
-    "4 ways to get from Gimpo Airport to Dongdaemun",
+    "Going direct from Gimpo Airport to Dongdaemun",
     [
-     "Rail, direct：Subway Line 5 takes you to Dongdaemun History & Culture Park Station with no transfers.",
-     "Limousine bus：Airport limousine buses do run, but the city is close, so most people at this airport take the subway or a taxi. Subway Line 5 takes you to Dongdaemun History & Culture Park Station with no transfers.",
-     "Taxi：Board at the taxi stand right outside the arrivals hall. Expect about KRW 25,000–32,000 (estimate based on fares as of November 2026, late-night surcharge extra).",
-     "Transfer：No changes from the arrivals hall exit to your hotel entrance. The price is a flat KRW 80,000 (1 vehicle). Most Dongdaemun hotels are on main roads with the entrance close to the drop-off point, so even lots of luggage is easy."
+     "Booking：Send us your date, flight number and Dongdaemun hotel name by LINE, phone or email (Japanese and Korean).",
+     "Meet and greet：We wait at the arrivals hall exit on the 1st floor of the International Terminal with a board showing your name.",
+     "The ride：We load your luggage and head to Dongdaemun. It is 25.2 km from the International Terminal, about 29 minutes without traffic.",
+     "Price：Fixed price of KRW 80,000 (per vehicle). Many Dongdaemun hotels are on main roads, with the entrance close to the drop-off area, so even a lot of luggage is easy to manage."
     ]
    ],
    [
-    "When a transfer makes sense",
+    "When a transfer helps most",
     [
-     "Arriving late：So you can rest as soon as you reach your Dongdaemun hotel, we drive you from the arrivals hall to the hotel with no changes. The wholesale fashion malls stay open from late night until dawn, so the area is lively even in the small hours.",
-     "2+ with luggage：4 travelers sharing the vehicle pay KRW 20,000 each. The train has no transfers, so with suitcases the main effort is walking inside the stations.",
-     "Kids or seniors：We provide child seats free of charge, and there are no changes all the way to your Dongdaemun hotel entrance.",
-     "Traveling light：Subway Line 5 takes you to Dongdaemun History & Culture Park Station with no transfers. The train is the cheapest option."
+     "Late arrivals：We drive you straight from the arrivals hall to your Dongdaemun hotel so you can rest as soon as you get there. The wholesale fashion malls open from late at night until dawn, so the area stays lively through the night.",
+     "2+ or many bags：KRW 20,000 per person for 4. The driver helps carry your suitcases to the vehicle.",
+     "Families：Child seats are available free of charge, and the ride goes straight to the entrance of your Dongdaemun hotel with no changes.",
+     "Solo travelers：Genesis VIP transfers are also available. Please contact us for the price."
     ]
    ],
    [
     "Estimated hotel arrival by flight time",
     [
-     "From Gimpo Airport, the route exits on the east side of the airport and heads to Dongdaemun via roads such as Gangbyeonbuk-ro (north of the Han River). Much of the way is off the expressway, so time spent at traffic lights largely decides the travel time.",
+     "From Gimpo Airport, we leave on the east side of the airport and head to Dongdaemun on roads such as Gangbyeonbuk-ro (north of the Han River). Much of the route is off the expressway, so time at traffic lights affects the drive.",
      "9:00 arrival：at your Dongdaemun hotel around 10:40",
      "13:00 arrival：at your Dongdaemun hotel around 14:40",
      "17:00 arrival：at your Dongdaemun hotel around 18:40",
      "21:00 arrival：at your Dongdaemun hotel around 22:30",
      "23:00 arrival：at your Dongdaemun hotel around 0:30",
-     "Estimates allow about 50 minutes for immigration and baggage claim, with daytime driving times multiplied by 1.4 for traffic."
+     "These estimates allow about 50 minutes for immigration and baggage claim, and multiply daytime drive times by 1.4 for traffic."
     ]
    ],
    [
     "About the Dongdaemun area",
     [
-     "A district of DDP and fashion malls open late into the night, lively even if you arrive after midnight. Highlights include Dongdaemun Design Plaza (DDP), Gwangjang Market and Dongdaemun Fashion Town. Nearby areas are Euljiro (about 1.5km), Myeongdong (about 2.1km) and Jongno/Insadong (about 2.3km).",
-     "On arrival day：The DDP light-up runs into the evening, so you can take a short stroll even after a late arrival."
+     "A district of DDP and fashion malls that open until late, lively even if you arrive after midnight. Main sights include Dongdaemun Design Plaza (DDP), Gwangjang Market and Dongdaemun Fashion Town. Nearby areas are Euljiro (about 1.5 km), Myeongdong (about 2.1 km) and Jongno/Insadong (about 2.3 km).",
+     "On arrival day：DDP stays lit up into the night, so you can take a short walk even if you arrive late."
     ]
    ],
    [
-    "Common questions: Gimpo Airport to Dongdaemun",
+    "Common requests for Gimpo Airport to Dongdaemun transfers",
     [
-     "First and last service times for the AREX airport railroad and airport limousine buses vary by route and season, so check the official timetables. Immigration and baggage claim at Gimpo Airport can take a while, so a flight landing just before the last departure may not make it.",
-     "At Gimpo Airport's International Terminal, arrivals are on the 1st floor, and you reach Gimpo Airport Station (subway and AREX airport railroad) through an underground walkway. With a transfer, we meet you at the arrivals exit, so there is no need to hunt around the airport."
+     "Kuma Travel transfers run around your flight's arrival time. Even if immigration or baggage claim at Gimpo Airport takes a while, you can get to your hotel with no schedule to worry about.",
+     "At Gimpo Airport's International Terminal, the arrivals hall is on the 1st floor. We meet at the hall exit, so there is no need to search around the airport."
     ]
    ]
   ],
   "table": [
    [
-    "Option",
-    "Approx. fare",
-    "Transfers",
-    "With lots of luggage",
-    "Late night"
+    "Vehicle",
+    "Passengers",
+    "Luggage",
+    "Price"
    ],
    [
-    "Train",
-    "From about KRW 1,500",
-    "No transfers",
-    "Station stairs and platform walks",
-    "Not after the last train"
+    "Solati",
+    "7 to 15",
+    "15 or more",
+    "Contact us"
    ],
    [
-    "Airport limousine bus",
-    "Varies by route",
-    "Walk from the stop",
-    "Bags go in the luggage hold",
-    "Not after the last bus"
-   ],
-   [
-    "Regular taxi",
-    "KRW 25,000–32,000",
-    "None",
-    "Small trunk",
-    "20–40% surcharge"
-   ],
-   [
-    "Kuma Travel transfer",
-    "KRW 80,000",
-    "None (to the door)",
-    "4–5 large cases OK",
-    "Same price"
+    "Staria",
+    "Up to 6",
+    "4 to 5 large",
+    "KRW 80,000 (fixed price)"
    ]
   ],
   "flow": [
    [
     "Arrival",
-    "We wait at the arrivals hall exit on the 1st floor of the International Terminal, holding a sign with your name."
+    "We wait at the arrivals hall exit on the 1st floor of the International Terminal with a board showing your name."
    ],
    [
-    "Drive",
-    "We load your luggage and head to your Dongdaemun hotel: 25.2km from the International Terminal, about 29 minutes without traffic."
+    "Ride",
+    "We load your luggage and head to your Dongdaemun hotel. It is 25.2 km from the International Terminal, about 29 minutes without traffic."
    ],
    [
     "Hotel",
-    "Drop-off at the front entrance. The DDP light-up runs into the evening, so you can take a short stroll even after a late arrival."
+    "Drop-off at the hotel entrance. DDP stays lit up into the night, so you can take a short walk even if you arrive late."
    ]
   ],
   "faq": [
    [
-    "Can I get to Dongdaemun if I land at Gimpo Airport late at night?",
-    "The AREX airport railroad and airport limousine buses run less often late at night and stop entirely for part of the night. The wholesale fashion malls stay open from late night until dawn, so the area is lively even in the small hours. Kuma Travel transfers wait for your flight, so even after a late arrival we take you to your hotel at the same price."
+    "If I land at Gimpo Airport late at night, can you still take me to Dongdaemun?",
+    "Yes. The driver waits for your flight and takes you to your hotel at the same price, even for a late-night arrival. The wholesale fashion malls open from late at night until dawn, so the area stays lively through the night."
    ],
    [
-    "What languages can I use?",
-    "From booking to day-of contact, we communicate via LINE, phone or email (Japanese and Korean). Drivers on the day speak simple Japanese."
+    "Can I communicate in Japanese?",
+    "Yes. From booking to contact on the day, we can help you in Japanese on LINE. Drivers also speak simple Japanese on the day."
    ],
    [
     "What happens if my flight is delayed?",
     "We track your flight's arrival time and wait for you. There is no extra charge for delays."
    ],
    [
-    "How do I pay?",
-    "Pay on the day in cash (KRW or JPY) or by credit card."
+    "How can I pay?",
+    "You can pay on the day in cash (won or yen) or by credit card."
    ]
   ],
-  "img_alt": "Dongdaemun scenery",
-  "label": "Gimpo Airport to Dongdaemun",
-  "_src": "cdde7f725107f60aec1a3b17b17dbc12"
+  "img_alt": "View of Dongdaemun",
+  "label": "How to Get from Gimpo Airport to Dongdaemun",
+  "_src": "9da02a67ba3d33da63659095dca54106"
  },
  "icn-itaewon-taxi": {
-  "title": "Incheon Airport to Itaewon Taxi Fares and Times｜Flat-Rate Transfer KRW 150,000｜Kuma Travel",
-  "desc": "Cosmopolitan Itaewon has global eateries, bars and steep hills that are hard with big bags. Taxi fares and times from Incheon Airport. 55.0km, about 56 min.",
-  "h1": "How Much Is a Taxi from Incheon Airport to Itaewon?",
-  "lead": "A cosmopolitan neighborhood lined with international restaurants and bars, with hills that make walking with big bags hard work. Here are the fares, travel times and taxi stands for getting between Itaewon and Incheon Airport by taxi.",
+  "title": "Incheon Airport to Itaewon Transfer Price and Time｜Fixed Price KRW 150,000｜Kuma Travel",
+  "desc": "Hilly Itaewon is hard on foot with large luggage. Incheon Airport transfer price, time and meeting point: 55.0 km, about 56 min by car.",
+  "h1": "Incheon Airport to Itaewon Transfer Price｜Fixed Price KRW 150,000",
+  "lead": "Itaewon is an international neighborhood lined with restaurants from around the world and bars. It has many hills, so walking with large luggage is hard work. Here are the price, time and meeting point for a transfer between Itaewon and Incheon Airport.",
   "box": [
    [
     "From Terminal 1",
-    "55.0km, about 56 min by car (estimate)"
+    "55.0 km, about 56 min by car (estimate)"
    ],
    [
     "From Terminal 2",
-    "60.7km, about 56 min by car (estimate)"
+    "60.7 km, about 56 min by car (estimate)"
    ],
    [
     "Kuma Travel transfer",
-    "KRW 150,000 (flat rate, 1 vehicle), same price late at night and early morning"
+    "KRW 150,000 (per vehicle, fixed price), same price late at night and early in the morning"
    ],
    [
-    "Regular taxi",
-    "KRW 58,000–71,000 (estimate, late-night surcharge extra)"
+    "Round-trip booking",
+    "10% off the total"
+   ],
+   [
+    "Vehicle",
+    "Staria, up to 6 people, 4 to 5 large suitcases"
    ]
   ],
   "secs": [
    [
-    "Estimated taxi fares from Incheon Airport to Itaewon",
+    "Incheon Airport to Itaewon transfer price",
     [
-     "The road distance to Itaewon Station is 55.0km from Terminal 1 and 60.7km from Terminal 2. The route from Incheon Airport to Itaewon uses expressways, so tolls are added to the metered fare. Based on metered rates as of November 2026 (KRW 4,800 base fare plus distance and time charges), a ride to Itaewon costs about KRW 58,000–71,000.",
-     "From 22:00 to 4:00, a late-night surcharge (20–40% depending on the hour) applies. On weekend nights the bar streets get crowded and Itaewon-ro also backs up.",
-     "The Kuma Travel transfer is a flat KRW 150,000, unchanged late at night, early in the morning or in traffic. 4 travelers sharing the vehicle pay KRW 37,500 each, which can be cheaper than splitting into 2 taxis."
+     "The road distance to Itaewon Station is 55.0 km from Terminal 1 and 60.7 km from Terminal 2. Kuma Travel's transfer is a fixed KRW 150,000 per vehicle.",
+     "The price is set when you book and does not change late at night, early in the morning or in traffic. The bar streets get crowded on weekend nights, and Itaewon-ro can back up as well.",
+     "KRW 37,500 per person for 4. A round-trip booking gets 10% off the total."
     ]
    ],
    [
-    "Regular taxi vs. flat-rate transfer",
+    "Why travelers choose Kuma Travel transfers",
     [
-     "A regular taxi's trunk is full with about 2 suitcases. If 4 adults with lots of luggage are heading to Itaewon, you will need a jumbo taxi or a van transfer.",
-     "With a transfer, the driver waits at the arrivals hall exit, helps with your bags and walks you to the car. Many Itaewon hotels and guesthouses sit up on hills or in residential streets, so a car is the easy way to cut down on dragging your suitcase."
+     "A Staria carries 6 people and 4 to 5 large suitcases together, so 4 adults with plenty of luggage can ride to Itaewon comfortably.",
+     "The driver helps load and unload your luggage. We track flight delays ourselves, and there is no extra charge for them. Many places to stay in Itaewon are up hills or in residential streets, so a ride is handy for cutting down the distance you drag your suitcases."
     ]
    ],
    [
-    "How to choose",
+    "Who chooses this transfer",
     [
-     "Late or early：On weekend nights the bar streets get crowded and Itaewon-ro also backs up. With a transfer, we wait for your flight, and the price is the same as during the day.",
-     "Lots of luggage：Many Itaewon hotels and guesthouses sit up on hills or in residential streets, so a car is the easy way to cut down on dragging your suitcase.",
-     "First visit：With plenty of international restaurants, finding dinner on arrival day is easy. Arriving rested means you can start sightseeing from the day you arrive.",
-     "Traveling light：Take the AREX airport railroad to Gongdeok Station, then change to subway Line 6 for Itaewon Station. The train is the cheapest option."
+     "Late or early：The bar streets get crowded on weekend nights, and Itaewon-ro can back up as well. We wait for your flight, and the price is the same as in the daytime.",
+     "Lots of luggage：Many places to stay in Itaewon are up hills or in residential streets, so a ride is handy for cutting down the distance you drag your suitcases.",
+     "First visit：With so many international restaurants, dinner on arrival day is easy to sort out. With an easy ride in, you can start sightseeing on the day you arrive.",
+     "Solo travelers：Genesis VIP transfers are also available. Please contact us for the price."
     ]
    ],
    [
     "Estimated hotel arrival by flight time",
     [
-     "From Incheon Airport, the route crosses Yeongjong Bridge or Incheon Bridge and enters Seoul via the Incheon International Airport Expressway. For Itaewon, it usually continues along Gangbyeonbuk-ro (north of the Han River), detouring onto city streets when the riverside road is congested.",
+     "From Incheon Airport, we cross the Yeongjong Bridge or Incheon Bridge and enter Seoul on the Incheon International Airport Expressway. To reach Itaewon we usually continue on Gangbyeonbuk-ro (north of the Han River), and we detour onto city streets when the riverside road is busy.",
      "9:00 arrival：at your Itaewon hotel around 11:10",
      "13:00 arrival：at your Itaewon hotel around 15:10",
      "17:00 arrival：at your Itaewon hotel around 19:10",
      "21:00 arrival：at your Itaewon hotel around 23:00",
      "23:00 arrival：at your Itaewon hotel around 1:00",
-     "Estimates allow about 50 minutes for immigration and baggage claim, with daytime driving times multiplied by 1.4 for traffic."
+     "These estimates allow about 50 minutes for immigration and baggage claim, and multiply daytime drive times by 1.4 for traffic."
     ]
    ],
    [
     "About the Itaewon area",
     [
-     "A cosmopolitan neighborhood lined with international restaurants and bars, with hills that make walking with big bags hard work. Major hotels include Mondrian Seoul Itaewon and Grand Hyatt Seoul. If your group is split across several hotels around Itaewon, we can drop everyone off in turn.",
-     "Drop-off tip：Many Itaewon hotels and guesthouses sit up on hills or in residential streets, so a car is the easy way to cut down on dragging your suitcase."
+     "An international neighborhood lined with restaurants from around the world and bars. It has many hills, so walking with large luggage is hard work. Major hotels include Mondrian Seoul Itaewon and Grand Hyatt Seoul. If your group is split across several hotels around Itaewon, we can drop you off in turn.",
+     "Drop-off tips：Many places to stay in Itaewon are up hills or in residential streets, so a ride is handy for cutting down the distance you drag your suitcases."
     ]
    ]
   ],
@@ -823,625 +810,580 @@
   "flow": [
    [
     "Arrival",
-    "At both Terminals 1 and 2, we wait at the arrivals hall exit on the 1st floor holding a sign with your name."
+    "At both Terminal 1 and Terminal 2, we wait at the arrivals hall exit on the 1st floor with a board showing your name."
    ],
    [
-    "Drive",
-    "We load your luggage and head to your Itaewon hotel: 55.0km from Terminal 1, about 56 minutes without traffic."
+    "Ride",
+    "We load your luggage and head to your Itaewon hotel. It is 55.0 km from Terminal 1, about 56 minutes without traffic."
    ],
    [
     "Hotel",
-    "Drop-off at the front entrance. With plenty of international restaurants, finding dinner on arrival day is easy."
+    "Drop-off at the hotel entrance. With so many international restaurants, dinner on arrival day is easy to sort out."
    ]
   ],
   "faq": [
    [
-    "Can I get to Itaewon if I land at Incheon Airport late at night?",
-    "The AREX airport railroad and airport limousine buses run less often late at night and stop entirely for part of the night. On weekend nights the bar streets get crowded and Itaewon-ro also backs up. Kuma Travel transfers wait for your flight, so even after a late arrival we take you to your hotel at the same price."
+    "If I land at Incheon Airport late at night, can you still take me to Itaewon?",
+    "Yes. The driver waits for your flight and takes you to your hotel at the same price, even for a late-night arrival. The bar streets get crowded on weekend nights, and Itaewon-ro can back up as well."
    ],
    [
-    "How do I book a transfer between Incheon Airport and Itaewon?",
-    "Send us your date, flight number, group size and Itaewon hotel name via LINE, phone, email or the inquiry form on our site. Booking is handled in Japanese and Korean."
+    "How do I book a transfer from Incheon Airport to Itaewon?",
+    "Send us your date, flight number, group size and Itaewon hotel name by LINE, phone, email or the contact form on this site (Japanese and Korean)."
    ],
    [
-    "What languages can I use?",
-    "From booking to day-of contact, we communicate via LINE, phone or email (Japanese and Korean). Drivers on the day speak simple Japanese."
+    "Can I communicate in Japanese?",
+    "Yes. From booking to contact on the day, we can help you in Japanese on LINE. Drivers also speak simple Japanese on the day."
    ],
    [
     "What happens if my flight is delayed?",
     "We track your flight's arrival time and wait for you. There is no extra charge for delays."
    ]
   ],
-  "img_alt": "Itaewon scenery",
-  "label": "Incheon Airport to Itaewon: taxi and transfer",
-  "_src": "e754445cf5b74488cce5fa8b38af4ab2"
+  "img_alt": "View of Itaewon",
+  "label": "Incheon Airport to Itaewon Transfer and Price",
+  "_src": "c9dab055618b04e678dc11ac78338aa0"
  },
  "icn-unseo-ikikata": {
-  "title": "Incheon Airport to Unseo｜Train, Bus, Taxi and Transfer Compared｜Kuma Travel",
-  "desc": "Unseo is a town on Yeongjongdo, the island of Incheon Airport, with hotels for airport staff. Train, bus and car options compared by fare and transfers.",
-  "h1": "Incheon Airport to Unseo｜Which Way Is Easiest?",
-  "lead": "Unseo is a town on Yeongjongdo, the island of Incheon Airport, with hotels for airport staff. Train, bus and car options compared by fare and transfers.",
+  "title": "How to Get from Incheon Airport to Unseo｜Direct Transfer to Your Hotel Door｜Kuma Travel",
+  "desc": "Incheon Airport to Unseo, a town on Yeongjong Island, by transfer. Booking via LINE, phone or email (Japanese and Korean).",
+  "h1": "How to Get from Incheon Airport to Unseo｜From Airport to Hotel",
+  "lead": "Unseo is a town on Yeongjong Island, where Incheon Airport is located, with hotels and restaurants serving airport staff. Here is how to get from Incheon Airport to Unseo by transfer, with booking via LINE, phone or email (Japanese and Korean).",
   "box": [
    [
     "Kuma Travel transfer",
-    "Quote on request (outside Seoul)"
+    "By quote"
+   ],
+   [
+    "Round-trip booking",
+    "10% off the total"
+   ],
+   [
+    "Vehicle",
+    "Staria, up to 6 people, 4 to 5 large suitcases"
    ]
   ],
   "secs": [
    [
-    "4 ways to get from Incheon Airport to Unseo",
+    "Going direct from Incheon Airport to Unseo",
     [
-     "Rail, direct：Unseo is 2 stops from Terminal 1 on the AREX airport railroad all-stop train. It is popular with travelers staying near the airport after a late arrival.",
-     "Limousine bus：Direct airport limousine bus routes to Unseo are limited, so the train or a taxi is easier.",
-     "Taxi：Board at the taxi stand right outside the arrivals hall.",
-     "Transfer：No changes from the arrivals hall exit to your hotel entrance. Pricing is by quote. Hotels around Unseo Station are convenient for a single night after a late arrival, and the next day you can head into Seoul on the AREX airport railroad."
+     "Booking：Send us your date, flight number and Unseo hotel name by LINE, phone or email (Japanese and Korean).",
+     "Meet and greet：At both Terminal 1 and Terminal 2, we wait at the arrivals hall exit on the 1st floor with a board showing your name.",
+     "The ride：We load your luggage and head to Unseo.",
+     "Price：Quote on request. Hotels around Unseo Station are convenient for one night after a late arrival, and you can also ask us about a transfer to Seoul the next day."
     ]
    ],
    [
-    "When a transfer makes sense",
+    "When a transfer helps most",
     [
-     "Late arrival：Some restaurants around the station stay open late. With a transfer, you never have to worry about the late-night taxi surcharge (20–40%).",
-     "2+ with luggage：The train has no transfers, so with suitcases the main effort is walking inside the stations.",
-     "Family trip：Even with a stroller or large bags, we help carry your luggage from the Incheon Airport arrivals hall to the car.",
-     "Traveling light：Unseo is 2 stops from Terminal 1 on the AREX airport railroad all-stop train. The train is the cheapest option."
+     "Late arrivals：Some restaurants around the station stay open late. We take you to your hotel at the same price, even late at night.",
+     "2+ or many bags：The driver helps carry your suitcases to the vehicle.",
+     "Wheelchair use：Available at no extra charge. The driver helps with loading the wheelchair and getting in and out.",
+     "Solo travelers：Genesis VIP transfers are also available. Please contact us for the price."
     ]
    ],
    [
     "About the Unseo area",
     [
-     "A town on Yeongjongdo, the island home to Incheon Airport, with hotels and restaurants serving airport staff. Highlights include Unseo Station, Yeongjongdo and Eurwangni Beach. Nearby areas are Paradise City (about 6.9km), central Incheon (about 11.0km) and Songdo (about 17.0km).",
-     "On arrival day：You can head out to Eurwangni Beach or the seaside cafes of Yeongjongdo."
+     "A town on Yeongjong Island, where Incheon Airport is located, with hotels and restaurants serving airport staff. Main sights include Unseo Station, Yeongjong Island and Eurwangni Beach. Nearby areas are Paradise City (about 6.9 km), central Incheon (about 11.0 km) and Songdo (about 17.0 km).",
+     "On arrival day：You can head out to Eurwangni Beach or the seaside cafes of Yeongjong Island."
     ]
    ],
    [
-    "Common questions: Incheon Airport to Unseo",
+    "Common requests for Incheon Airport to Unseo transfers",
     [
-     "First and last service times for the AREX airport railroad and airport limousine buses vary by route and season, so check the official timetables. Immigration and baggage claim at Incheon Airport can take a while, so a flight landing just before the last departure may not make it."
+     "Kuma Travel transfers run around your flight's arrival time. Even if immigration or baggage claim at Incheon Airport takes a while, you can get to your hotel with no schedule to worry about."
     ]
    ]
   ],
   "table": [
    [
-    "Option",
-    "Approx. fare",
-    "Transfers",
-    "With lots of luggage",
-    "Late night"
+    "Vehicle",
+    "Passengers",
+    "Luggage",
+    "Price"
    ],
    [
-    "Train",
-    "KRW 9,500 (express), etc.",
-    "No transfers",
-    "Station stairs and platform walks",
-    "Not after the last train"
+    "Solati",
+    "7 to 15",
+    "15 or more",
+    "Contact us"
    ],
    [
-    "Airport limousine bus",
-    "Few direct buses",
-    "Walk from the stop",
-    "Bags go in the luggage hold",
-    "Not after the last bus"
-   ],
-   [
-    "Regular taxi",
-    "Metered",
-    "None",
-    "Small trunk",
-    "20–40% surcharge"
-   ],
-   [
-    "Kuma Travel transfer",
-    "Quote",
-    "None (to the door)",
-    "4–5 large cases OK",
-    "Same price"
+    "Staria",
+    "Up to 6",
+    "4 to 5 large",
+    "Quote on request"
    ]
   ],
   "flow": [
    [
     "Arrival",
-    "At both Terminals 1 and 2, we wait at the arrivals hall exit on the 1st floor holding a sign with your name."
+    "At both Terminal 1 and Terminal 2, we wait at the arrivals hall exit on the 1st floor with a board showing your name."
    ],
    [
-    "Drive",
-    "We load your luggage and head to your hotel in Unseo."
+    "Ride",
+    "We load your luggage and head to your Unseo hotel."
    ],
    [
     "Hotel",
-    "Drop-off at the front entrance. You can head out to Eurwangni Beach or the seaside cafes of Yeongjongdo."
+    "Drop-off at the hotel entrance. You can head out to Eurwangni Beach or the seaside cafes of Yeongjong Island."
    ]
   ],
   "faq": [
    [
-    "How much is a taxi from Incheon Airport to Unseo?",
-    "Kuma Travel transfers are quoted based on distance (send us your destination via LINE)."
+    "How much is a transfer from Incheon Airport to Unseo?",
+    "Kuma Travel quotes this transfer based on distance (please send us your destination on LINE). The price is set when you book and does not change late at night, early in the morning or in traffic. A round-trip booking gets 10% off the total."
    ],
    [
-    "Can I get to Unseo if I land at Incheon Airport late at night?",
-    "The AREX airport railroad and airport limousine buses run less often late at night and stop entirely for part of the night. Some restaurants around the station stay open late. Kuma Travel transfers wait for your flight, so even after a late arrival we take you to your hotel at the same price."
+    "If I land at Incheon Airport late at night, can you still take me to Unseo?",
+    "Yes. The driver waits for your flight and takes you to your hotel at the same price, even for a late-night arrival. Some restaurants around the station stay open late."
    ],
    [
-    "What languages can I use?",
-    "From booking to day-of contact, we communicate via LINE, phone or email (Japanese and Korean). Drivers on the day speak simple Japanese."
+    "Can I communicate in Japanese?",
+    "Yes. From booking to contact on the day, we can help you in Japanese on LINE. Drivers also speak simple Japanese on the day."
    ],
    [
     "What happens if my flight is delayed?",
     "We track your flight's arrival time and wait for you. There is no extra charge for delays."
    ]
   ],
-  "img_alt": "Unseo scenery",
-  "label": "Incheon Airport to Unseo",
-  "_src": "c6284bc61ea1cc0f6bfc4f4637bf0e70"
+  "img_alt": "View of Unseo",
+  "label": "How to Get from Incheon Airport to Unseo",
+  "_src": "196f33887269a78ccefc40d906b083d2"
  },
  "gmp-hongdae-ikikata": {
-  "title": "Gimpo Airport ⇄ Hongdae｜Train, Bus, Taxi and Transfer Compared｜Kuma Travel",
-  "desc": "Which way gets you from Gimpo Airport to Hongdae without changing? We compare every option on this 15.8km route. Road distance 15.8km, about 19 min by car.",
-  "h1": "Gimpo Airport to Hongdae｜Travel Times and Fares",
-  "lead": "Which way gets you from Gimpo Airport to Hongdae without changing? We compare each transport option on this 15.8km road route.",
+  "title": "Gimpo Airport ⇄ Hongdae｜Direct Transfer to Your Hotel Door｜Kuma Travel",
+  "desc": "Gimpo Airport to Hongdae by road is 15.8 km, about 19 min by car. Load your suitcases and ride straight to your hotel.",
+  "h1": "How to Get from Gimpo Airport to Hongdae｜Easy Fixed-Price Transfer",
+  "lead": "Gimpo Airport to Hongdae is 15.8 km by road. Here is how to load your suitcases into the vehicle and ride straight to your hotel.",
   "box": [
    [
     "From the International Terminal",
-    "15.8km, about 19 min by car (estimate)"
+    "15.8 km, about 19 min by car (estimate)"
    ],
    [
     "Kuma Travel transfer",
-    "KRW 80,000 (flat rate, 1 vehicle), same price late at night and early morning"
+    "KRW 80,000 (per vehicle, fixed price), same price late at night and early in the morning"
    ],
    [
-    "Regular taxi",
-    "KRW 17,000–22,000 (estimate, late-night surcharge extra)"
+    "Round-trip booking",
+    "10% off the total"
+   ],
+   [
+    "Vehicle",
+    "Staria, up to 6 people, 4 to 5 large suitcases"
    ]
   ],
   "secs": [
    [
-    "4 ways to get from Gimpo Airport to Hongdae",
+    "Going direct from Gimpo Airport to Hongdae",
     [
-     "Rail, direct：The AREX airport railroad goes to Hongik Univ. Station with no transfers, just about 2 stops away.",
-     "Limousine bus：Airport limousine buses do run, but the city is close, so most people at this airport take the subway or a taxi. The AREX airport railroad goes to Hongik Univ. Station with no transfers, just about 2 stops away.",
-     "Taxi：Board at the taxi stand right outside the arrivals hall. Expect about KRW 17,000–22,000 (estimate based on fares as of November 2026, late-night surcharge extra).",
-     "Transfer：No changes from the arrivals hall exit to your hotel entrance. The price is a flat KRW 80,000 (1 vehicle). Roads around Hongik Univ. Station get busy on weekend nights, so pickups and drop-offs are often on the main road."
+     "Booking：Send us your date, flight number and Hongdae hotel name by LINE, phone or email (Japanese and Korean).",
+     "Meet and greet：We wait at the arrivals hall exit on the 1st floor of the International Terminal with a board showing your name.",
+     "The ride：We load your luggage and head to Hongdae. It is 15.8 km from the International Terminal, about 19 minutes without traffic.",
+     "Price：Fixed price of KRW 80,000 (per vehicle). Roads around Hongik University Station get busy on weekend nights, so pickup and drop-off are often on the main road."
     ]
    ],
    [
-    "When a transfer makes sense",
+    "When a transfer helps most",
     [
-     "Arriving late：So you can rest as soon as you reach your Hongdae hotel, we drive you from the arrivals hall to the hotel with no changes. On Friday and Saturday nights the area stays crowded until late, and taxi queues can form.",
-     "2+ with luggage：4 travelers sharing the vehicle pay KRW 20,000 each. The train has no transfers, so with suitcases the main effort is walking inside the stations.",
-     "Kids or seniors：We provide child seats free of charge, and there are no changes all the way to your Hongdae hotel entrance.",
-     "Traveling light：The AREX airport railroad goes to Hongik Univ. Station with no transfers, just about 2 stops away. The train is the cheapest option."
+     "Late arrivals：We drive you straight from the arrivals hall to your Hongdae hotel so you can rest as soon as you get there. On Friday and Saturday nights the streets stay busy and lively until late.",
+     "2+ or many bags：KRW 20,000 per person for 4. The driver helps carry your suitcases to the vehicle.",
+     "Families：Child seats are available free of charge, and the ride goes straight to the entrance of your Hongdae hotel with no changes.",
+     "Solo travelers：Genesis VIP transfers are also available. Please contact us for the price."
     ]
    ],
    [
     "Estimated hotel arrival by flight time",
     [
-     "From Gimpo Airport, the route exits on the east side of the airport and heads to Hongdae via roads such as Gangbyeonbuk-ro (north of the Han River). Much of the way is off the expressway, so time spent at traffic lights largely decides the travel time.",
+     "From Gimpo Airport, we leave on the east side of the airport and head to Hongdae on roads such as Gangbyeonbuk-ro (north of the Han River). Much of the route is off the expressway, so time at traffic lights affects the drive.",
      "9:00 arrival：at your Hongdae hotel around 10:20",
      "13:00 arrival：at your Hongdae hotel around 14:20",
      "17:00 arrival：at your Hongdae hotel around 18:20",
      "21:00 arrival：at your Hongdae hotel around 22:20",
      "23:00 arrival：at your Hongdae hotel around 0:20",
-     "Estimates allow about 50 minutes for immigration and baggage claim, with daytime driving times multiplied by 1.4 for traffic."
+     "These estimates allow about 50 minutes for immigration and baggage claim, and multiply daytime drive times by 1.4 for traffic."
     ]
    ],
    [
     "Departure day：Hongdae to Gimpo Airport",
     [
-     "On the way back, we meet you in your Hongdae hotel lobby and drop you off in front of the Gimpo Airport departures hall (International Terminal). Book a round trip and get 10% off the total.",
-     "Going back by train requires no transfers. Rather than hauling your bags around after check-out, heading straight from the hotel to the airport makes timing easier to predict.",
+     "On the way back, we wait in the lobby of your Hongdae hotel and drive you to the front of the Gimpo Airport departures hall (International Terminal). A round-trip booking gets 10% off the total.",
+     "With no changes between the hotel lobby and the departures hall, the trip after check-out is easy to time and you have no luggage worries.",
      "8:00 departure：leave Hongdae around 4:30",
      "11:00 departure：leave Hongdae around 7:30",
      "14:00 departure：leave Hongdae around 10:30",
      "18:00 departure：leave Hongdae around 14:30",
      "21:00 departure：leave Hongdae around 17:30",
-     "Estimates assume arriving at the airport 3 hours before an international flight, with driving times multiplied by 1.4 for traffic."
+     "These estimates assume arriving at the airport 3 hours before an international flight, and multiply drive times by 1.4 for traffic."
     ]
    ],
    [
     "About the Hongdae area",
     [
-     "A youthful neighborhood full of live music venues, cafes and vintage shops, with Yeonnam-dong and Hapjeong within walking distance. Highlights include Hongdae's streets, Yeonnam-dong, Gyeongui Line Forest Park and Hapjeong. Nearby areas are Yeouido (about 4.0km), Yeongdeungpo (about 4.8km) and Seoul Station (about 4.1km).",
-     "On arrival day：Hongdae's street performances and cafe-hopping in Yeonnam-dong are popular on the evening you arrive."
+     "A youthful district full of live music venues, cafes and vintage shops, with Yeonnam-dong and Hapjeong within walking distance. Main sights include Hongdae Street, Yeonnam-dong, Gyeongui Line Forest Park and Hapjeong. Nearby areas are Yeouido (about 4.0 km), Yeongdeungpo (about 4.8 km) and Seoul Station (about 4.1 km).",
+     "On arrival day：On arrival night, Hongdae's street performances and the cafes of Yeonnam-dong are popular."
     ]
    ],
    [
-    "Common questions: Gimpo Airport to Hongdae",
+    "Common requests for Gimpo Airport to Hongdae transfers",
     [
-     "At Gimpo Airport's International Terminal, arrivals are on the 1st floor, and you reach Gimpo Airport Station (subway and AREX airport railroad) through an underground walkway. With a transfer, we meet you at the arrivals exit, so there is no need to hunt around the airport."
+     "At Gimpo Airport's International Terminal, the arrivals hall is on the 1st floor. We meet at the hall exit, so there is no need to search around the airport."
     ]
    ]
   ],
   "table": [
    [
-    "Option",
-    "Approx. fare",
-    "Transfers",
-    "With lots of luggage",
-    "Late night"
+    "Vehicle",
+    "Passengers",
+    "Luggage",
+    "Price"
    ],
    [
-    "Train",
-    "From about KRW 1,500",
-    "No transfers",
-    "Station stairs and platform walks",
-    "Not after the last train"
+    "Solati",
+    "7 to 15",
+    "15 or more",
+    "Contact us"
    ],
    [
-    "Airport limousine bus",
-    "Varies by route",
-    "Walk from the stop",
-    "Bags go in the luggage hold",
-    "Not after the last bus"
-   ],
-   [
-    "Regular taxi",
-    "KRW 17,000–22,000",
-    "None",
-    "Small trunk",
-    "20–40% surcharge"
-   ],
-   [
-    "Kuma Travel transfer",
-    "KRW 80,000",
-    "None (to the door)",
-    "4–5 large cases OK",
-    "Same price"
+    "Staria",
+    "Up to 6",
+    "4 to 5 large",
+    "KRW 80,000 (fixed price)"
    ]
   ],
   "flow": [
    [
     "Arrival",
-    "We wait at the arrivals hall exit on the 1st floor of the International Terminal, holding a sign with your name."
+    "We wait at the arrivals hall exit on the 1st floor of the International Terminal with a board showing your name."
    ],
    [
-    "Drive",
-    "We load your luggage and head to your Hongdae hotel: 15.8km from the International Terminal, about 19 minutes without traffic."
+    "Ride",
+    "We load your luggage and head to your Hongdae hotel. It is 15.8 km from the International Terminal, about 19 minutes without traffic."
    ],
    [
     "Hotel",
-    "Drop-off at the front entrance. Hongdae's street performances and cafe-hopping in Yeonnam-dong are popular on the evening you arrive."
+    "Drop-off at the hotel entrance. On arrival night, Hongdae's street performances and the cafes of Yeonnam-dong are popular."
    ]
   ],
   "faq": [
    [
-    "How much is a taxi from Gimpo Airport to Hongdae?",
-    "Regular taxis are metered, and a ride to Hongik Univ. Station costs roughly KRW 17,000–22,000 (estimate based on fares as of November 2026). A surcharge applies from 22:00 to 4:00. The Kuma Travel transfer is a flat KRW 80,000 (Staria up to 6 passengers, price for 1 vehicle) and does not change with the time of day or traffic."
+    "How much is a transfer from Gimpo Airport to Hongdae?",
+    "Kuma Travel's transfer is a fixed KRW 80,000 (Staria, up to 6 people, price per vehicle). The price is set when you book and does not change late at night, early in the morning or in traffic. A round-trip booking gets 10% off the total."
    ],
    [
-    "What languages can I use?",
-    "From booking to day-of contact, we communicate via LINE, phone or email (Japanese and Korean). Drivers on the day speak simple Japanese."
+    "Can I communicate in Japanese?",
+    "Yes. From booking to contact on the day, we can help you in Japanese on LINE. Drivers also speak simple Japanese on the day."
    ],
    [
     "What happens if my flight is delayed?",
     "We track your flight's arrival time and wait for you. There is no extra charge for delays."
    ],
    [
-    "How do I pay?",
-    "Pay on the day in cash (KRW or JPY) or by credit card."
+    "How can I pay?",
+    "You can pay on the day in cash (won or yen) or by credit card."
    ]
   ],
-  "img_alt": "Hongdae scenery",
-  "label": "Gimpo Airport to Hongdae",
-  "_src": "d07e31ad928fa84ea41f1866e9fd9c87"
+  "img_alt": "View of Hongdae",
+  "label": "How to Get from Gimpo Airport to Hongdae",
+  "_src": "761fac4eff2a40ef97d1527c2929f62e"
  },
  "icn-jamsil-ikikata": {
-  "title": "Incheon Airport to Jamsil｜Train, Bus, Taxi and Transfer Compared｜Kuma Travel",
-  "desc": "Unsure how to get from Incheon Airport to Jamsil? Train for price, transfer for ease. Times and tips for the Lotte World Tower area. 67.3km, about 67 min.",
-  "h1": "Incheon Airport to Jamsil｜Train, Bus, Taxi and Transfer Compared",
-  "lead": "For first-time visitors to Korea unsure how to get from Incheon Airport to Jamsil: the train is cheapest, a transfer is easiest. Here are travel times and tips for heading to the Lotte World Tower area in Jamsil.",
+  "title": "How to Get from Incheon Airport to Jamsil｜Direct Transfer to Your Hotel Door｜Kuma Travel",
+  "desc": "First trip to Korea? How a transfer from Incheon Airport to the Lotte World Tower area in Jamsil works: 67.3 km, about 67 min by car.",
+  "h1": "How to Get from Incheon Airport to Jamsil｜Direct to Your Hotel Door",
+  "lead": "First trip to Korea and unsure how to get from Incheon Airport to Jamsil? Here is how a transfer to the Lotte World Tower area works and how long it takes, with booking via LINE, phone or email (Japanese and Korean).",
   "box": [
    [
     "From Terminal 1",
-    "67.3km, about 67 min by car (estimate)"
+    "67.3 km, about 67 min by car (estimate)"
    ],
    [
     "From Terminal 2",
-    "72.6km, about 68 min by car (estimate)"
+    "72.6 km, about 68 min by car (estimate)"
    ],
    [
     "Kuma Travel transfer",
-    "KRW 150,000 (flat rate, 1 vehicle), same price late at night and early morning"
+    "KRW 150,000 (per vehicle, fixed price), same price late at night and early in the morning"
    ],
    [
-    "Regular taxi",
-    "KRW 68,000–84,000 (estimate, late-night surcharge extra)"
+    "Round-trip booking",
+    "10% off the total"
+   ],
+   [
+    "Vehicle",
+    "Staria, up to 6 people, 4 to 5 large suitcases"
    ]
   ],
   "secs": [
    [
-    "4 ways to get from Incheon Airport to Jamsil",
+    "Going direct from Incheon Airport to Jamsil",
     [
-     "Rail, 2 changes：Jamsil is one of the farthest areas from the airport, and many people take the airport limousine bus bound for Lotte World. By train, you need 2 or more transfers.",
-     "Limousine bus：Airport limousine buses run from Incheon Airport toward Jamsil, and you walk from the stop to your hotel. The fare is around KRW 17,000.",
-     "Taxi：Board at the taxi stand right outside the arrivals hall. Expect about KRW 68,000–84,000 (estimate based on fares as of November 2026, late-night surcharge extra).",
-     "Transfer：No changes from the arrivals hall exit to your hotel entrance. The price is a flat KRW 150,000 (1 vehicle). On weekends and holidays, cars queuing for parking clog the roads around Lotte World Tower, so using your hotel's drop-off area keeps things smooth."
+     "Booking：Send us your date, flight number and Jamsil hotel name by LINE, phone or email (Japanese and Korean).",
+     "Meet and greet：At both Terminal 1 and Terminal 2, we wait at the arrivals hall exit on the 1st floor with a board showing your name.",
+     "The ride：We load your luggage and head to Jamsil. It is 67.3 km from Terminal 1, about 67 minutes without traffic.",
+     "Price：Fixed price of KRW 150,000 (per vehicle). Lines for parking form around Lotte World Tower on holidays, so using your hotel's drop-off area keeps things smooth."
     ]
    ],
    [
-    "When a transfer makes sense",
+    "When a transfer helps most",
     [
-     "Late arrival：The tower's night view is beautiful after sunset, and the observation deck stays open into the evening. With a transfer, you never have to worry about the late-night taxi surcharge (20–40%).",
-     "Lots of luggage：On weekends and holidays, cars queuing for parking clog the roads around Lotte World Tower, so using your hotel's drop-off area keeps things smooth.",
-     "Kids or seniors：We provide child seats free of charge, and there are no changes all the way to your Jamsil hotel entrance.",
-     "Traveling light：Jamsil is one of the farthest areas from the airport, and many people take the airport limousine bus bound for Lotte World. The train is the cheapest option."
+     "Late arrivals：The tower looks beautiful after sunset, and the observation deck stays open into the night. We take you to your hotel at the same price, even late at night.",
+     "Lots of luggage：Lines for parking form around Lotte World Tower on holidays, so using your hotel's drop-off area keeps things smooth.",
+     "Families：Child seats are available free of charge, and the ride goes straight to the entrance of your Jamsil hotel with no changes.",
+     "Solo travelers：Genesis VIP transfers are also available. Please contact us for the price."
     ]
    ],
    [
     "Estimated hotel arrival by flight time",
     [
-     "From Incheon Airport, the route crosses Yeongjong Bridge or Incheon Bridge and enters Seoul via the Incheon International Airport Expressway. For Jamsil, it usually continues along Olympic-daero (south of the Han River), detouring onto city streets when the riverside road is congested.",
+     "From Incheon Airport, we cross the Yeongjong Bridge or Incheon Bridge and enter Seoul on the Incheon International Airport Expressway. To reach Jamsil we usually continue on Olympic-daero (south of the Han River), and we detour onto city streets when the riverside road is busy.",
      "9:00 arrival：at your Jamsil hotel around 11:30",
      "13:00 arrival：at your Jamsil hotel around 15:30",
      "17:00 arrival：at your Jamsil hotel around 19:30",
      "21:00 arrival：at your Jamsil hotel around 23:10",
      "23:00 arrival：at your Jamsil hotel around 1:10",
-     "Estimates allow about 50 minutes for immigration and baggage claim, with daytime driving times multiplied by 1.4 for traffic."
+     "These estimates allow about 50 minutes for immigration and baggage claim, and multiply daytime drive times by 1.4 for traffic."
     ]
    ],
    [
     "About the Jamsil area",
     [
-     "A large district in eastern Seoul, home to Lotte World Tower, Lotte World and Seokchon Lake. Highlights include Lotte World Tower, Lotte World, Seokchon Lake and Olympic Park. Nearby areas are Walkerhill (about 4.7km), Samseong/COEX (about 3.8km) and Seongsu (about 5.4km).",
-     "On arrival day：Spend the afternoon at the Seoul Sky observation deck and strolling around Seokchon Lake."
+     "A large area in eastern Seoul, home to Lotte World Tower, Lotte World and Seokchon Lake. Main sights include Lotte World Tower, Lotte World, Seokchon Lake and Olympic Park. Nearby areas are Walkerhill (about 4.7 km), Samseong/COEX (about 3.8 km) and Seongsu (about 5.4 km).",
+     "On arrival day：You can spend the afternoon of your arrival at the Seoul Sky observation deck and on a walk around Seokchon Lake."
     ]
    ]
   ],
   "table": [
    [
-    "Option",
-    "Approx. fare",
-    "Transfers",
-    "With lots of luggage",
-    "Late night"
+    "Vehicle",
+    "Passengers",
+    "Luggage",
+    "Price"
    ],
    [
-    "Train",
-    "KRW 9,500 (express), etc.",
-    "2 transfers",
-    "Station stairs and transfers are hard",
-    "Not after the last train"
+    "Solati",
+    "7 to 15",
+    "15 or more",
+    "Contact us"
    ],
    [
-    "Airport limousine bus",
-    "About KRW 17,000",
-    "Walk from the stop",
-    "Bags go in the luggage hold",
-    "Not after the last bus"
-   ],
-   [
-    "Regular taxi",
-    "KRW 68,000–84,000",
-    "None",
-    "Small trunk",
-    "20–40% surcharge"
-   ],
-   [
-    "Kuma Travel transfer",
-    "KRW 150,000",
-    "None (to the door)",
-    "4–5 large cases OK",
-    "Same price"
+    "Staria",
+    "Up to 6",
+    "4 to 5 large",
+    "KRW 150,000 (fixed price)"
    ]
   ],
   "flow": [
    [
     "Arrival",
-    "At both Terminals 1 and 2, we wait at the arrivals hall exit on the 1st floor holding a sign with your name."
+    "At both Terminal 1 and Terminal 2, we wait at the arrivals hall exit on the 1st floor with a board showing your name."
    ],
    [
-    "Drive",
-    "We load your luggage and head to your Jamsil hotel: 67.3km from Terminal 1, about 67 minutes without traffic."
+    "Ride",
+    "We load your luggage and head to your Jamsil hotel. It is 67.3 km from Terminal 1, about 67 minutes without traffic."
    ],
    [
     "Hotel",
-    "Drop-off at the front entrance. Spend the afternoon at the Seoul Sky observation deck and strolling around Seokchon Lake."
+    "Drop-off at the hotel entrance. You can spend the afternoon of your arrival at the Seoul Sky observation deck and on a walk around Seokchon Lake."
    ]
   ],
   "faq": [
    [
-    "What languages can I use?",
-    "From booking to day-of contact, we communicate via LINE, phone or email (Japanese and Korean). Drivers on the day speak simple Japanese."
+    "Can I communicate in Japanese?",
+    "Yes. From booking to contact on the day, we can help you in Japanese on LINE. Drivers also speak simple Japanese on the day."
    ],
    [
     "What happens if my flight is delayed?",
     "We track your flight's arrival time and wait for you. There is no extra charge for delays."
    ],
    [
-    "How do I pay?",
-    "Pay on the day in cash (KRW or JPY) or by credit card."
+    "How can I pay?",
+    "You can pay on the day in cash (won or yen) or by credit card."
    ],
    [
     "Is there a cancellation fee?",
-    "Cancellations up to the day before are free. Same-day cancellations are charged 50% of the fare."
+    "Cancellation is free up to the day before. Same-day cancellations are charged 50% of the price."
    ]
   ],
-  "img_alt": "Jamsil scenery",
-  "label": "Incheon Airport to Jamsil",
-  "_src": "cd176f4d6cb08ef07a8b83af222e41b5"
+  "img_alt": "View of Jamsil",
+  "label": "How to Get from Incheon Airport to Jamsil",
+  "_src": "5bfa3f2bd19a385476a7d8f36a925241"
  },
  "gmp-jamsil-ikikata": {
-  "title": "Gimpo Airport to Jamsil｜Train, Bus, Taxi and Transfer Compared｜Kuma Travel",
-  "desc": "Unsure how to get from Gimpo Airport to Jamsil? Train for price, transfer for ease. Times and tips for the Lotte World Tower area. 34.2km, about 38 min.",
-  "h1": "Gimpo Airport to Jamsil｜Train, Bus, Taxi and Transfer Compared",
-  "lead": "For first-time visitors to Korea unsure how to get from Gimpo Airport to Jamsil: the train is cheapest, a transfer is easiest. Here are travel times and tips for heading to the Lotte World Tower area in Jamsil.",
+  "title": "How to Get from Gimpo Airport to Jamsil｜Direct Transfer to Your Hotel Door｜Kuma Travel",
+  "desc": "First trip to Korea? How a transfer from Gimpo Airport to the Lotte World Tower area in Jamsil works: 34.2 km, about 38 min by car.",
+  "h1": "How to Get from Gimpo Airport to Jamsil｜Direct to Your Hotel Door",
+  "lead": "First trip to Korea and unsure how to get from Gimpo Airport to Jamsil? Here is how a transfer to the Lotte World Tower area works and how long it takes, with booking via LINE, phone or email (Japanese and Korean).",
   "box": [
    [
     "From the International Terminal",
-    "34.2km, about 38 min by car (estimate)"
+    "34.2 km, about 38 min by car (estimate)"
    ],
    [
     "Kuma Travel transfer",
-    "KRW 80,000 (flat rate, 1 vehicle), same price late at night and early morning"
+    "KRW 80,000 (per vehicle, fixed price), same price late at night and early in the morning"
    ],
    [
-    "Regular taxi",
-    "KRW 33,000–42,000 (estimate, late-night surcharge extra)"
+    "Round-trip booking",
+    "10% off the total"
+   ],
+   [
+    "Vehicle",
+    "Staria, up to 6 people, 4 to 5 large suitcases"
    ]
   ],
   "secs": [
    [
-    "4 ways to get from Gimpo Airport to Jamsil",
+    "Going direct from Gimpo Airport to Jamsil",
     [
-     "Rail, 1 change：Take a subway Line 9 express heading east, then change to Line 2 or another line.",
-     "Limousine bus：Airport limousine buses do run, but the city is close, so most people at this airport take the subway or a taxi. Take a subway Line 9 express heading east, then change to Line 2 or another line.",
-     "Taxi：Board at the taxi stand right outside the arrivals hall. Expect about KRW 33,000–42,000 (estimate based on fares as of November 2026, late-night surcharge extra).",
-     "Transfer：No changes from the arrivals hall exit to your hotel entrance. The price is a flat KRW 80,000 (1 vehicle). On weekends and holidays, cars queuing for parking clog the roads around Lotte World Tower, so using your hotel's drop-off area keeps things smooth."
+     "Booking：Send us your date, flight number and Jamsil hotel name by LINE, phone or email (Japanese and Korean).",
+     "Meet and greet：We wait at the arrivals hall exit on the 1st floor of the International Terminal with a board showing your name.",
+     "The ride：We load your luggage and head to Jamsil. It is 34.2 km from the International Terminal, about 38 minutes without traffic.",
+     "Price：Fixed price of KRW 80,000 (per vehicle). Lines for parking form around Lotte World Tower on holidays, so using your hotel's drop-off area keeps things smooth."
     ]
    ],
    [
-    "When a transfer makes sense",
+    "When a transfer helps most",
     [
-     "Late arrival：The tower's night view is beautiful after sunset, and the observation deck stays open into the evening. With a transfer, you never have to worry about the late-night taxi surcharge (20–40%).",
-     "2+ with luggage：4 travelers sharing the vehicle pay KRW 20,000 each. The train involves 1 transfer, which is not easy with suitcases.",
-     "First visit：Spend the afternoon at the Seoul Sky observation deck and strolling around Seokchon Lake. Arriving rested means you can start sightseeing from the day you arrive.",
-     "Traveling light：Take a subway Line 9 express heading east, then change to Line 2 or another line. The train is the cheapest option."
+     "Late arrivals：The tower looks beautiful after sunset, and the observation deck stays open into the night. We take you to your hotel at the same price, even late at night.",
+     "2+ or many bags：KRW 20,000 per person for 4. The driver helps carry your suitcases to the vehicle.",
+     "First visit：You can spend the afternoon of your arrival at the Seoul Sky observation deck and on a walk around Seokchon Lake. With an easy ride in, you can start sightseeing on the day you arrive.",
+     "Solo travelers：Genesis VIP transfers are also available. Please contact us for the price."
     ]
    ],
    [
     "Estimated hotel arrival by flight time",
     [
-     "From Gimpo Airport, the route exits on the east side of the airport and heads to Jamsil via roads such as Olympic-daero (south of the Han River). Much of the way is off the expressway, so time spent at traffic lights largely decides the travel time.",
+     "From Gimpo Airport, we leave on the east side of the airport and head to Jamsil on roads such as Olympic-daero (south of the Han River). Much of the route is off the expressway, so time at traffic lights affects the drive.",
      "9:00 arrival：at your Jamsil hotel around 10:50",
      "13:00 arrival：at your Jamsil hotel around 14:50",
      "17:00 arrival：at your Jamsil hotel around 18:50",
      "21:00 arrival：at your Jamsil hotel around 22:40",
      "23:00 arrival：at your Jamsil hotel around 0:40",
-     "Estimates allow about 50 minutes for immigration and baggage claim, with daytime driving times multiplied by 1.4 for traffic."
+     "These estimates allow about 50 minutes for immigration and baggage claim, and multiply daytime drive times by 1.4 for traffic."
     ]
    ],
    [
     "About the Jamsil area",
     [
-     "A large district in eastern Seoul, home to Lotte World Tower, Lotte World and Seokchon Lake. Highlights include Lotte World Tower, Lotte World, Seokchon Lake and Olympic Park. Nearby areas are Walkerhill (about 4.7km), Samseong/COEX (about 3.8km) and Seongsu (about 5.4km).",
-     "On arrival day：Spend the afternoon at the Seoul Sky observation deck and strolling around Seokchon Lake."
+     "A large area in eastern Seoul, home to Lotte World Tower, Lotte World and Seokchon Lake. Main sights include Lotte World Tower, Lotte World, Seokchon Lake and Olympic Park. Nearby areas are Walkerhill (about 4.7 km), Samseong/COEX (about 3.8 km) and Seongsu (about 5.4 km).",
+     "On arrival day：You can spend the afternoon of your arrival at the Seoul Sky observation deck and on a walk around Seokchon Lake."
     ]
    ]
   ],
   "table": [
    [
-    "Option",
-    "Approx. fare",
-    "Transfers",
-    "With lots of luggage",
-    "Late night"
+    "Vehicle",
+    "Passengers",
+    "Luggage",
+    "Price"
    ],
    [
-    "Train",
-    "From about KRW 1,500",
-    "1 transfer",
-    "Station stairs and transfers are hard",
-    "Not after the last train"
+    "Solati",
+    "7 to 15",
+    "15 or more",
+    "Contact us"
    ],
    [
-    "Airport limousine bus",
-    "Varies by route",
-    "Walk from the stop",
-    "Bags go in the luggage hold",
-    "Not after the last bus"
-   ],
-   [
-    "Regular taxi",
-    "KRW 33,000–42,000",
-    "None",
-    "Small trunk",
-    "20–40% surcharge"
-   ],
-   [
-    "Kuma Travel transfer",
-    "KRW 80,000",
-    "None (to the door)",
-    "4–5 large cases OK",
-    "Same price"
+    "Staria",
+    "Up to 6",
+    "4 to 5 large",
+    "KRW 80,000 (fixed price)"
    ]
   ],
   "flow": [
    [
     "Arrival",
-    "We wait at the arrivals hall exit on the 1st floor of the International Terminal, holding a sign with your name."
+    "We wait at the arrivals hall exit on the 1st floor of the International Terminal with a board showing your name."
    ],
    [
-    "Drive",
-    "We load your luggage and head to your Jamsil hotel: 34.2km from the International Terminal, about 38 minutes without traffic."
+    "Ride",
+    "We load your luggage and head to your Jamsil hotel. It is 34.2 km from the International Terminal, about 38 minutes without traffic."
    ],
    [
     "Hotel",
-    "Drop-off at the front entrance. Spend the afternoon at the Seoul Sky observation deck and strolling around Seokchon Lake."
+    "Drop-off at the hotel entrance. You can spend the afternoon of your arrival at the Seoul Sky observation deck and on a walk around Seokchon Lake."
    ]
   ],
   "faq": [
    [
-    "What languages can I use?",
-    "From booking to day-of contact, we communicate via LINE, phone or email (Japanese and Korean). Drivers on the day speak simple Japanese."
+    "Can I communicate in Japanese?",
+    "Yes. From booking to contact on the day, we can help you in Japanese on LINE. Drivers also speak simple Japanese on the day."
    ],
    [
     "What happens if my flight is delayed?",
     "We track your flight's arrival time and wait for you. There is no extra charge for delays."
    ],
    [
-    "How do I pay?",
-    "Pay on the day in cash (KRW or JPY) or by credit card."
+    "How can I pay?",
+    "You can pay on the day in cash (won or yen) or by credit card."
    ],
    [
     "Is there a cancellation fee?",
-    "Cancellations up to the day before are free. Same-day cancellations are charged 50% of the fare."
+    "Cancellation is free up to the day before. Same-day cancellations are charged 50% of the price."
    ]
   ],
-  "img_alt": "Jamsil scenery",
-  "label": "Gimpo Airport to Jamsil",
-  "_src": "eab18375e6f39531d8aaabcd09d0ffb7"
+  "img_alt": "View of Jamsil",
+  "label": "How to Get from Gimpo Airport to Jamsil",
+  "_src": "fc65230b60b4310e78017213b5afd0c6"
  },
  "gmp-terminal": {
-  "title": "Gimpo Airport International and Domestic Terminals: Getting There｜Kuma Travel",
-  "desc": "Gimpo Airport has separate international and domestic terminals. How to reach the International Terminal and get around. 21.6km, about 25 min by car.",
-  "h1": "Getting to Gimpo Airport's International Terminal",
-  "lead": "Gimpo Airport has separate international and domestic terminals. Here is how to get to the International Terminal and how to get around inside the airport.",
+  "title": "Getting to Gimpo Airport's International and Domestic Terminals｜Kuma Travel",
+  "desc": "Gimpo Airport's international and domestic terminals are separate. Where we meet you and how to get around: 21.6 km, about 25 min by car.",
+  "h1": "How to Get to Gimpo Airport's International Terminal",
+  "lead": "Gimpo Airport has separate international and domestic terminals. This guide covers how we meet you at the International Terminal and how to get around the airport.",
   "box": [
    [
     "From the International Terminal",
-    "21.6km, about 25 min by car (estimate)"
+    "21.6 km, about 25 min by car (estimate)"
    ],
    [
     "Kuma Travel transfer",
-    "KRW 80,000 (flat rate, 1 vehicle), same price late at night and early morning"
+    "KRW 80,000 (per vehicle, fixed price), same price late at night and early in the morning"
    ],
    [
-    "Regular taxi",
-    "KRW 22,000–28,000 to Seoul City Hall (estimate, late-night surcharge extra)"
+    "Round-trip booking",
+    "10% off the total"
+   ],
+   [
+    "Vehicle",
+    "Staria, up to 6 people, 4 to 5 large suitcases"
    ]
   ],
   "secs": [
    [
-    "Getting to the International Terminal",
+    "Getting in and out at the International Terminal",
     [
-     "Gimpo Airport Station (subway Lines 5 and 9 and the AREX airport railroad) is closer to the Domestic Terminal, and you reach the International Terminal through an underground walkway. With lots of luggage, the walk can feel a little long.",
-     "Flights from Japan, such as from Haneda, Kansai and Nagoya, use the International Terminal. By taxi or transfer, you can get in and out right in front of the International Terminal."
+     "Flights to and from Japan, including Haneda, Kansai and Nagoya, use the International Terminal. A transfer picks you up and drops you off right in front of it."
     ]
    ],
    [
     "With a transfer",
     [
-     "Kuma Travel's Gimpo Airport transfer is a flat KRW 80,000 to central Seoul (Staria up to 6 passengers, 1 vehicle). The price stays the same late at night, early in the morning and in traffic, and a round-trip booking gets 10% off (Gimpo Airport ⇄ central Seoul is KRW 80,000 one way).",
-     "We wait at the arrivals hall exit on the 1st floor of the International Terminal with a name sign."
+     "Kuma Travel's Gimpo Airport transfer is a fixed KRW 80,000 to central Seoul (Staria, up to 6 people, per vehicle). The price stays the same late at night, early in the morning and in traffic, and a round-trip booking gets 10% off (Gimpo Airport ⇄ central Seoul is KRW 80,000 one way).",
+     "We wait at the arrivals hall exit on the 1st floor of the International Terminal with a board showing your name."
     ]
    ],
    [
-    "Domestic connections and spending time at the airport",
+    "Domestic connections and time at the airport",
     [
-     "If you are connecting to a domestic flight to Jeju or Busan, clear immigration and collect your bags at the International Terminal, then move to the Domestic Terminal and check in again. You can walk between them, but it takes time with lots of luggage, so plan with plenty of margin.",
-     "Next to the airport is Lotte Mall Gimpo Airport, handy for shopping or a meal before your flight home. If you have time before departure, leave your bags at the hotel or the airport storage first and drop by unburdened.",
-     "Conversely, if you fly into Gimpo Airport on a domestic flight from Jeju or elsewhere and then fly home to Japan, you walk from the Domestic Terminal to the International Terminal. Allow at least 2 hours for the connection in case the domestic flight is delayed.",
-     "The International Terminal's departures hall is smaller than Incheon Airport's, and the walk from check-in to the gate is short. Even so, security gets crowded around holiday periods, so arriving 2 hours before departure gives you peace of mind."
+     "If you are connecting to a domestic flight to Jeju or Busan, clear immigration and collect your luggage at the International Terminal, then go to the Domestic Terminal and check in again. You can walk between them, but it takes longer with a lot of luggage, so allow plenty of time.",
+     "Lotte Mall Gimpo Airport is next door, handy for shopping or a meal before your flight home.",
+     "In the other direction, if you land at Gimpo Airport on a domestic flight from Jeju or elsewhere and are flying back to Japan, walk from the Domestic Terminal to the International Terminal. Allow at least 2 hours for the connection in case the domestic flight is late.",
+     "Security lines get busy around long holidays, so arriving 2 hours before departure is a safe choice."
     ]
    ],
    [
-    "Distance and time from Gimpo Airport to major areas",
+    "Distance and drive time from Gimpo Airport to main areas",
     [
-     "Namdaemun：22.1km, about 26 min by car, taxi approx. KRW 22,000–29,000",
-     "Yeouido：15.0km, about 20 min by car, taxi approx. KRW 17,000–21,000",
-     "Magok：3.9km, about 9 min by car, taxi approx. KRW 7,000–9,000",
-     "Seongsu：30.1km, about 35 min by car, taxi approx. KRW 29,000–37,000",
-     "Hongdae：15.8km, about 19 min by car, taxi approx. KRW 17,000–22,000",
-     "Samseong/COEX：30.4km, about 34 min by car, taxi approx. KRW 29,000–37,000",
-     "Distances are road distances from the International Terminal, and times assume no traffic. Taxi fares are estimates based on metered rates as of November 2026 and exclude the late-night surcharge. Kuma Travel transfers are a flat KRW 80,000 to any area in central Seoul."
+     "Namdaemun：22.1 km, about 26 min by car",
+     "Yeouido：15.0 km, about 20 min by car",
+     "Magok：3.9 km, about 9 min by car",
+     "Seongsu：30.1 km, about 35 min by car",
+     "Hongdae：15.8 km, about 19 min by car",
+     "Samseong/COEX：30.4 km, about 34 min by car",
+     "Distances are by road from the International Terminal and times are estimates without traffic. Kuma Travel transfers are a fixed KRW 80,000 to any area of Seoul."
     ]
    ]
   ],
@@ -1449,104 +1391,108 @@
   "flow": [
    [
     "Booking",
-    "Send us your flight number, group size and hotel name via LINE."
+    "Send us your flight number, group size and hotel name on LINE."
    ],
    [
     "Arrival",
-    "We wait at the arrivals hall exit on the 1st floor of the International Terminal, holding a sign with your name. Flights from Haneda, Kansai, Nagoya and other cities arrive here."
+    "We wait at the arrivals hall exit on the 1st floor of the International Terminal with a board showing your name. Flights from Haneda, Kansai, Nagoya and other airports arrive here."
    ],
    [
-    "Drive",
-    "We load your luggage and head to the hotel, with no changes."
+    "Ride",
+    "We load your luggage and head to your hotel, with no changes along the way."
    ],
    [
     "Hotel",
-    "Drop-off at the front entrance. You can leave your bags at the front desk even before check-in."
+    "Drop-off at the hotel entrance. You can leave your luggage at the front desk even before check-in."
    ]
   ],
   "faq": [
    [
-    "What languages can I use?",
-    "From booking to day-of contact, we communicate via LINE, phone or email (Japanese and Korean). Drivers on the day speak simple Japanese."
+    "Can I go from Gimpo Airport to central Seoul without changing vehicles?",
+    "Yes. A Kuma Travel transfer takes you in one vehicle from the Gimpo Airport arrivals hall to your hotel entrance. The price is a fixed KRW 80,000 (Staria, up to 6 people, price per vehicle)."
+   ],
+   [
+    "Can I communicate in Japanese?",
+    "Yes. From booking to contact on the day, we can help you in Japanese on LINE. Drivers also speak simple Japanese on the day."
    ],
    [
     "What happens if my flight is delayed?",
     "We track your flight's arrival time and wait for you. There is no extra charge for delays."
    ],
    [
-    "How do I pay?",
-    "Pay on the day in cash (KRW or JPY) or by credit card."
-   ],
-   [
-    "Is there a cancellation fee?",
-    "Cancellations up to the day before are free. Same-day cancellations are charged 50% of the fare."
+    "How can I pay?",
+    "You can pay on the day in cash (won or yen) or by credit card."
    ]
   ],
   "img_alt": "Seoul at night",
-  "label": "Getting to Gimpo Airport's International Terminal",
-  "_src": "fe62c022aa68bc7a81b566752135e828"
+  "label": "How to Get to Gimpo Airport's International Terminal",
+  "_src": "62f561cc317945910f04ce53460d48d7"
  },
  "gmp-walkerhill-taxi": {
-  "title": "Gimpo Airport to Walkerhill Taxi Fares and Times｜Flat-Rate Transfer KRW 80,000｜Kuma Travel",
-  "desc": "Hilltop hotels above the Han River (Grand Walkerhill, Vista Walkerhill), far from stations. Taxi fares and times from Gimpo Airport. 35.0km, about 45 min.",
-  "h1": "How Much Is a Taxi from Gimpo Airport to Walkerhill?",
-  "lead": "A hilltop hotel area overlooking the Han River (Grand Walkerhill and Vista Walkerhill), some distance from the nearest station. Here are the fares, travel times and taxi stands for getting between Walkerhill and Gimpo Airport by taxi.",
+  "title": "Gimpo Airport to Walkerhill Transfer Price and Time｜Fixed Price KRW 80,000｜Kuma Travel",
+  "desc": "Walkerhill's hilltop hotels are far from the nearest station. Gimpo Airport transfer price, time and meeting point: 35.0 km, about 45 min by car.",
+  "h1": "Gimpo Airport to Walkerhill Transfer Price｜Fixed Price KRW 80,000",
+  "lead": "Walkerhill is a hilltop hotel area overlooking the Han River (Grand Walkerhill and Vista Walkerhill), far from the nearest station. Here are the price, time and meeting point for a transfer between Walkerhill and Gimpo Airport.",
   "box": [
    [
     "From the International Terminal",
-    "35.0km, about 45 min by car (estimate)"
+    "35.0 km, about 45 min by car (estimate)"
    ],
    [
     "Kuma Travel transfer",
-    "KRW 80,000 (flat rate, 1 vehicle), same price late at night and early morning"
+    "KRW 80,000 (per vehicle, fixed price), same price late at night and early in the morning"
    ],
    [
-    "Regular taxi",
-    "KRW 33,000–42,000 (estimate, late-night surcharge extra)"
+    "Round-trip booking",
+    "10% off the total"
+   ],
+   [
+    "Vehicle",
+    "Staria, up to 6 people, 4 to 5 large suitcases"
    ]
   ],
   "secs": [
    [
-    "Estimated taxi fares from Gimpo Airport to Walkerhill",
+    "Gimpo Airport to Walkerhill transfer price",
     [
-     "The road distance from the International Terminal to Grand Walkerhill is 35.0km. The route from Gimpo Airport to Walkerhill is mostly on regular city roads, so the taxi fare is much lower than from Incheon Airport. A regular taxi to Walkerhill should run about KRW 33,000–42,000 on the meter (estimate based on fares as of November 2026 and road distance).",
-     "From 22:00 to 4:00, a late-night surcharge (20–40% depending on the hour) applies. Walkerhill sits on a hill, so walking from the nearest station is not realistic. Going directly from the airport to the hotel's drop-off area is by far the easiest.",
-     "The Kuma Travel transfer is a flat KRW 80,000, unchanged late at night, early in the morning or in traffic. 4 travelers sharing the vehicle pay KRW 20,000 each, which can be cheaper than splitting into 2 taxis."
+     "The road distance to Grand Walkerhill is 35.0 km from the International Terminal. Kuma Travel's transfer is a fixed KRW 80,000 per vehicle.",
+     "The price is set when you book and does not change late at night, early in the morning or in traffic. Walkerhill sits on a hill, and walking from the nearest station is not realistic. Going straight from the airport to the hotel's drop-off area is the easiest way.",
+     "KRW 20,000 per person for 4. A round-trip booking gets 10% off the total."
     ]
    ],
    [
-    "Regular taxi vs. flat-rate transfer",
+    "Why travelers choose Kuma Travel transfers",
     [
-     "A regular taxi's trunk is full with about 2 suitcases. If 4 adults with lots of luggage are heading to Walkerhill, you will need a jumbo taxi or a van transfer.",
-     "At Gimpo Airport, the taxi stand is close to the arrivals hall and waits tend to be short. With a transfer, we meet you at the arrivals hall exit and walk you straight to the car. Walkerhill sits on a hill, so walking from the nearest station is not realistic. Going directly from the airport to the hotel's drop-off area is by far the easiest."
+     "A Staria carries 6 people and 4 to 5 large suitcases together, so 4 adults with plenty of luggage can ride to Walkerhill comfortably.",
+     "The driver helps load and unload your luggage. We track flight delays ourselves, and there is no extra charge for them. Walkerhill sits on a hill, and walking from the nearest station is not realistic. Going straight from the airport to the hotel's drop-off area is the easiest way."
     ]
    ],
    [
-    "Recommendations by situation",
+    "Tips for your situation",
     [
-     "Late or early：There are few ways to get out from the hotel at night, so if you plan to go out, a taxi or chartered car is the convenient choice. With a transfer, we wait for your flight, and the price is the same as during the day.",
-     "Group travel：A Staria seats 6 passengers plus 4–5 large suitcases. 4 travelers sharing the vehicle pay KRW 20,000 each.",
-     "Family trip：Even with a stroller or large bags, we help carry your luggage from the Gimpo Airport arrivals hall to the car.",
-     "Traveling light：Take subway Line 5 to Gwangnaru Station, then the hotel shuttle bus. The train is the cheapest option."
+     "Late or early：Most guests spend the evening at the hotel, and a chartered vehicle is handy if you want to go out. We wait for your flight, and the price is the same as in the daytime.",
+     "Group trips：A Staria carries 6 people and 4 to 5 large suitcases together. That is KRW 20,000 per person for 4.",
+     "Wheelchair use：Available at no extra charge. The driver helps with loading the wheelchair and getting in and out.",
+     "Solo travelers：Genesis VIP transfers are also available. Please contact us for the price."
     ]
    ],
    [
     "Estimated hotel arrival by flight time",
     [
-     "From Gimpo Airport, the route exits on the east side of the airport and heads to Walkerhill via roads such as Gangbyeonbuk-ro (north of the Han River). Much of the way is off the expressway, so time spent at traffic lights largely decides the travel time.",
+     "From Gimpo Airport, we leave on the east side of the airport and head to Walkerhill on roads such as Gangbyeonbuk-ro (north of the Han River). Much of the route is off the expressway, so time at traffic lights affects the drive.",
      "9:00 arrival：at your Walkerhill hotel around 11:00",
      "13:00 arrival：at your Walkerhill hotel around 15:00",
      "17:00 arrival：at your Walkerhill hotel around 19:00",
      "21:00 arrival：at your Walkerhill hotel around 22:40",
      "23:00 arrival：at your Walkerhill hotel around 0:40",
-     "Estimates allow about 50 minutes for immigration and baggage claim, with daytime driving times multiplied by 1.4 for traffic."
+     "These estimates allow about 50 minutes for immigration and baggage claim, and multiply daytime drive times by 1.4 for traffic."
     ]
    ],
    [
     "About the Walkerhill area",
     [
-     "A hilltop hotel area overlooking the Han River (Grand Walkerhill and Vista Walkerhill), some distance from the nearest station. Major hotels include Grand Walkerhill Seoul and Vista Walkerhill Seoul. If your group is split across several hotels around Walkerhill, we can drop everyone off in turn.",
-     "Drop-off tip：Walkerhill sits on a hill, so walking from the nearest station is not realistic. Going directly from the airport to the hotel's drop-off area is by far the easiest."
+     "A hilltop hotel area overlooking the Han River (Grand Walkerhill and Vista Walkerhill), far from the nearest station. Major hotels include Grand Walkerhill Seoul and Vista Walkerhill Seoul. If your group is split across several hotels around Walkerhill, we can drop you off in turn.",
+     "Drop-off tips：Walkerhill sits on a hill, and walking from the nearest station is not realistic. Going straight from the airport to the hotel's drop-off area is the easiest way."
     ]
    ]
   ],
@@ -1554,172 +1500,159 @@
   "flow": [
    [
     "Arrival",
-    "We wait at the arrivals hall exit on the 1st floor of the International Terminal, holding a sign with your name."
+    "We wait at the arrivals hall exit on the 1st floor of the International Terminal with a board showing your name."
    ],
    [
-    "Drive",
-    "We load your luggage and head to your Walkerhill hotel: 35.0km from the International Terminal, about 45 minutes without traffic."
+    "Ride",
+    "We load your luggage and head to your Walkerhill hotel. It is 35.0 km from the International Terminal, about 45 minutes without traffic."
    ],
    [
     "Hotel",
-    "Drop-off at the front entrance. These hotels overlook the Han River and suit a relaxed stay enjoying the in-house restaurants and shows."
+    "Drop-off at the hotel entrance. These hotels overlook the Han River and suit a relaxed stay enjoying their restaurants and shows."
    ]
   ],
   "faq": [
    [
-    "What languages can I use?",
-    "From booking to day-of contact, we communicate via LINE, phone or email (Japanese and Korean). Drivers on the day speak simple Japanese."
+    "Can I communicate in Japanese?",
+    "Yes. From booking to contact on the day, we can help you in Japanese on LINE. Drivers also speak simple Japanese on the day."
    ],
    [
     "What happens if my flight is delayed?",
     "We track your flight's arrival time and wait for you. There is no extra charge for delays."
    ],
    [
-    "How do I pay?",
-    "Pay on the day in cash (KRW or JPY) or by credit card."
+    "How can I pay?",
+    "You can pay on the day in cash (won or yen) or by credit card."
    ],
    [
     "Is there a cancellation fee?",
-    "Cancellations up to the day before are free. Same-day cancellations are charged 50% of the fare."
+    "Cancellation is free up to the day before. Same-day cancellations are charged 50% of the price."
    ]
   ],
-  "img_alt": "Walkerhill scenery",
-  "label": "Gimpo Airport to Walkerhill: taxi and transfer",
-  "_src": "da59ea47d7ba379855f029d4cd20a09e"
+  "img_alt": "View of Walkerhill",
+  "label": "Gimpo Airport to Walkerhill Transfer and Price",
+  "_src": "ff06f8ffdd8c516124dee0d101cb5d99"
  },
  "icn-magok-ikikata": {
-  "title": "Incheon Airport to Magok｜Train, Bus, Taxi and Transfer Compared｜Kuma Travel",
-  "desc": "Which way gets you from Incheon Airport to Magok without changing? We compare every option on this 44.3km route. Road distance 44.3km, about 41 min by car.",
-  "h1": "Incheon Airport to Magok｜Which Way Is Easiest?",
-  "lead": "Which way gets you from Incheon Airport to Magok without changing? We compare each transport option on this 44.3km road route.",
+  "title": "How to Get from Incheon Airport to Magok｜Direct Transfer to Your Hotel Door｜Kuma Travel",
+  "desc": "Incheon Airport to Magok by road is 44.3 km, about 41 min by car. Load your suitcases and ride straight to your hotel.",
+  "h1": "How to Get from Incheon Airport to Magok｜From Airport to Hotel",
+  "lead": "Incheon Airport to Magok is 44.3 km by road. Here is how to load your suitcases into the vehicle and ride straight to your hotel.",
   "box": [
    [
     "From Terminal 1",
-    "44.3km, about 41 min by car (estimate)"
+    "44.3 km, about 41 min by car (estimate)"
    ],
    [
     "From Terminal 2",
-    "44.0km, about 42 min by car (estimate)"
+    "44.0 km, about 42 min by car (estimate)"
    ],
    [
     "Kuma Travel transfer",
-    "KRW 150,000 (flat rate, 1 vehicle), same price late at night and early morning"
+    "KRW 150,000 (per vehicle, fixed price), same price late at night and early in the morning"
    ],
    [
-    "Regular taxi",
-    "KRW 49,000–60,000 (estimate, late-night surcharge extra)"
+    "Round-trip booking",
+    "10% off the total"
+   ],
+   [
+    "Vehicle",
+    "Staria, up to 6 people, 4 to 5 large suitcases"
    ]
   ],
   "secs": [
    [
-    "4 ways to get from Incheon Airport to Magok",
+    "Going direct from Incheon Airport to Magok",
     [
-     "Rail, direct：The AREX airport railroad stops at Magongnaru Station, so you can get there with no transfers.",
-     "Limousine bus：Direct airport limousine bus routes to Magok are limited, so the train or a taxi is easier.",
-     "Taxi：Board at the taxi stand right outside the arrivals hall. Expect about KRW 49,000–60,000 (estimate based on fares as of November 2026, late-night surcharge extra).",
-     "Transfer：No changes from the arrivals hall exit to your hotel entrance. The price is a flat KRW 150,000 (1 vehicle). Magok is a new district with wide roads, just a short drive from Gimpo Airport."
+     "Booking：Send us your date, flight number and Magok hotel name by LINE, phone or email (Japanese and Korean).",
+     "Meet and greet：At both Terminal 1 and Terminal 2, we wait at the arrivals hall exit on the 1st floor with a board showing your name.",
+     "The ride：We load your luggage and head to Magok. It is 44.3 km from Terminal 1, about 41 minutes without traffic.",
+     "Price：Fixed price of KRW 150,000 (per vehicle). Magok is a new district with wide roads, just a short distance from Gimpo Airport."
     ]
    ],
    [
-    "How to choose",
+    "Who chooses this transfer",
     [
-     "Late or early：At night Magok is a quiet mix of offices and homes, ideal if you want a calm stay near the airport. With a transfer, we wait for your flight, and the price is the same as during the day.",
-     "Lots of luggage：Magok is a new district with wide roads, just a short drive from Gimpo Airport.",
-     "Family trip：Even with a stroller or large bags, we help carry your luggage from the Incheon Airport arrivals hall to the car.",
-     "Traveling light：The AREX airport railroad stops at Magongnaru Station, so you can get there with no transfers. The train is the cheapest option."
+     "Late or early：It is a quiet office and residential area at night, which suits anyone wanting a peaceful stay near the airport. We wait for your flight, and the price is the same as in the daytime.",
+     "Lots of luggage：Magok is a new district with wide roads, just a short distance from Gimpo Airport.",
+     "Wheelchair use：Available at no extra charge. The driver helps with loading the wheelchair and getting in and out.",
+     "Solo travelers：Genesis VIP transfers are also available. Please contact us for the price."
     ]
    ],
    [
     "Estimated hotel arrival by flight time",
     [
-     "From Incheon Airport, the route crosses Yeongjong Bridge or Incheon Bridge and enters Seoul via the Incheon International Airport Expressway. For Magok, it usually continues along Olympic-daero (south of the Han River), detouring onto city streets when the riverside road is congested.",
+     "From Incheon Airport, we cross the Yeongjong Bridge or Incheon Bridge and enter Seoul on the Incheon International Airport Expressway. To reach Magok we usually continue on Olympic-daero (south of the Han River), and we detour onto city streets when the riverside road is busy.",
      "9:00 arrival：at your Magok hotel around 10:50",
      "13:00 arrival：at your Magok hotel around 14:50",
      "17:00 arrival：at your Magok hotel around 18:50",
      "21:00 arrival：at your Magok hotel around 22:40",
      "23:00 arrival：at your Magok hotel around 0:40",
-     "Estimates allow about 50 minutes for immigration and baggage claim, with daytime driving times multiplied by 1.4 for traffic."
+     "These estimates allow about 50 minutes for immigration and baggage claim, and multiply daytime drive times by 1.4 for traffic."
     ]
    ],
    [
     "About the Magok area",
     [
-     "A new district just east of Gimpo Airport, home to Seoul Botanic Park, the Mayfield Hotel and LG Science Park. Highlights include Seoul Botanic Park, Magongnaru Station and Balsan Station. Nearby areas are Yeongdeungpo (about 9.1km), Hongdae (about 8.6km) and Yeouido (about 9.9km).",
-     "On arrival day：Relax on arrival day with the greenhouse and a lakeside walk at Seoul Botanic Park."
+     "A new district just east of Gimpo Airport, home to Botanic Park, the Mayfield Hotel and LG Science Park. Main sights include Seoul Botanic Park, Magoknaru Station and Balsan Station. Nearby areas are Yeongdeungpo (about 9.1 km), Hongdae (about 8.6 km) and Yeouido (about 9.9 km).",
+     "On arrival day：You can spend a relaxed arrival day at the Seoul Botanic Park greenhouse and on a walk by its lake."
     ]
    ]
   ],
   "table": [
    [
-    "Option",
-    "Approx. fare",
-    "Transfers",
-    "With lots of luggage",
-    "Late night"
+    "Vehicle",
+    "Passengers",
+    "Luggage",
+    "Price"
    ],
    [
-    "Train",
-    "KRW 9,500 (express), etc.",
-    "No transfers",
-    "Station stairs and platform walks",
-    "Not after the last train"
+    "Solati",
+    "7 to 15",
+    "15 or more",
+    "Contact us"
    ],
    [
-    "Airport limousine bus",
-    "Few direct buses",
-    "Walk from the stop",
-    "Bags go in the luggage hold",
-    "Not after the last bus"
-   ],
-   [
-    "Regular taxi",
-    "KRW 49,000–60,000",
-    "None",
-    "Small trunk",
-    "20–40% surcharge"
-   ],
-   [
-    "Kuma Travel transfer",
-    "KRW 150,000",
-    "None (to the door)",
-    "4–5 large cases OK",
-    "Same price"
+    "Staria",
+    "Up to 6",
+    "4 to 5 large",
+    "KRW 150,000 (fixed price)"
    ]
   ],
   "flow": [
    [
     "Arrival",
-    "At both Terminals 1 and 2, we wait at the arrivals hall exit on the 1st floor holding a sign with your name."
+    "At both Terminal 1 and Terminal 2, we wait at the arrivals hall exit on the 1st floor with a board showing your name."
    ],
    [
-    "Drive",
-    "We load your luggage and head to your Magok hotel: 44.3km from Terminal 1, about 41 minutes without traffic."
+    "Ride",
+    "We load your luggage and head to your Magok hotel. It is 44.3 km from Terminal 1, about 41 minutes without traffic."
    ],
    [
     "Hotel",
-    "Drop-off at the front entrance. Relax on arrival day with the greenhouse and a lakeside walk at Seoul Botanic Park."
+    "Drop-off at the hotel entrance. You can spend a relaxed arrival day at the Seoul Botanic Park greenhouse and on a walk by its lake."
    ]
   ],
   "faq": [
    [
-    "What languages can I use?",
-    "From booking to day-of contact, we communicate via LINE, phone or email (Japanese and Korean). Drivers on the day speak simple Japanese."
+    "Can I communicate in Japanese?",
+    "Yes. From booking to contact on the day, we can help you in Japanese on LINE. Drivers also speak simple Japanese on the day."
    ],
    [
     "What happens if my flight is delayed?",
     "We track your flight's arrival time and wait for you. There is no extra charge for delays."
    ],
    [
-    "How do I pay?",
-    "Pay on the day in cash (KRW or JPY) or by credit card."
+    "How can I pay?",
+    "You can pay on the day in cash (won or yen) or by credit card."
    ],
    [
     "Is there a cancellation fee?",
-    "Cancellations up to the day before are free. Same-day cancellations are charged 50% of the fare."
+    "Cancellation is free up to the day before. Same-day cancellations are charged 50% of the price."
    ]
   ],
-  "img_alt": "Magok scenery",
-  "label": "Incheon Airport to Magok",
-  "_src": "2b69ad8f0c3eb227e2f3a3420bac8e2e"
+  "img_alt": "View of Magok",
+  "label": "How to Get from Incheon Airport to Magok",
+  "_src": "d87d2fc0d9d5d53401caca8ae50b2eea"
  }
 }
