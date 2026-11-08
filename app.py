@@ -252,6 +252,8 @@ def guide_page_l(lang, slug):
 
 @app.route("/q/<slug>")
 def guide_kw(slug):
+    if slug in guide.KW_ALIAS:  # 같은 키워드(어순·표기만 다름) → 남긴 1페이지로
+        return redirect(guide.KW_ALIAS[slug], 301)
     k = guide.KW_BY.get(slug)
     if not k or not guide.kw_open(k):
         abort(404)

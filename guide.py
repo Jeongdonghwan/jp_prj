@@ -663,10 +663,26 @@ def kw_slug(kw):
     return re.sub(r"[\s/?#%&]+", "-", kw.strip()).strip("-")
 
 
-KW = []
-for _p in PAGES:
-    for _i, _k in enumerate(x for x in _p["kws"] if x != _p["main"]):  # 묶음을 1~4에 고르게, 상위 페이지보다 먼저 열리지 않게
-        KW.append({"kw": _k, "slug": kw_slug(_k), "parent": _p["id"], "wave": max(_p["wave"], 1 + _i % 4)})
+def kw_norm(kw):
+    """단어 순서·国際空港·から/まで/へ 만 다른 키워드는 같은 검색 → 같은 값"""
+    import re
+    kw = re.sub(r"(から|まで|への|へ)(?=\s|$)", " ", kw.replace("国際空港", "空港"))
+    return tuple(sorted(kw.split()))
+
+
+# 보조 키워드 + 추가 키워드(seo/kw_extra.json, tools/add_keywords.py). 같은 키워드는 1페이지만, 나머지 주소는 301(KW_ALIAS)
+_EXTRA = json.load(open(os.path.join(BASE, "seo", "kw_extra.json"), encoding="utf-8"))
+_all = [(max(_p["wave"], 1 + _i % 4), _k, _p["id"]) for _p in PAGES  # 묶음을 1~4에 고르게, 상위 페이지보다 먼저 열리지 않게
+        for _i, _k in enumerate(x for x in _p["kws"] if x != _p["main"])]
+_all += [(4, x["kw"], x["parent"]) for x in _EXTRA]  # 추가분은 마지막 묶음
+_seen = {kw_norm(p["main"]): f"/{p['id']}" for p in PAGES}
+KW, KW_ALIAS = [], {}
+for _w, _k, _pid in sorted(_all, key=lambda x: x[0]):  # 먼저 열리는 쪽을 남긴다
+    if kw_norm(_k) in _seen:
+        KW_ALIAS[kw_slug(_k)] = _seen[kw_norm(_k)]
+        continue
+    _seen[kw_norm(_k)] = f"/q/{kw_slug(_k)}"
+    KW.append({"kw": _k, "slug": kw_slug(_k), "parent": _pid, "wave": _w})
 KW_BY = {k["slug"]: k for k in KW}
 assert len(KW_BY) == len(KW), "키워드 슬러그 중복"
 KIDS = {}

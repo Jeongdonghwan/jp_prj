@@ -1,0 +1,1106 @@
+[
+ {
+  "kw": "金浦空港 南大門 送迎 料金",
+  "parent": "gmp-namdaemun-taxi"
+ },
+ {
+  "kw": "金浦空港 梨泰院 タクシー 料金",
+  "parent": "gmp-itaewon-taxi"
+ },
+ {
+  "kw": "金浦空港 梨泰院 タクシー いくら",
+  "parent": "gmp-itaewon-taxi"
+ },
+ {
+  "kw": "金浦空港 梨泰院 タクシー 時間",
+  "parent": "gmp-itaewon-taxi"
+ },
+ {
+  "kw": "金浦空港 梨泰院 タクシー 深夜",
+  "parent": "gmp-itaewon-taxi"
+ },
+ {
+  "kw": "金浦空港 梨泰院 タクシー 予約",
+  "parent": "gmp-itaewon-taxi"
+ },
+ {
+  "kw": "金浦空港 梨泰院 送迎",
+  "parent": "gmp-itaewon-taxi"
+ },
+ {
+  "kw": "金浦空港 梨泰院 送迎 料金",
+  "parent": "gmp-itaewon-taxi"
+ },
+ {
+  "kw": "金浦空港 イテウォン タクシー",
+  "parent": "gmp-itaewon-taxi"
+ },
+ {
+  "kw": "金浦空港 イテウォン タクシー 料金",
+  "parent": "gmp-itaewon-taxi"
+ },
+ {
+  "kw": "金浦空港 イテウォン タクシー いくら",
+  "parent": "gmp-itaewon-taxi"
+ },
+ {
+  "kw": "金浦空港 イテウォン タクシー 時間",
+  "parent": "gmp-itaewon-taxi"
+ },
+ {
+  "kw": "金浦空港 イテウォン タクシー 深夜",
+  "parent": "gmp-itaewon-taxi"
+ },
+ {
+  "kw": "金浦空港 イテウォン タクシー 予約",
+  "parent": "gmp-itaewon-taxi"
+ },
+ {
+  "kw": "金浦空港 イテウォン 送迎",
+  "parent": "gmp-itaewon-taxi"
+ },
+ {
+  "kw": "金浦空港 イテウォン 送迎 料金",
+  "parent": "gmp-itaewon-taxi"
+ },
+ {
+  "kw": "金浦空港 狎鴎亭 タクシー 料金",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 狎鴎亭 タクシー いくら",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 狎鴎亭 タクシー 時間",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 狎鴎亭 タクシー 深夜",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 狎鴎亭 タクシー 予約",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 狎鴎亭 送迎",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 狎鴎亭 送迎 料金",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 新沙 タクシー",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 新沙 タクシー 料金",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 新沙 タクシー いくら",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 新沙 タクシー 時間",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 新沙 タクシー 深夜",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 新沙 タクシー 予約",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 新沙 送迎",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 新沙 送迎 料金",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 新村 タクシー",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 新村 タクシー 料金",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 新村 タクシー いくら",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 新村 タクシー 時間",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 新村 タクシー 深夜",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 新村 タクシー 予約",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 新村 送迎",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 新村 送迎 料金",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 ソウル駅 タクシー 料金",
+  "parent": "gmp-seoul-station-taxi"
+ },
+ {
+  "kw": "金浦空港 ソウル駅 タクシー いくら",
+  "parent": "gmp-seoul-station-taxi"
+ },
+ {
+  "kw": "金浦空港 ソウル駅 タクシー 時間",
+  "parent": "gmp-seoul-station-taxi"
+ },
+ {
+  "kw": "金浦空港 ソウル駅 タクシー 深夜",
+  "parent": "gmp-seoul-station-taxi"
+ },
+ {
+  "kw": "金浦空港 ソウル駅 タクシー 予約",
+  "parent": "gmp-seoul-station-taxi"
+ },
+ {
+  "kw": "金浦空港 ソウル駅 送迎",
+  "parent": "gmp-seoul-station-taxi"
+ },
+ {
+  "kw": "金浦空港 ソウル駅 送迎 料金",
+  "parent": "gmp-seoul-station-taxi"
+ },
+ {
+  "kw": "金浦空港 延南洞 タクシー",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 延南洞 タクシー 料金",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 延南洞 タクシー いくら",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 延南洞 タクシー 時間",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 延南洞 タクシー 深夜",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 延南洞 タクシー 予約",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 延南洞 送迎",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 延南洞 送迎 料金",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 合井 タクシー",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 合井 タクシー 料金",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 合井 タクシー いくら",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 合井 タクシー 時間",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 合井 タクシー 深夜",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 合井 タクシー 予約",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 合井 送迎",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 合井 送迎 料金",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 三成 タクシー",
+  "parent": "gmp-samseong-taxi"
+ },
+ {
+  "kw": "金浦空港 三成 タクシー 料金",
+  "parent": "gmp-samseong-taxi"
+ },
+ {
+  "kw": "金浦空港 三成 タクシー いくら",
+  "parent": "gmp-samseong-taxi"
+ },
+ {
+  "kw": "金浦空港 三成 タクシー 時間",
+  "parent": "gmp-samseong-taxi"
+ },
+ {
+  "kw": "金浦空港 三成 タクシー 深夜",
+  "parent": "gmp-samseong-taxi"
+ },
+ {
+  "kw": "金浦空港 三成 タクシー 予約",
+  "parent": "gmp-samseong-taxi"
+ },
+ {
+  "kw": "金浦空港 三成 送迎",
+  "parent": "gmp-samseong-taxi"
+ },
+ {
+  "kw": "金浦空港 三成 送迎 料金",
+  "parent": "gmp-samseong-taxi"
+ },
+ {
+  "kw": "金浦空港 COEX タクシー",
+  "parent": "gmp-samseong-taxi"
+ },
+ {
+  "kw": "金浦空港 COEX タクシー 料金",
+  "parent": "gmp-samseong-taxi"
+ },
+ {
+  "kw": "金浦空港 COEX タクシー いくら",
+  "parent": "gmp-samseong-taxi"
+ },
+ {
+  "kw": "金浦空港 COEX タクシー 時間",
+  "parent": "gmp-samseong-taxi"
+ },
+ {
+  "kw": "金浦空港 COEX タクシー 深夜",
+  "parent": "gmp-samseong-taxi"
+ },
+ {
+  "kw": "金浦空港 COEX タクシー 予約",
+  "parent": "gmp-samseong-taxi"
+ },
+ {
+  "kw": "金浦空港 COEX 送迎",
+  "parent": "gmp-samseong-taxi"
+ },
+ {
+  "kw": "金浦空港 COEX 送迎 料金",
+  "parent": "gmp-samseong-taxi"
+ },
+ {
+  "kw": "金浦空港 清潭洞 タクシー",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 清潭洞 タクシー 料金",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 清潭洞 タクシー いくら",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 清潭洞 タクシー 時間",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 清潭洞 タクシー 深夜",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 清潭洞 タクシー 予約",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 清潭洞 送迎",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 清潭洞 送迎 料金",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 永登浦 タクシー",
+  "parent": "gmp-yeongdeungpo-taxi"
+ },
+ {
+  "kw": "金浦空港 永登浦 タクシー 料金",
+  "parent": "gmp-yeongdeungpo-taxi"
+ },
+ {
+  "kw": "金浦空港 永登浦 タクシー いくら",
+  "parent": "gmp-yeongdeungpo-taxi"
+ },
+ {
+  "kw": "金浦空港 永登浦 タクシー 時間",
+  "parent": "gmp-yeongdeungpo-taxi"
+ },
+ {
+  "kw": "金浦空港 永登浦 タクシー 深夜",
+  "parent": "gmp-yeongdeungpo-taxi"
+ },
+ {
+  "kw": "金浦空港 永登浦 タクシー 予約",
+  "parent": "gmp-yeongdeungpo-taxi"
+ },
+ {
+  "kw": "金浦空港 永登浦 送迎",
+  "parent": "gmp-yeongdeungpo-taxi"
+ },
+ {
+  "kw": "金浦空港 永登浦 送迎 料金",
+  "parent": "gmp-yeongdeungpo-taxi"
+ },
+ {
+  "kw": "金浦空港 江南駅 タクシー 料金",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 江南駅 タクシー いくら",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 江南駅 タクシー 時間",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 江南駅 タクシー 深夜",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 江南駅 タクシー 予約",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 江南駅 送迎",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 江南駅 送迎 料金",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "金浦空港 弘大入口駅 タクシー",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 弘大入口駅 タクシー 料金",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 弘大入口駅 タクシー いくら",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 弘大入口駅 タクシー 時間",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 弘大入口駅 タクシー 深夜",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 弘大入口駅 タクシー 予約",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 弘大入口駅 送迎",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "金浦空港 弘大入口駅 送迎 料金",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "ソウルから仁川空港 送迎",
+  "parent": "icn-seoul-taxi"
+ },
+ {
+  "kw": "ソウル市内から仁川空港 タクシー",
+  "parent": "icn-seoul-taxi"
+ },
+ {
+  "kw": "ソウル市内から仁川空港 タクシー 料金",
+  "parent": "icn-seoul-taxi"
+ },
+ {
+  "kw": "ソウル市内から仁川空港 タクシー 早朝",
+  "parent": "icn-seoul-taxi"
+ },
+ {
+  "kw": "ソウル市内から仁川空港 送迎",
+  "parent": "icn-seoul-taxi"
+ },
+ {
+  "kw": "明洞から仁川空港 タクシー 料金",
+  "parent": "icn-myeongdong-taxi"
+ },
+ {
+  "kw": "ミョンドンから仁川空港 タクシー",
+  "parent": "icn-myeongdong-taxi"
+ },
+ {
+  "kw": "ミョンドンから仁川空港 タクシー 料金",
+  "parent": "icn-myeongdong-taxi"
+ },
+ {
+  "kw": "ミョンドンから仁川空港 タクシー 早朝",
+  "parent": "icn-myeongdong-taxi"
+ },
+ {
+  "kw": "ミョンドンから仁川空港 送迎",
+  "parent": "icn-myeongdong-taxi"
+ },
+ {
+  "kw": "ソウルから金浦空港 タクシー 料金",
+  "parent": "gmp-seoul-taxi"
+ },
+ {
+  "kw": "ソウルから金浦空港 タクシー 早朝",
+  "parent": "gmp-seoul-taxi"
+ },
+ {
+  "kw": "ソウルから金浦空港 送迎",
+  "parent": "gmp-seoul-taxi"
+ },
+ {
+  "kw": "ソウル市内から金浦空港 タクシー",
+  "parent": "gmp-seoul-taxi"
+ },
+ {
+  "kw": "ソウル市内から金浦空港 タクシー 料金",
+  "parent": "gmp-seoul-taxi"
+ },
+ {
+  "kw": "ソウル市内から金浦空港 タクシー 早朝",
+  "parent": "gmp-seoul-taxi"
+ },
+ {
+  "kw": "ソウル市内から金浦空港 送迎",
+  "parent": "gmp-seoul-taxi"
+ },
+ {
+  "kw": "弘大から金浦空港 タクシー",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "弘大から金浦空港 タクシー 料金",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "弘大から金浦空港 タクシー 早朝",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "弘大から金浦空港 送迎",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "ホンデから金浦空港 タクシー",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "ホンデから金浦空港 タクシー 料金",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "ホンデから金浦空港 タクシー 早朝",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "ホンデから金浦空港 送迎",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "江南から金浦空港 タクシー",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "江南から金浦空港 タクシー 料金",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "江南から金浦空港 タクシー 早朝",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "江南から金浦空港 送迎",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "カンナムから金浦空港 タクシー",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "カンナムから金浦空港 タクシー 料金",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "カンナムから金浦空港 タクシー 早朝",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "カンナムから金浦空港 送迎",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "東大門から金浦空港 タクシー",
+  "parent": "gmp-dongdaemun-taxi"
+ },
+ {
+  "kw": "東大門から金浦空港 タクシー 料金",
+  "parent": "gmp-dongdaemun-taxi"
+ },
+ {
+  "kw": "東大門から金浦空港 タクシー 早朝",
+  "parent": "gmp-dongdaemun-taxi"
+ },
+ {
+  "kw": "東大門から金浦空港 送迎",
+  "parent": "gmp-dongdaemun-taxi"
+ },
+ {
+  "kw": "トンデムンから金浦空港 タクシー",
+  "parent": "gmp-dongdaemun-taxi"
+ },
+ {
+  "kw": "トンデムンから金浦空港 タクシー 料金",
+  "parent": "gmp-dongdaemun-taxi"
+ },
+ {
+  "kw": "トンデムンから金浦空港 タクシー 早朝",
+  "parent": "gmp-dongdaemun-taxi"
+ },
+ {
+  "kw": "トンデムンから金浦空港 送迎",
+  "parent": "gmp-dongdaemun-taxi"
+ },
+ {
+  "kw": "景福宮から金浦空港 タクシー",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "景福宮から金浦空港 タクシー 料金",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "景福宮から金浦空港 タクシー 早朝",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "景福宮から金浦空港 送迎",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "仁寺洞から金浦空港 タクシー",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "仁寺洞から金浦空港 タクシー 料金",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "仁寺洞から金浦空港 タクシー 早朝",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "仁寺洞から金浦空港 送迎",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "聖水から金浦空港 タクシー",
+  "parent": "seongsu-to-gmp-taxi"
+ },
+ {
+  "kw": "聖水から金浦空港 タクシー 料金",
+  "parent": "seongsu-to-gmp-taxi"
+ },
+ {
+  "kw": "聖水から金浦空港 タクシー 早朝",
+  "parent": "seongsu-to-gmp-taxi"
+ },
+ {
+  "kw": "聖水から金浦空港 送迎",
+  "parent": "seongsu-to-gmp-taxi"
+ },
+ {
+  "kw": "ソンスから金浦空港 タクシー",
+  "parent": "seongsu-to-gmp-taxi"
+ },
+ {
+  "kw": "ソンスから金浦空港 タクシー 料金",
+  "parent": "seongsu-to-gmp-taxi"
+ },
+ {
+  "kw": "ソンスから金浦空港 タクシー 早朝",
+  "parent": "seongsu-to-gmp-taxi"
+ },
+ {
+  "kw": "ソンスから金浦空港 送迎",
+  "parent": "seongsu-to-gmp-taxi"
+ },
+ {
+  "kw": "狎鴎亭から金浦空港 タクシー",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "狎鴎亭から金浦空港 タクシー 料金",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "狎鴎亭から金浦空港 タクシー 早朝",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "狎鴎亭から金浦空港 送迎",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "新沙から金浦空港 タクシー",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "新沙から金浦空港 タクシー 料金",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "新沙から金浦空港 タクシー 早朝",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "新沙から金浦空港 送迎",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "新村から金浦空港 タクシー",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "新村から金浦空港 タクシー 料金",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "新村から金浦空港 タクシー 早朝",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "新村から金浦空港 送迎",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "鍾路から金浦空港 タクシー",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "鍾路から金浦空港 タクシー 料金",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "鍾路から金浦空港 タクシー 早朝",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "鍾路から金浦空港 送迎",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "益善洞から金浦空港 タクシー",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "益善洞から金浦空港 タクシー 料金",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "益善洞から金浦空港 タクシー 早朝",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "益善洞から金浦空港 送迎",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "北村から金浦空港 タクシー",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "北村から金浦空港 タクシー 料金",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "北村から金浦空港 タクシー 早朝",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "北村から金浦空港 送迎",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "光化門から金浦空港 タクシー",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "光化門から金浦空港 タクシー 料金",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "光化門から金浦空港 タクシー 早朝",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "光化門から金浦空港 送迎",
+  "parent": "jongno-to-gmp-taxi"
+ },
+ {
+  "kw": "延南洞から金浦空港 タクシー",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "延南洞から金浦空港 タクシー 料金",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "延南洞から金浦空港 タクシー 早朝",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "延南洞から金浦空港 送迎",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "合井から金浦空港 タクシー",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "合井から金浦空港 タクシー 料金",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "合井から金浦空港 タクシー 早朝",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "合井から金浦空港 送迎",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "清潭洞から金浦空港 タクシー",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "清潭洞から金浦空港 タクシー 料金",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "清潭洞から金浦空港 タクシー 早朝",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "清潭洞から金浦空港 送迎",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "江南駅から金浦空港 タクシー",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "江南駅から金浦空港 タクシー 料金",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "江南駅から金浦空港 タクシー 早朝",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "江南駅から金浦空港 送迎",
+  "parent": "gmp-gangnam-taxi"
+ },
+ {
+  "kw": "弘大入口駅から金浦空港 タクシー",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "弘大入口駅から金浦空港 タクシー 料金",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "弘大入口駅から金浦空港 タクシー 早朝",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "弘大入口駅から金浦空港 送迎",
+  "parent": "gmp-hongdae-taxi"
+ },
+ {
+  "kw": "仁川空港 送迎 料金",
+  "parent": "icn-sougei"
+ },
+ {
+  "kw": "仁川空港 送迎 安い",
+  "parent": "icn-sougei"
+ },
+ {
+  "kw": "仁川空港 送迎 予約",
+  "parent": "icn-sougei"
+ },
+ {
+  "kw": "仁川空港 送迎 日本語",
+  "parent": "icn-sougei"
+ },
+ {
+  "kw": "仁川空港 ソウル 送迎 安い",
+  "parent": "icn-seoul-taxi"
+ },
+ {
+  "kw": "仁川空港 ソウル 送迎 予約",
+  "parent": "icn-seoul-taxi"
+ },
+ {
+  "kw": "仁川空港 ソウル 送迎 おすすめ",
+  "parent": "icn-seoul-taxi"
+ },
+ {
+  "kw": "仁川空港 ソウル 送迎 日本語",
+  "parent": "icn-seoul-taxi"
+ },
+ {
+  "kw": "仁川空港 タクシー 日本語",
+  "parent": "icn-taxi"
+ },
+ {
+  "kw": "金浦空港 送迎 料金",
+  "parent": "gmp-sougei"
+ },
+ {
+  "kw": "金浦空港 送迎 安い",
+  "parent": "gmp-sougei"
+ },
+ {
+  "kw": "金浦空港 送迎 おすすめ",
+  "parent": "gmp-sougei"
+ },
+ {
+  "kw": "金浦空港 送迎 日本語",
+  "parent": "gmp-sougei"
+ },
+ {
+  "kw": "金浦空港 ソウル 送迎 安い",
+  "parent": "gmp-seoul-taxi"
+ },
+ {
+  "kw": "金浦空港 ソウル 送迎 予約",
+  "parent": "gmp-seoul-taxi"
+ },
+ {
+  "kw": "金浦空港 ソウル 送迎 おすすめ",
+  "parent": "gmp-seoul-taxi"
+ },
+ {
+  "kw": "金浦空港 ソウル 送迎 日本語",
+  "parent": "gmp-seoul-taxi"
+ },
+ {
+  "kw": "仁川空港 荷物 ホテル 当日",
+  "parent": "icn-nimotsu"
+ },
+ {
+  "kw": "仁川空港 ソウル市内 アクセス",
+  "parent": "icn-seoul-ikikata"
+ },
+ {
+  "kw": "仁川空港 ソウル市内 所要時間",
+  "parent": "icn-seoul-ikikata"
+ },
+ {
+  "kw": "仁川空港 ソウル市内 早朝",
+  "parent": "icn-seoul-ikikata"
+ },
+ {
+  "kw": "仁川空港 ソウル市内 荷物配送",
+  "parent": "icn-nimotsu"
+ },
+ {
+  "kw": "仁川空港 明洞 荷物配送",
+  "parent": "icn-nimotsu"
+ },
+ {
+  "kw": "仁川空港 ミョンドン 行き方",
+  "parent": "icn-myeongdong-ikikata"
+ },
+ {
+  "kw": "仁川空港 ミョンドン 移動",
+  "parent": "icn-myeongdong-ikikata"
+ },
+ {
+  "kw": "仁川空港 ミョンドン アクセス",
+  "parent": "icn-myeongdong-ikikata"
+ },
+ {
+  "kw": "仁川空港 ミョンドン 所要時間",
+  "parent": "icn-myeongdong-ikikata"
+ },
+ {
+  "kw": "仁川空港 ミョンドン 深夜",
+  "parent": "icn-myeongdong-ikikata"
+ },
+ {
+  "kw": "仁川空港 ミョンドン 早朝",
+  "parent": "icn-myeongdong-ikikata"
+ },
+ {
+  "kw": "仁川空港 ミョンドン 荷物配送",
+  "parent": "icn-nimotsu"
+ },
+ {
+  "kw": "仁川空港 弘大 移動",
+  "parent": "icn-hongdae-ikikata"
+ },
+ {
+  "kw": "仁川空港 弘大 アクセス",
+  "parent": "icn-hongdae-ikikata"
+ },
+ {
+  "kw": "仁川空港 弘大 所要時間",
+  "parent": "icn-hongdae-ikikata"
+ },
+ {
+  "kw": "仁川空港 弘大 深夜",
+  "parent": "icn-hongdae-ikikata"
+ },
+ {
+  "kw": "仁川空港 弘大 早朝",
+  "parent": "icn-hongdae-ikikata"
+ },
+ {
+  "kw": "仁川空港 ホンデ 移動",
+  "parent": "icn-hongdae-ikikata"
+ },
+ {
+  "kw": "仁川空港 ホンデ アクセス",
+  "parent": "icn-hongdae-ikikata"
+ },
+ {
+  "kw": "仁川空港 ホンデ 所要時間",
+  "parent": "icn-hongdae-ikikata"
+ },
+ {
+  "kw": "仁川空港 ホンデ 深夜",
+  "parent": "icn-hongdae-ikikata"
+ },
+ {
+  "kw": "仁川空港 ホンデ 早朝",
+  "parent": "icn-hongdae-ikikata"
+ },
+ {
+  "kw": "仁川空港 江南 早朝",
+  "parent": "icn-gangnam-ikikata"
+ },
+ {
+  "kw": "仁川空港 カンナム アクセス",
+  "parent": "icn-gangnam-ikikata"
+ },
+ {
+  "kw": "仁川空港 カンナム 所要時間",
+  "parent": "icn-gangnam-ikikata"
+ },
+ {
+  "kw": "仁川空港 カンナム 深夜",
+  "parent": "icn-gangnam-ikikata"
+ },
+ {
+  "kw": "仁川空港 カンナム 早朝",
+  "parent": "icn-gangnam-ikikata"
+ },
+ {
+  "kw": "仁川空港 東大門 所要時間",
+  "parent": "icn-dongdaemun-ikikata"
+ },
+ {
+  "kw": "仁川空港 トンデムン 行き方",
+  "parent": "icn-dongdaemun-ikikata"
+ },
+ {
+  "kw": "仁川空港 トンデムン 移動",
+  "parent": "icn-dongdaemun-ikikata"
+ },
+ {
+  "kw": "仁川空港 トンデムン アクセス",
+  "parent": "icn-dongdaemun-ikikata"
+ },
+ {
+  "kw": "仁川空港 トンデムン 所要時間",
+  "parent": "icn-dongdaemun-ikikata"
+ },
+ {
+  "kw": "仁川空港 トンデムン 深夜",
+  "parent": "icn-dongdaemun-ikikata"
+ },
+ {
+  "kw": "仁川空港 トンデムン 早朝",
+  "parent": "icn-dongdaemun-ikikata"
+ },
+ {
+  "kw": "仁川空港 南大門 行き方",
+  "parent": "icn-namdaemun-ikikata"
+ },
+ {
+  "kw": "仁川空港 南大門 移動",
+  "parent": "icn-namdaemun-ikikata"
+ },
+ {
+  "kw": "仁川空港 南大門 アクセス",
+  "parent": "icn-namdaemun-ikikata"
+ },
+ {
+  "kw": "仁川空港 南大門 所要時間",
+  "parent": "icn-namdaemun-ikikata"
+ },
+ {
+  "kw": "仁川空港 南大門 深夜",
+  "parent": "icn-namdaemun-ikikata"
+ },
+ {
+  "kw": "仁川空港 南大門 早朝",
+  "parent": "icn-namdaemun-ikikata"
+ },
+ {
+  "kw": "仁川空港 景福宮 移動",
+  "parent": "icn-jongno-ikikata"
+ },
+ {
+  "kw": "仁川空港 景福宮 アクセス",
+  "parent": "icn-jongno-ikikata"
+ },
+ {
+  "kw": "仁川空港 景福宮 所要時間",
+  "parent": "icn-jongno-ikikata"
+ },
+ {
+  "kw": "仁川空港 景福宮 深夜",
+  "parent": "icn-jongno-ikikata"
+ }
+]
