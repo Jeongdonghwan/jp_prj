@@ -40,7 +40,7 @@
 <article>
 <header class="gd-hero">
   <div class="wrap narrow">
-    <nav class="crumb"><a href="{{ ui.main }}">{{ t.brand }}</a> › <a href="{{ '/guide' if lang == 'ja' else '/' ~ lang ~ '/guide' }}">{{ ui.guide }}</a>{% if g and g.parent %} › <a href="{{ g.parent[0] }}">{{ g.parent[1] }}</a>{% endif %}{% if g %} › <span>{{ g.h1 }}</span>{% endif %}</nav>
+    <nav class="crumb"><a href="{{ ui.main }}">{{ t.brand }}</a> › <a href="{{ ui.guide_path or ('/guide' if lang == 'ja' else '/' ~ lang ~ '/guide') }}">{{ ui.guide }}</a>{% if g and g.parent %} › <a href="{{ g.parent[0] }}">{{ g.parent[1] }}</a>{% endif %}{% if g %} › <span>{{ g.h1 }}</span>{% endif %}</nav>
     <h1>{{ h1 }}</h1>
     <p class="lead">{{ lead }}</p>
     {% if alts | length > 1 %}<p class="gd-lang">{% for l, h in alts %}{% if l == lang %}<b>{{ {'ja': '日本語', 'ko': '한국어', 'en': 'English'}[l] }}</b>{% else %}<a href="{{ h }}" hreflang="{{ l }}" lang="{{ l }}">{{ {'ja': '日本語', 'ko': '한국어', 'en': 'English'}[l] }}</a>{% endif %}{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}

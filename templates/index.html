@@ -73,6 +73,7 @@
     <div class="hub"><b>{{ t.hub_title }}</b>
       {% for s, l in landings.items() %}<a href="/{{ s }}"{% if lp and lp.kw == l.kw %} aria-current="page"{% endif %}>{{ l.kw }}</a>{% endfor %}
       <a href="/guide">空港アクセスガイド</a>
+      <a href="/charter">韓国 貸切チャーターガイド</a>
       {% if lp %}<a href="/">{{ t.landing_back }}</a>{% endif %}
     </div>
     {% else %}

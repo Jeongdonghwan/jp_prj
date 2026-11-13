@@ -1,0 +1,86 @@
+{
+ "dmz": {
+  "km": 55.6,
+  "min": 52
+ },
+ "nami": {
+  "km": 73.0,
+  "min": 75
+ },
+ "chuncheon": {
+  "km": 98.0,
+  "min": 91
+ },
+ "suwon": {
+  "km": 38.1,
+  "min": 37
+ },
+ "yongin": {
+  "km": 42.1,
+  "min": 39
+ },
+ "ganghwa": {
+  "km": 55.7,
+  "min": 52
+ },
+ "incheon": {
+  "km": 39.8,
+  "min": 37
+ },
+ "icheon": {
+  "km": 66.1,
+  "min": 58
+ },
+ "yangpyeong": {
+  "km": 36.4,
+  "min": 42
+ },
+ "pocheon": {
+  "km": 55.1,
+  "min": 52
+ },
+ "gwangmyeong": {
+  "km": 26.2,
+  "min": 31
+ },
+ "gangneung": {
+  "km": 219.7,
+  "min": 180
+ },
+ "sokcho": {
+  "km": 193.3,
+  "min": 162
+ },
+ "pyeongchang": {
+  "km": 188.6,
+  "min": 153
+ },
+ "jeonju": {
+  "km": 212.7,
+  "min": 164
+ },
+ "andong": {
+  "km": 224.2,
+  "min": 186
+ },
+ "gyeongju": {
+  "km": 328.5,
+  "min": 250
+ },
+ "busan": {
+  "km": 399.9,
+  "min": 299
+ },
+ "daegu": {
+  "km": 282.8,
+  "min": 216
+ },
+ "gongju": {
+  "km": 136.1,
+  "min": 104
+ },
+ "danyang": {
+  "km": 168.6,
+  "min": 144
+ }
+}

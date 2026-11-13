@@ -5,6 +5,7 @@ from urllib.parse import quote
 from flask import Flask, render_template, request, redirect, abort, Response, session
 from dotenv import load_dotenv
 import guide
+import charter
 
 load_dotenv()
 app = Flask(__name__)
@@ -167,13 +168,13 @@ def _t(lang):
 
 def _guide_ld(path, name, g=None, rel=(), lang="ja"):  # rel: [(경로, 이름)]
     u, ui = CFG["site_url"], guide.UI[lang]
-    crumbs = [(_t(lang)["brand"], ui["main"]), (ui["guide"], guide.path(lang))] + ([g["parent"][::-1]] if g and g.get("parent") else []) + ([(name, path)] if g else [])
+    crumbs = [(_t(lang)["brand"], ui["main"]), (ui["guide"], ui.get("guide_path") or guide.path(lang))] + ([g["parent"][::-1]] if g and g.get("parent") else []) + ([(name, path)] if g else [])
     graph = [{"@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": i + 1, "name": n, "item": u + h} for i, (n, h) in enumerate(crumbs)]}]
     if g:
         graph.append({"@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in g["faq"]]})
-        svc = {"@type": "Service", "name": name, "serviceType": {"ja": "空港送迎", "ko": "공항 송영", "en": "Airport transfer"}[lang], "areaServed": "Seoul",
+        svc = {"@type": "Service", "name": name, "serviceType": g.get("stype") or {"ja": "空港送迎", "ko": "공항 송영", "en": "Airport transfer"}[lang], "areaServed": "Seoul",
                "provider": {"@type": "LocalBusiness", "@id": u + "/#business", "name": "クマトラベル / Kuma Travel"}}
         if g["c"]["flat"]:
             svc["offers"] = {"@type": "Offer", "price": g["c"]["flat"], "priceCurrency": "KRW"}
@@ -215,6 +216,7 @@ def render_guide(p=None, lang="ja"):
         lead, groups = desc + ui["hub_more"], _hub_groups(lang)
         if lang == "ja":
             groups.append(("キーワード別の質問", [("/guide/keywords", f"よく調べられている質問 {sum(guide.kw_open(k) for k in guide.KW)}件の一覧")]))
+            groups.append(("ソウル発の貸切チャーター", [("/charter", "DMZ・南怡島・全州・安東・慶州など 日帰り貸切ガイド")]))
         alts = [(l, guide.path(l)) for l in guide.LANGS]
     groups = [x for x in groups if x[1]]
     return render_template("guide.html", t=t, lang=lang, ui=ui, cfg=CFG, prices=PRICES, year=datetime.now().year, path=path,
@@ -250,10 +252,65 @@ def guide_page_l(lang, slug):
     return _guide_page(slug, lang)
 
 
+CUI = {**guide.UI["ja"], "guide": "貸切チャーターガイド", "guide_path": "/charter", "table": "車両と料金", "flow": "貸切のご利用の流れ",
+       "fare_note": "ソウル市内の貸切は車1台あたりの定額です。ソウル以外は距離と時間に応じてお見積りします。",
+       "cta_h": "貸切のご相談・お見積りは日本語で", "cta_p": "日付・人数・行きたい場所をLINEでお送りください。ソウル市内は半日（4時間）300,000ウォン、1日（8時間）500,000ウォン（車1台）。"}
+
+
+def _charter_render(path, g, title, desc, h1, lead, groups, rel=()):
+    return render_template("guide.html", t=I18N["ja"], lang="ja", ui=CUI, alts=[], cfg=CFG, prices=PRICES, year=datetime.now().year, path=path,
+                           title=title, desc=desc, h1=h1, lead=lead, g=g, groups=[x for x in groups if x[1]], intent=None,
+                           ld=_guide_ld(path, h1, g, rel, "ja") if g else _guide_ld(path, h1, None, rel, "ja"))
+
+
+@app.route("/charter")
+def charter_hub():
+    pages = [(charter.path(p["id"]), charter.label(p["id"])) for p in charter.open_pages()]
+    groups = [("地域別の貸切チャーター", [("/seoul-charter", "ソウルチャーター車・貸切（半日・1日）")] + pages)]
+    for i in ["seoul"] + [p["id"] for p in charter.open_pages()]:
+        ks = [(f"/q/{k['slug']}", k["kw"]) for k in charter.KIDS.get(i, []) if charter.kw_open(k)]
+        groups.append((f"{'ソウル' if i == 'seoul' else charter.D[i]['n']}の貸切でよく調べられていること", ks))
+    groups.append(("サービス", guide.UI["ja"]["svc"]))
+    title = "韓国 貸切チャーターガイド｜ソウルから日帰りで行けるDMZ・南怡島・全州・安東・慶州｜クマトラベル"
+    desc = "ソウルのホテルから貸切車で出かける日帰り旅をエリア別にまとめました。DMZ・南怡島・水原・江陵・全州・安東・慶州まで、所要時間とモデルコース、日本語での予約方法をご案内します。"
+    return _charter_render("/charter", None, title, desc, "韓国 貸切チャーターガイド", desc + "ソウル市内は半日（4時間）300,000ウォン、1日（8時間）500,000ウォンの定額です。", groups, pages)
+
+
+@app.route("/charter/<slug>")
+def charter_page(slug):
+    p = charter.BY_ID.get(slug)
+    if not p or not charter.is_open(p):
+        abort(404)
+    g = {**charter.compose(slug), "parent": None}
+    path = charter.path(slug)
+    rel = [(charter.path(i), charter.label(i)) for i in charter.related(slug)]
+    kids = [(f"/q/{k['slug']}", k["kw"]) for k in charter.KIDS.get(slug, []) if charter.kw_open(k)]
+    groups = [("近くの貸切先", rel), (f"{charter.D[slug]['n']}の貸切でよく調べられていること", kids),
+              ("ソウル市内の貸切", [("/seoul-charter", "ソウルチャーター車・貸切（半日・1日）"), ("/charter", "貸切チャーターガイド一覧")]), ("サービス", guide.UI["ja"]["svc"])]
+    return _charter_render(path, g, g["title"], g["desc"], g["h1"], g["lead"], groups, rel)
+
+
+def _charter_kw(k):
+    g = charter.compose_kw(k)
+    path = f"/q/{k['slug']}"
+    sib = [(f"/q/{x['slug']}", x["kw"]) for x in charter.kw_siblings(k)]
+    rel = [(charter.path(i), charter.label(i)) for i in charter.related(k["parent"], 4)]
+    groups = [("このページの詳しい解説", [g["parent"]]), ("同じエリアの質問", sib), ("ほかの貸切先", rel),
+              ("貸切チャーターガイド", [("/charter", "エリア別の貸切チャーター一覧")]), ("サービス", guide.UI["ja"]["svc"])]
+    return _charter_render(path, g, g["title"], g["desc"], g["h1"], g["lead"], groups, sib)
+
+
 @app.route("/q/<slug>")
 def guide_kw(slug):
     if slug in guide.KW_ALIAS:  # 같은 키워드(어순·표기만 다름) → 남긴 1페이지로
         return redirect(guide.KW_ALIAS[slug], 301)
+    if slug in charter.KW_ALIAS:
+        return redirect(charter.KW_ALIAS[slug], 301)
+    if slug in charter.KW_BY:
+        k = charter.KW_BY[slug]
+        if not charter.kw_open(k):
+            abort(404)
+        return _charter_kw(k)
     k = guide.KW_BY.get(slug)
     if not k or not guide.kw_open(k):
         abort(404)
@@ -464,7 +521,8 @@ def sitemap():
     urls += "".join(f"<url><loc>{u}/{p}</loc><lastmod>{gm}</lastmod></url>"
                     for p in ["guide", "guide/keywords"] + [q["id"] for q in guide.open_pages()]
                     + [f"q/{quote(k['slug'])}" for k in guide.KW if guide.kw_open(k)]
-                    + [f"{l}/guide" for l in ("ko", "en")]
+                    + [f"{l}/guide" for l in ("ko", "en")] + ["charter"] + [charter.path(p["id"])[1:] for p in charter.open_pages()]
+                    + [f"q/{quote(k['slug'])}" for k in charter.KW if charter.kw_open(k)]
                     + [f"{l}/{q['id']}" for q in guide.open_pages() for l in ("ko", "en") if q["id"] in guide.TR[l]])
     xml = ('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
            'xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'
