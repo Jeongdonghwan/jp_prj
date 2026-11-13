@@ -105,7 +105,7 @@ def main():
     charter = importlib.reload(charter)
 
     U, hd = "https://kumatravelk.com", PatternFill("solid", fgColor="3A2E2A")
-    od = lambda w: (charter.LAUNCH + charter.timedelta(days=charter.guide.WAVE_DAY[w])).isoformat()
+    od = lambda w: (charter.LAUNCH + charter.timedelta(days=charter.WAVE_DAY[w])).isoformat()
     url = {k["kw"]: (U + "/q/" + k["slug"], od(k["wave"])) for k in charter.KW}
     for s, to in charter.KW_ALIAS.items():
         url.setdefault(s.replace("-", " "), (U + to + " (301 합침)", ""))
@@ -132,7 +132,7 @@ def main():
     s0.append(["합계", len(L), sum(r["src"].startswith("구글") for r in L), len(charter.KW)])
     s0.append([])
     s0.append(["새 페이지 합계", f"지역 가이드 {len(charter.PAGES)} + 허브 1 + 키워드 페이지 {len(charter.KW)} = {len(charter.PAGES) + 1 + len(charter.KW)}"])
-    s0.append(["오픈", f"CHARTER_LAUNCH={charter.LAUNCH} 부터 0·2·4·6일째 묶음 1~4"])
+    s0.append(["오픈", f"CHARTER_LAUNCH={charter.LAUNCH}(금) 묶음 1 → 토 묶음 2 → 일 묶음 3·4"])
     s0.append(["요금", "서울 시내 반나절 300,000원·하루 500,000원, 서울 밖은 견적 (사이트 확정 사실만 사용)"])
     for w, (sh, widths) in enumerate([(s0, [34, 12, 14, 14]), (ws, [6, 40, 34, 40, 22, 18, 10, 8, 60, 12]), (s2, [6, 30, 48, 14, 16, 14, 12])]):
         for c in sh[1]:

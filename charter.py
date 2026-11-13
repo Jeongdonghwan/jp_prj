@@ -12,7 +12,8 @@ from guide import pick, won, kw_slug, kw_norm, PX
 
 BASE = guide.BASE
 HALF, FULL = 300000, 500000
-LAUNCH = date.fromisoformat(os.getenv("CHARTER_LAUNCH", "2026-11-14"))  # 0·2·4·6일째 묶음 1~4
+LAUNCH = date.fromisoformat(os.getenv("CHARTER_LAUNCH", "2026-11-13"))
+WAVE_DAY = {1: 0, 2: 1, 3: 2, 4: 2}  # 금(오픈일) 묶음 1 → 토 2 → 일 3·4: 주말 안에 전부 공개
 
 # id: n(이름), spot(거리 기준 지점), lat/lng, feat, spots, tip, extra(지역 고유 한 줄), rx(키워드 배정)
 D = {
@@ -170,7 +171,7 @@ for _k in KW:
 
 
 def is_open(p, today=None):
-    return (today or date.today()) >= LAUNCH + timedelta(days=guide.WAVE_DAY[p["wave"]])
+    return (today or date.today()) >= LAUNCH + timedelta(days=WAVE_DAY[p["wave"]])
 
 
 def open_pages(today=None):
@@ -380,7 +381,7 @@ def related(i, n=6):
 
 
 def demo():
-    today = LAUNCH + timedelta(days=6)
+    today = LAUNCH + timedelta(days=2)
     assert all(i in DIST and DIST[i]["km"] for i in D), [i for i in D if i not in DIST]
     assert not set(KW_BY) & set(guide.KW_BY) and not set(KW_BY) & set(guide.KW_ALIAS)
     for i in D:
