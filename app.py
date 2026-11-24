@@ -146,12 +146,7 @@ def render(lang, slug=None):
     )
 
 
-# --- 공항 가이드 페이지 (guide.py 조합, 묶음별 순차 공개) ---
-def _guide_lastmod():
-    files = [os.path.join(BASE, f) for f in ("guide.py", "seo/pages.json", "seo/places.json", "templates/guide.html")]
-    return datetime.fromtimestamp(max(os.path.getmtime(f) for f in files))
-
-
+# --- 공항 가이드 페이지 (guide.py 조합, 묶음별 순차 공개). 사이트맵 lastmod 는 guide.UPDATED(언어별 개정일) ---
 # 영어 화면 틀 (영어 메인은 없음 → 헤더 메뉴는 일본어 메인으로)
 EN_T = {**I18N["ja"], "brand": "Kuma Travel", "brand_sub": "KUMA TRAVEL", "nav_service": "Services", "nav_price": "Prices",
         "nav_vehicle": "Vehicles", "nav_gallery": "Gallery", "nav_reviews": "Reviews", "nav_faq": "FAQ", "nav_contact": "Contact",
@@ -209,10 +204,15 @@ def render_guide(p=None, lang="ja"):
         kids = [(f"/q/{k['slug']}", k["kw"]) for k in guide.KIDS.get(p["id"], []) if guide.kw_open(k)] if lang == "ja" else []
         groups = [(ui["related"], rel)] + ([(ui["kids"], kids)] if kids else []) + [(ui["services"], ui["svc"])]
         alts = [(l, guide.path(l, p["id"])) for l in guide.langs_of(p)]
+        if g.get("kw"):  # 한국어: 키워드가 든 h2 (핵심 요약·표·흐름·FAQ·문의)
+            kw = g["kw"]
+            ui = {**ui, "box": f"{kw} {ui['box']}", "table": f"{kw} {ui['table']}", "flow": f"{kw}, {ui['flow']}",
+                  "faq": f"{kw} {ui['faq']}", "cta_h": f"{kw} {ui['cta_h']}"}
     else:
-        g, path = None, guide.path(lang)
+        path = guide.path(lang)
         rel = _links(guide.open_pages()[:30], lang)
         title, desc, h1 = ui["hub_t"], ui["hub_d"], ui["hub_h1"]
+        g = None
         lead, groups = desc + ui["hub_more"], _hub_groups(lang)
         if lang == "ja":
             groups.append(("キーワード別の質問", [("/guide/keywords", f"よく調べられている質問 {sum(guide.kw_open(k) for k in guide.KW)}件の一覧")]))
@@ -221,6 +221,7 @@ def render_guide(p=None, lang="ja"):
     groups = [x for x in groups if x[1]]
     return render_template("guide.html", t=t, lang=lang, ui=ui, cfg=CFG, prices=PRICES, year=datetime.now().year, path=path,
                            title=title, desc=desc, h1=h1, lead=lead, g=g, groups=groups, intent=p and p["intent"], alts=alts,
+                           h1sub=g["h1sub"] if g and g.get("h1sub") else ui.get("hub_sub") if not p else None,
                            ld=_guide_ld(path, h1, g, rel, lang))
 
 
@@ -517,8 +518,7 @@ def sitemap():
         for p, lang in (("/", "ja"), ("/ko", "ko")))
     urls += "".join(f"<url><loc>{u}/{s}</loc><lastmod>{_lastmod('ja').strftime('%Y-%m-%d')}</lastmod>"
                     f"<changefreq>weekly</changefreq></url>" for s in LANDINGS)
-    gm = _guide_lastmod().strftime("%Y-%m-%d")
-    urls += "".join(f"<url><loc>{u}/{p}</loc><lastmod>{gm}</lastmod></url>"
+    urls += "".join(f"<url><loc>{u}/{p}</loc><lastmod>{guide.UPDATED[p[:2] if p[:3] in ('ko/', 'en/') else 'ja']}</lastmod></url>"
                     for p in ["guide", "guide/keywords"] + [q["id"] for q in guide.open_pages()]
                     + [f"q/{quote(k['slug'])}" for k in guide.KW if guide.kw_open(k)]
                     + [f"{l}/guide" for l in ("ko", "en")] + ["charter"] + [charter.path(p["id"])[1:] for p in charter.open_pages()]

@@ -3,7 +3,7 @@
 문장 틀은 슬러그 해시로 고정 선택(같은 페이지는 항상 같은 글), 숫자는 전부 데이터에서 온다.
 다른 교통수단과 비교하지 않고 구마트래블의 사실·장점만 쓴다 (demo()가 검사).
 """
-import hashlib, json, math, os
+import hashlib, json, math, os, re
 from datetime import date, timedelta
 
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -782,7 +782,52 @@ def compose_tr(p, lang):
     if not t:
         return None
     g = compose(p)
-    return {**g, **{k: t[k] for k in TR_KEYS}, "label": t["label"]}
+    g = {**g, **{k: t[k] for k in TR_KEYS}, "label": t["label"]}
+    return {**g, **ko_meta(p, g)} if lang == "ko" else g
+
+
+# ---- 한국어 페이지 형식 (2026-11-24): h1 = 키워드 + 수식어, title = h1 글자 | 상호(40자 이하), description 45~80자, 키워드 든 h2 ----
+UPDATED = {"ja": "2026-11-16", "en": "2026-11-16", "ko": "2026-11-24"}  # 본문·title·h1 을 바꾼 날 → 사이트맵 lastmod
+BRAND_KO = "구마트래블"
+
+
+def kw_title(kw, sub, brand=BRAND_KO):
+    for x in (f"{kw} {sub} | {brand}", f"{kw} {sub}", f"{kw} | {brand}"):
+        if len(x) <= 40:
+            return x
+    return kw
+
+
+def ko_meta(p, g):
+    """숫자는 전부 ctx(거리·시간·정액)에서, 나머지 말은 그 페이지 핵심 요약 칸에 있는 사실만."""
+    c, kw = ctx(p), g["h1"].split("｜")[0]
+    T = "제1터미널" if c["ap"] == "icn" else "국제선 터미널"
+    km, mn = c["legs"][0][1:] if c["legs"] else (0, 0)
+    fl = f"{c['flat']:,}원" if c["flat"] else ""
+    if fl and c["legs"]:
+        subs = [f"정액 {fl}·차로 약 {mn}분", f"{T} 기준 {km}km·약 {mn}분", f"차량 1대 {fl} 정액, 왕복 10% 할인", f"차로 약 {mn}분, 심야에도 같은 요금"]
+        s1 = f"차량 1대 {fl} 정액, {T} 기준 {km}km·약 {mn}분."
+        s2 = ["심야·새벽도 같은 요금, 왕복 10% 할인.", "왕복 10% 할인.", "스타리아 최대 6명.", "심야·새벽도 같은 요금."]
+    elif c["legs"]:
+        subs = [f"{T} 기준 {km}km·약 {mn}분", f"차로 약 {mn}분, 스타리아 최대 6명", f"{km}km·약 {mn}분, 왕복 10% 할인"]
+        s1 = f"{T} 기준 {km}km·차로 약 {mn}분, 요금은 견적으로 안내."
+        s2 = ["스타리아 최대 6명, 왕복 10% 할인.", "왕복 10% 할인.", "스타리아 최대 6명."]
+    else:
+        subs = ["스타리아 최대 6명·왕복 10% 할인", "대형 캐리어 4~5개, 왕복 10% 할인", "스타리아 최대 6명·대형 캐리어 4~5개"]
+        s1 = "요금은 견적으로 안내, 스타리아 최대 6명·대형 캐리어 4~5개."
+        s2 = ["왕복 예약은 합계에서 10% 할인.", "왕복 10% 할인."]
+    i = int(hashlib.md5(f"{p['id']}:kosub".encode()).hexdigest(), 16)
+    subs = subs[i % len(subs):] + subs[:i % len(subs)]
+    words = lambda s: [w for w in re.findall(r"[가-힣]{2,}", s)]
+    subs += ([f"정액 {fl}"] if fl else []) + ([f"차로 약 {mn}분"] if mn else []) + ["스타리아 최대 6명"]  # 짧은 벌: title 40자에 맞출 때
+    ok = lambda s: not any(w[:2] in kw for w in words(s))  # 키워드에 이미 있는 낱말은 되풀이하지 않는다
+    sub = next((s for s in subs if ok(s) and len(kw) + 1 + len(s) <= 40), next(filter(ok, subs), subs[0]))
+    s2 = [s2[0]] + s2[1:][i % (len(s2) - 1):] + s2[1:][:i % (len(s2) - 1)]
+    desc = next((d for d in (f"{kw} — {s1} {x} LINE·전화 예약" for x in s2) if len(d) <= 80), f"{kw} — {s1} LINE·전화 예약")
+    con = iter((": ", " — "))  # 본문 절 둘에 키워드를 붙인다(이미 구간 이름으로 시작하는 소제목·첫 절은 그대로)
+    secs = [(h if n == 0 or "：" in h or h.startswith(kw.split()[0]) or not (x := next(con, "")) else f"{kw}{x}{h}", ps)
+            for n, (h, ps) in enumerate(g["secs"])]
+    return {"kw": kw, "h1": kw, "h1sub": sub, "title": kw_title(kw, sub), "desc": desc, "secs": secs}
 
 
 # 템플릿·허브 고정 문구 (본문은 TR, 이건 화면 틀)
@@ -803,7 +848,7 @@ UI = {
                faq="자주 묻는 질문", cta_h="예약·견적 문의", cta_p="날짜·항공편명·인원·목적지 호텔명을 보내 주세요. 인천공항⇄서울 시내 {icn}원, 김포공항⇄서울 시내 {gmp}원(편도·차량 1대), 왕복 예약 시 10% 할인.",
                form="문의 양식", related="관련 페이지", services="서비스", kids="",
                svc=[("/ko", "구마트래블 송영·대절 안내"), ("/ko/guide", "공항 이동 가이드 전체")],
-               hub_t="인천공항·김포공항 이동 가이드｜호텔까지 정액 픽업｜구마트래블",
+               hub_t="인천공항·김포공항 이동 가이드 호텔까지 정액 픽업 | 구마트래블", hub_sub="호텔까지 정액 픽업",
                hub_d="인천공항·김포공항에서 서울 시내 각 지역까지 픽업 요금과 소요 시간, 짐 배송, 심야·새벽 이동을 지역별로 정리했습니다.",
                hub_h1="인천공항·김포공항 이동 가이드", hub_more="정액 송영 예약 안내도 있습니다.",
                cats=["인천공항에서 서울 시내로", "김포공항에서 서울 시내로", "서울 시내에서 공항으로", "공항 기본 정보·상황별"], locale="ko_KR", main="/ko"),

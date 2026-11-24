@@ -278,6 +278,7 @@ table.price{width:100%;border-collapse:separate;border-spacing:0;background:#fff
 /* 공항 가이드 페이지 */
 .gd-hero{background:var(--sky);padding:40px 0 34px}
 .gd-hero h1{font-size:clamp(1.6rem,4vw,2.3rem)}
+.gd-hero h1 .hero-sub{display:block;font-family:var(--font);font-size:.46em;font-weight:700;color:var(--ink2);margin-top:.4em}
 .gd-hero .lead{color:var(--ink2);margin:0}
 .gd-body{padding-top:28px;padding-bottom:12px}
 .gd-sec{margin:0 0 36px}
