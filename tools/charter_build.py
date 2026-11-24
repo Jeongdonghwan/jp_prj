@@ -2,6 +2,8 @@
 
   python -I tools/charter_build.py           (자동완성 원본 keywords/charter_suggest_raw.json 재사용)
   python -I tools/charter_build.py --fetch   (구글 일본 자동완성을 다시 모은다, 약 2,200회 요청)
+  python -I tools/charter_build.py --deep    (찾은 대절 검색어를 씨앗으로 한 단계 더, 원본에 누적)
+사이트 전체 페이지(사이트맵 주소)가 TOTAL 이 되도록 새 키워드를 점수순으로 붙인다. 이미 있는 키워드 페이지는 순서·주소를 바꾸지 않는다.
 키워드 = 구글 자동완성에 실제로 뜬 대절·당일치기 검색어 + 키워드_전체.xlsx 의 대절 조합 키워드.
 거리 = 서울시청 → 지역 기준 지점 OSRM 도로 거리(막힘 없는 최소값이라 페이지엔 "目安"으로만 쓴다).
 """
@@ -41,7 +43,7 @@ def fetch():
 
 A = r"貸切|貸し切り|チャーター|ハイヤー|専用車|観光タクシー"
 B = r"日帰り|ツアー|ソウルから|ソウル から|行き方|アクセス"
-SK = r"便|機|風呂|アパート|一軒家|wbc|ポーズ|ブログ|コネスト|セルフ|大統領|富山|釧路|バス|電車|ktx|高速|新幹線|飛行機|フェリー|航空券|羽田|成田|関空|福岡|大阪|東京発|his|地下鉄|時刻表|arex|事件|中止|再開|現在|2026|スタバ|服装|温泉|競技場|格安|添乗員|泊|弾丸|アーリー|釜山 から|釜山から|大邱 から|海南|空港 日帰り|国際 空港 日帰り|インスパイア|パラダイス|ワールドカップ|ちほ|オーバー|アプリ|韓国 語|ハイヤー 韓国|dmz.{0,3}アクセス|先行|早期|アーリー|カード|なし|とは|年齢|国際空港|仁川まで|仁川 終電|荷物|トランジット|名古屋|帯広|関西|セール|ピーチ|宙|スペース|図書館|ヨット|スポーツ|始発|ホテル|釜山発|パス|大橋|スター フィールド"
+SK = r"便|機|風呂|アパート|一軒家|wbc|ポーズ|ブログ|コネスト|セルフ|大統領|富山|釧路|バス|電車|ktx|高速|新幹線|飛行機|フェリー|航空券|羽田|成田|関空|福岡|大阪|東京発|his|地下鉄|時刻表|arex|事件|中止|再開|現在|2026|スタバ|服装|温泉|競技場|格安|添乗員|泊|弾丸|アーリー|釜山 から|釜山から|大邱 から|海南|空港 日帰り|国際 空港 日帰り|インスパイア|パラダイス|ワールドカップ|ちほ|オーバー|アプリ|韓国 語|ハイヤー 韓国|dmz.{0,3}アクセス|先行|早期|アーリー|カード|なし|とは|年齢|国際空港|仁川まで|仁川 終電|荷物|トランジット|名古屋|帯広|関西|セール|ピーチ|宙|スペース|図書館|ヨット|スポーツ|始発|ホテル|釜山発|パス|大橋|スター フィールド|喫茶|料理|銀行|スタンダード|花巻|福島|カジノ 貸切"
 KO = [("日帰り旅行", "당일치기 여행"), ("までの距離", "까지 거리"), ("までの行き方", "까지 가는 법"), ("からの行き方", "에서 가는 법"), ("まで何時間かかりますか", "까지 몇 시간"), ("へ の ", ""), ("まで", "까지"), ("ソウルから", "서울에서 "), ("ソウル から", "서울에서 "), ("貸切タクシー", "대절택시"), ("貸し切り", "대절"), ("貸切", "대절"), ("チャーター車", "차량대절"), ("チャーター", "차량대절"),
       ("観光タクシー", "관광택시"), ("ハイヤー", "의전차량"), ("専用車", "전용차"), ("タクシー", "택시"), ("日帰りツアー", "당일 투어"), ("日帰り", "당일치기"), ("ツアー", "투어"),
       ("行き方", "가는 법"), ("アクセス", "가는 법"), ("料金", "요금"), ("おすすめ", "추천"), ("日本語", "일본어"), ("観光", "관광"), ("予約", "예약"), ("モデル コース", "추천 코스"),
@@ -71,6 +73,32 @@ def route(b):
     return None, None
 
 
+TOTAL = 3000
+SIGHT = {"観光", "見どころ", "見所", "モデルコース", "コース", "スポット", "おすすめスポット", "観光地", "旅行", "ルート", "おすすめ", "韓国", "の", "市", "ソウル", "1日", "一日", "半日", "観光スポット"}
+
+
+def sightseeing(k):
+    """지방 관광 검색어: 지명을 뺀 나머지가 전부 관광 계획 단어일 때만 (맛집·중국어·사건 검색 제외)"""
+    import charter
+    rest = re.sub(charter.D[charter.dest_of(k)]["rx"] + r"|韓屋村|華城|雪岳山|海雲台|西面", " ", k, flags=re.I).split()
+    return bool(rest) and set(rest) <= SIGHT and bool(set(rest) - {"韓国", "の", "市", "ソウル"})
+
+
+def deep(seeds):
+    from airport_suggest import suggest, KANA
+    old = {x["kw"]: x for x in json.load(open(RAW, encoding="utf-8"))}
+    qs = [k + " " for k in seeds] + [k + " " + c for k in seeds for c in KANA]
+    with ThreadPoolExecutor(4) as ex:
+        for q, res in ex.map(suggest, qs):
+            for r, k in enumerate(res):
+                k = " ".join(k.split())
+                h = old.setdefault(k, {"kw": k, "n": 0, "best": 99, "seed": q.strip()})
+                h["n"] += 1
+                h["best"] = min(h["best"], r)
+    json.dump(list(old.values()), open(RAW, "w", encoding="utf-8"), ensure_ascii=False)
+    print("deep", len(qs), "queries →", len(old), "suggestions")
+
+
 def main():
     if "--fetch" in sys.argv:
         fetch()
@@ -86,14 +114,33 @@ def main():
             continue
         d = charter.dest_of(k)
         direct = bool(re.search(A, k))
-        if not d or not (direct or (re.search(B, k) and (d != "seoul" or re.search(r"日帰り|ツアー", k)))):
+        sight = d not in (None, "seoul") and not re.search(B, k) and sightseeing(k)
+        if not d or not (direct or sight or (re.search(B, k) and (d != "seoul" or re.search(r"日帰り|ツアー", k)))):
             continue
-        rows[k] = {"kw": k, "ko": ko(k), "kind": "대절 직접" if direct else "당일치기·투어(대절 대상)", "src": "구글 자동완성(실제)", "n": x["n"], "best": x["best"] + 1}
+        rows[k] = {"kw": k, "ko": ko(k), "kind": "대절 직접" if direct else "지방 관광(대절 대상)" if sight else "당일치기·투어(대절 대상)", "src": "구글 자동완성(실제)", "n": x["n"], "best": x["best"] + 1}
     for r in openpyxl.load_workbook(os.path.join(ROOT, "keywords", "구마트래블_키워드_전체.xlsx"), read_only=True).active.iter_rows(min_row=2, values_only=True):
         if re.search(A, r[1] or "") and r[1] not in rows and r[1] not in have and r[4] != "정보형" and charter.dest_of(r[1]):
             rows[r[1]] = {"kw": r[1], "ko": r[2], "kind": "대절 직접", "src": "기존 키워드(조합)", "n": r[7] or 0, "best": r[8] or ""}
     L = sorted(rows.values(), key=lambda r: (r["src"] != "구글 자동완성(실제)", r["kind"] != "대절 직접", -r["n"]))
-    json.dump(L, open(KWJ, "w", encoding="utf-8"), ensure_ascii=False, indent=0)
+    if "--deep" in sys.argv:
+        deep([r["kw"] for r in L if r["src"].startswith("구글")][:80])
+        sys.argv.remove("--deep")
+        return main()
+    import guide
+    prev = [x["kw"] for x in json.load(open(KWJ, encoding="utf-8"))] if os.path.exists(KWJ) else []
+    by = {r["kw"]: r for r in L}
+    keep = [by[k] for k in prev if k in by]
+    new = [r for r in L if r["kw"] not in set(prev)]
+    fixed = len(guide.PAGES) + len(guide.KW) + 4 + 1 + len(charter.D) + 2 + sum(len(guide.TR[l]) for l in ("ko", "en")) + 3  # 가이드·랜딩·대절 허브/지역·번역·목록
+    m = 0
+    while True:  # 같은 키워드는 charter.py 가 걸러내므로, 키워드 페이지 수가 목표에 닿을 때까지 하나씩 늘린다
+        json.dump(keep + new[:m], open(KWJ, "w", encoding="utf-8"), ensure_ascii=False, indent=0)
+        charter = importlib.reload(charter)
+        if fixed + len(charter.KW) >= TOTAL or m >= len(new):
+            break
+        m += max(1, TOTAL - fixed - len(charter.KW))
+    L = keep + new[:m]
+    print("pages", fixed + len(charter.KW), "of", TOTAL, "| new keywords", m, "left", len(new) - m)
     pl = json.load(open(PLJ, encoding="utf-8")) if os.path.exists(PLJ) else {}
     for i, x in charter.D.items():
         if i not in pl:
